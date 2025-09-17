@@ -216,8 +216,8 @@
   $f subset.eq A times B$ heißt surjektiv. wenn $forall b in B thick exists a
   in A thick ((a; b) in f)$.
 
-  In der Sprache der Relationen spricht man von *Rechtstotalität*. Man könnte die
-  Surjektivität einer Abbildung mit $f colon X ->> Y$ ausdrücken.
+  In der Sprache der Relationen spricht man von *Rechtstotalität*. Man könnte
+  die Surjektivität einer Abbildung mit $f colon X ->> Y$ ausdrücken.
 
   #tldr([
     Eine Abbildung ist surjektiv, wenn es zu jedem $y in Y$ *mindestens* ein $x
@@ -240,4 +240,60 @@
     Eine Abbildung heißt injektiv, wenn es zu jedem $y in Y$ *maximal* ein $x
     in X$ gibt.
   ])
+])
+
+= Folgen
+== Der Folgenbegriff
+
+#definition([
+  === Folgen
+  Eine Funktion, deren Definitionsbereich die Menge der natürlichen Zahlen ist,
+  heißt *Zahlenfolge*, kurz *Folge*.
+])
+
+#remark([
+  === Notation
+  Im Allgemeinen wird die Zuordnungsvorschrift in Form einer Gleichung gegeben.
+
+  $ (a_n) colon a_n = 3n - 4 $
+
+  $(a_n)$ ist die Folgenbezeichnung.
+
+  $n$ ist der Folgenindex, die Indexzahl, mit $n in NN$, wobei zumeist $n >= 1$
+  $n$ das Argument.
+
+  $a_n$ ist das $n$-te Folgenglied, d.h. der Funktionswert zum Argument $n$. In
+  der üblichen Notation von Funktionen sollte $a_n$ besser als $a(n)$
+  geschrieben werden.
+
+  $3n - 4$ ist Term für die Berechnung des $n$-ten Folgegliedes.
+])
+
+#definition([
+  === Rekursion und Explikation
+  Wird die Zuordnungsvorschrift einer Folge mit einem expliziten Term, z.B. $3n
+  - 4$, dann spricht man von einer *expliziten* Bildungsvorschrift.
+
+  \
+
+  Die Folge könnte aber auch durch eine *rekursive* Bildungsvorschrift gegeben
+  sein. Dann bediene man sich jener Form.
+
+  $ (a_n) colon a_1 = -1 and a_n = a_(n - 1) + 3 $
+
+  #tldr([
+    Wenn das Berechnen mit *einfachem* Rechenaufwand verbunden ist, der Term
+    also nicht auf vorhergehende oder nachfolgende Folgenglieder zurückgreift,
+    dann ist die Bildungsvorschrift *explizit*.
+
+    Wenn der Bildungsterm auf vorhergehende oder nachfolgende Folgenglieder
+    zurückgreift, dann ist die Zuordnungsvorschrift *rekursiv*.
+  ])
+])
+
+== Monotonieverhalten
+
+#definition([
+  //TODO: Definition hinzufügen
+  Hier kommt später noch eine Definition hin.
 ])
