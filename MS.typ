@@ -1,6 +1,9 @@
 #import "Template.typ": *
 
 #set heading(numbering: "1.1.")
+#set page(
+  numbering: "1"
+)
 #set text(
   lang: "de",
   size: 10pt,
@@ -123,8 +126,8 @@
 
     $forall x in D(f) subset.eq X$ gibt es genau ein $y = f(x) in Y$.
 
-    $ f colon X -> Y $
-    $ x |-> y $
+    $ f : X &-> Y \
+    x &|-> y $
 
     Handelt es sich bei $X$ und $Y$ um reine Zahlenmengen (z.B. $RR$), so
     bezeichnen wir die Abbildung $f$ auch als *Funktion*.
@@ -135,20 +138,20 @@
       Funktion.
     ])
 
-    + $D(f)$ ist die *Definitionsmenge* #footnote[Definitionsbereich bei
-      Funktionen] von der Vorschrift $f$.
+  + $D(f)$ ist die *Definitionsmenge* #footnote[Definitionsbereich bei
+    Funktionen] von der Vorschrift $f$.
 
-    + $B(f)$ ist die *Bildungsmenge* #footnote[Wertebereich bei
-      Funktionen] von $f$, wobei $B(f) = {y in Y | y = f(x) "mit" x in D(f)}$
+  + $B(f)$ ist die *Bildungsmenge* #footnote[Wertebereich bei
+    Funktionen] von $f$, wobei $B(f) = {y in Y | y = f(x) "mit" x in D(f)}$
 
   + $f(x) in Y$ heißt *Bildpunkt* bzw. *Funktionswert* von $x$ unter $f$.
 
     Ist $y in Y$, so heißt jedes $x in X$ mit $f(x) = y$ *ein Urbild* bzw.
     *Argument* von $y$ unter $f$.
 
-  + Die Menge aller Urpunkte von $y$ unter $f$ bezeichnen wir mit $f^(-1)(y) :=
-    {x in X | f(x) = y}$. Zu $f^(-1)$ sagen wir auch *das Urbild* von $y$ unter
-    $f$.
+  + Die Menge aller Urpunkte von $y$ unter $f$ bezeichnen wir mit $f^(-1)(y)
+    := {x in X | f(x) = y}$. Zu $f^(-1)$ sagen wir auch *das Urbild* von $y$
+    unter $f$.
 
     #tldr([
       *Das Urbild* ist die Menge aller *Urbilder*.
@@ -157,16 +160,17 @@
     $X = D(f)$ heißt *Definitionsbereich* von $f$ und $Y = B(f)$ heißt
     *Wertebereich* von $f$.
 
-    Die Menge $"im"(f) := {f(x) | x in X} = {y in Y | exists x in X}$ mit $f(x)
-    = y$ heißt *Bild* von $f$.
+    Die Menge $"im"(f) := {f(x) | x in X} = {y in Y | exists x in X}$ mit
+    $f(x) = y$ heißt *Bild* von $f$.
 
   + Die Menge $ Gamma_f := {(x, f(x)) | x in X} subset X times Y$
     #footnote[siehe @kartesischesProdukt] heißt der Graph von $f$.
 
-  + Zwei Abbildungen $f, g colon X -> Y$ heißen gleich ($f = g$), wenn
+  + Zwei Abbildungen $f, g : X -> Y$ heißen gleich ($f = g$), wenn
     $f(x) = g(x)$ $forall x in X$.
 
   #example([
+    === Beispiel
     Wir betrachten die Funktion $f(x) = sin(x)$.
 
     Für $X_1 = [0; pi/2]$ wäre das Bild $"im"(f(X_1)) = [0; 1]$.
@@ -180,14 +184,44 @@
   ])
 ])
 
+#remark([
+  #set enum(numbering: "(1)")
+
+  === Verschiedene Abbildungen
+  + Es sei $X$ eine nichtleere Menge. Die *Identität* auf $X$ ist definiert
+    durch
+
+    $ I d_X : X &-> X \
+    x &|-> x $
+
+  + Sei $y_0 in Y$ fixiert. Dann heißt die Abbildung
+
+    $ c_y_0 : X &-> Y \
+    x &|-> y_0 $
+
+    *konstante Abbildung*.
+
+  + Ist $X subset RR$, so heißt jede Abbildung $f : X -> RR$ *reelle
+    Funktion*.
+
+    #example([
+      === Beispiel
+      Die Logarithmusfunktion ist eine reelle Funktion.
+      $ ln : RR^+ -> RR &\
+      x &|-> ln(x) $
+    ])
+
+  #set enum(numbering: "1.")
+])
+
 == Verkettung von Abbildungen
 #definition([
   === Verkettung
-  Es seien $X$, $Y$, $Z$ nichtleere Mengen und $f colon X -> Y$ und $g colon
+  Es seien $X$, $Y$, $Z$ nichtleere Mengen und $f : X -> Y$ und $g:  
   Y -> Z$ zwei Abbildungen. Dann heißt die Abbildung
 
-  $ g compose f colon X -> Z $
-  $ x |-> g(f(x)) $
+  $ g compose f : X &-> Z \
+  x &|-> g(f(x)) $
 
   die *Verkettung* (oder *Verknüpfung*, *Hintereinanderausführung*) von $f$ und
   $g$.
@@ -196,8 +230,8 @@
 ])
 
 #theorem([
-  === Assoziativität
-  Seien $f colon X -> Y$, $g colon Y -> Z$ und $h colon Z -> W$
+  === Assoziativität <assoziativitaet>
+  Seien $f : X -> Y$, $g : Y -> Z$ und $h : Z -> W$
   Abbildungen.
 
   Dann sind die Verkettungen $h compose (g compose f)$ und $(h compose g)
@@ -212,33 +246,205 @@
 
 #definition([
   //TODO: Bild hinzufügen
-  === Surjektivität
-  $f subset.eq A times B$ heißt surjektiv. wenn $forall b in B thick exists a
-  in A thick ((a; b) in f)$.
+  === Surjektivität, Injektivität und Bijektivität <injSurBij>
+  Eine Abbildung $f : X -> Y$ heißt *surjektiv*. wenn $forall y in Y : exists x
+  in X : thick f(x) = y$.
 
   In der Sprache der Relationen spricht man von *Rechtstotalität*. Man könnte
-  die Surjektivität einer Abbildung mit $f colon X ->> Y$ ausdrücken.
+  die Surjektivität einer Abbildung mit $f : X ->> Y$ ausdrücken.
 
   #tldr([
     Eine Abbildung ist surjektiv, wenn es zu jedem $y in Y$ *mindestens* ein $x
     in X$ gibt.
   ])
-])
 
-#definition([
   //TODO: Bild hinzufügen
-  === Injektivität
-  Eine Abbildung heißt injektiv, wenn $forall a_1, a_2 in A and forall b in B
-  thick ((a_1; b); (a_2; b) in f) <=> a_1 = a_2$.
+  Eine Abbildung $f : X -> Y$ heißt *injektiv*, wenn $forall x_1, x_2 in X
+  : f(x_1) = f(x_2) <=> x_1 = x_2$.
 
   In der Sprache der Relationen spricht man von *Linkseindeutigkeit*. Man
-  könnte die Injektivität einer Zuordnung mit $f colon X arrow.r.hook Y$
+  könnte die Injektivität einer Zuordnung mit $f : X arrow.r.hook Y$
   ausdrücken, wobei der Pfeil eine Ähnlichkeit mit einer Teilmenge ($subset$)
   aufweist.
 
   #tldr([
     Eine Abbildung heißt injektiv, wenn es zu jedem $y in Y$ *maximal* ein $x
     in X$ gibt.
+  ])
+
+  //TODO: Bild hinzufügen
+  Eine Abbildung ist *bijektiv*, wenn sie sowohl subjektiv als auch injektiv
+  ist. Diese Abbildung nennen wir auch eineindeutige Zuordnung.
+
+  #tldr([
+    Eine Abbildung ist bijektiv, wenn jedem $x in X$ genau ein $y in Y$
+    zugeordnet wird und jedes $y in Y$ einem $x in X$ zugeordnet wird.
+  ])
+])
+
+#example([
+  === Beispielbeweis
+  Betrachten wir die Abbildung $f : x |-> x/(x + 1)$ mit $f : RR without {-1}
+  -> RR$. Wir wollen nun herausfinden, ob $f$ injektiv, surjektiv oder sogar
+  bijektiv, also beides, ist.
+
+  + Damit $f$ *injektiv* ist, muss die Definition #footnote[siehe @injSurBij]
+    <iSB> erfüllt sein. Also muss für $x_1, x_2 in X$ mit $f(x_1) = f(x_2)$
+    $x_1 = x_2$. Dafür setzen wir sie gleich.
+
+    $
+      x_1/(x_1 + 1) &= x_2/(x_2 + 1) wide &&| dot (x_2 + 1) \
+      (x_1 x_2 + x_1)/(x_1 + 1) &= x_2 &&| dot (x_1 + 1) \
+      x_1 x_2 + x_1 &= x_1 x_2 + x_2 &&| - x_1 x_2 \
+      x_1 &= x_2 \ \ \
+      &endOfProof
+    $
+
+    Somit ist $f$ injektiv. Da $x_1 = x_2$ ist die Definition erfüllt.
+
+  //TODO: Warum ist das der Ansatz?
+  + Damit $f$ *surjektiv* ist, muss auch die Definition #footnote(<iSB>)
+    $forall y in Y : exists x in X colon thick f(x) = y$ erfüllt sein.
+
+    $
+      y &= x/(x + 1) wide &&| dot (x + 1) \
+      y x + y &= x &&| -y -x \
+      y x - x &= -y <=> x (y - 1) = -y &&| dot 1/(y - 1) \
+      x &= - y/(y - 1)
+    $
+
+    $- y/(y - 1)$ ist für $y = 1$ nicht definiert und somit ist $f$ nicht
+    surjektiv, da ein $y in Y$ existiert für das es kein $x in X$ gibt.
+
+  + $f$ ist kann folglich nicht *bijektiv* sein, da es dafür surjektiv und
+    injektiv sein müsste. Es wäre bijektiv für $f : RR without {-1} -> RR
+    without {1}$.
+])
+
+== Umkehrabbildung
+#definition([
+  === Inverse Abbildung <inversAbb>
+  Ist die Abbildung $f : X -> Y$ bijektiv, so ist die inverse Abbildung
+  $f^(-1) : Y -> X$ zu $f$ definiert durch
+
+  $ f^(-1) : Y -> X \
+  y |-> f^(-1)(y) $
+
+  $y |-> f^(-1)(y) := $ das eindeutig bestimmte Urbild von $y$ unter $f$.
+
+  #remark([
+    Sei $f : X -> Y$ bijektiv. Dann ist $f^(-1) : Y -> X$ ebenfalls
+    bijektiv und es gilt aufgrund der Definition
+
+    $ f^(-1) compose f = I d_X \
+    f compose f^(-1) = I d_Y \
+    (f^(-1))^(-1) = f $
+
+  ])
+
+  #example([
+    #set enum(numbering: "(1)")
+    === Beispiel
+
+    + $I d_X : X -> X$ ist bijektiv.
+
+      $ I d_X : RR -> RR \
+      x |-> x $
+
+      $ (I d_X)^(-1) = I d_X $
+
+    + Die konstante Abbildung $c_y_0 : X -> Y$ ist weder injektiv noch
+      surjektiv, unter der Bedingung, dass $X$ und $Y$ mehr als ein Element
+      enthalten.
+
+      $(c_y_0)^(-1)$ ist zudem keine Abbildung mehr.
+
+    + Die reelle Funktion $ln : RR^+ -> RR$, $ln : x |-> ln(x)$ ist
+      bijektiv.
+
+      Die Umkehrabbildung wäre
+
+      $ exp : RR -> RR^+ \
+      exp: x -> e^x $
+
+    #set enum(numbering: "1.")
+  ])
+])
+
+#theorem([
+  #set enum(numbering: "(1)")
+  === Satz über Links- und Rechtsinverse
+  Sei $f : X -> Y$ eine Abbildung. Dann gilt
+
+  + $f$ ist genau dann injektiv, wenn es eine Abbildung $g : Y -> X$ gibt,
+    sodass $g compose f = I d_X$. \
+    $g$ heißt *Linksinverse* von $f$.
+
+  + $f$ ist genau dann surjektiv, wenn es eine Abbildung $h : Y -> X$ gibt,
+    sodass $f compose h = I d_Y$. \
+    $h$ heißt *Rechtsinverse* von $f$.
+
+  + $f$ ist genau dann bijektiv, wenn es eine Abbildung $g : Y -> X$ gibt, die
+    sowohl Links- als auch Rechtsinverse von $f$ ist. D.h. es gilt $g compose f
+    = I d_X and f compose g = I d_Y$, wobei $g$ eindeutig bestimmt ist, und $g
+    = f^(-1)$.
+
+  #set enum(numbering: "1.")
+
+  #remark([
+    Nur für *bijektive* Abbildungen gibt es Umkehrabbildungen. Bei nur
+    surjektiv oder injektiven Abbildungen existiert ein Urbild $f^(-1)$, eine
+    Menge mit keinem, einem oder anderen Elementen.
+  ])
+])
+
+#theorem([
+  === Satz über die Verkettung bijektiver Abbildungen
+  Seien $f : X -> Y$ und $g : Y -> Z$ zwei bijektive Abbildungen. \
+  Dann ist auch ihre Verkettung $g compose f$ bijektiv und für ihre inversen
+  Abbildungen gilt
+
+  $ (g compose f)^(-1) = f^(-1) compose g^(-1) $
+
+  #example([
+    === Beweis
+    Für die inversen Abbildungen $f^(-1) : Y -> X$ und $g^(-1) : Z -> Y$ gilt
+    #footnote[siehe @inversAbb]
+    $
+      f^(-1) compose f &= I d_X wide g^(-1) compose g &&= I d_Y \
+      f compose f^(-1) &= I d_Y wide g compose g^(-1) &&= I d_Z
+    $
+
+    Wegen der Assoziativität #footnote[siehe @assoziativitaet] von
+    Verknüpfungen gilt
+
+    $
+      (f^(-1) compose g^(-1)) compose (g compose f) \
+      &<=> f^(-1) compose g^(-1) compose g compose f \
+      &<=> f^(-1) compose (g^(-1) compose g) compose f \
+      &<=> f^(-1) compose (I d_Y) compose f \
+      &<=> f^(-1) compose f = I d_X \
+      (f^(-1) compose g^(-1)) compose (g compose f) = I d_X
+    $
+
+    Umgekehrt gilt analog dazu
+
+    $
+      (g compose f) compose (f^(-1) compose g^(-1)) \
+      &<=> g compose (f compose f^(-1)) compose g^(-1) \
+      &<=> g compose (I d_Y) compose g^(-1) \
+      &<=> g compose g^(-1) = I d_Z \
+      (g compose f) compose (f^(-1) compose g^(-1)) = I d_Z
+    $
+
+    Somit gilt, falls $f$ und $g$ bijektiv sind, $exists f^(-1) and g ^(-1)$,
+    die eindeutig bestimmt, d.h. ebenfalls bijektiv sind.
+
+    $
+      &exists f^(-1) and g^(-1) \
+      => &exists f^(-1) compose g^(-1) = (g compose f)^(-1) \ \ \
+      endOfProof
+    $
   ])
 ])
 
@@ -255,7 +461,7 @@
   === Notation
   Im Allgemeinen wird die Zuordnungsvorschrift in Form einer Gleichung gegeben.
 
-  $ (a_n) colon a_n = 3n - 4 $
+  $ (a_n) : a_n = 3n - 4 $
 
   $(a_n)$ ist die Folgenbezeichnung.
 
@@ -279,7 +485,7 @@
   Die Folge könnte aber auch durch eine *rekursive* Bildungsvorschrift gegeben
   sein. Dann bediene man sich jener Form.
 
-  $ (a_n) colon a_1 = -1 and a_n = a_(n - 1) + 3 $
+  $ (a_n) : a_1 = -1 and a_n = a_(n - 1) + 3 $
 
   #tldr([
     Wenn das Berechnen mit *einfachem* Rechenaufwand verbunden ist, der Term
@@ -291,9 +497,79 @@
   ])
 ])
 
+== Verschiedene Folgen
+
+#definition([
+  === Geometrische Folgen <geometrischeFolgen>
+  Eine Folge $(a_n)$ heißt geometrisch, wenn $exists q in RR without {0; 1}
+  thick forall n in NN without {0} : (a_(n + 1))/a_n = q$
+
+  Es gibt genau ein $q in RR without {0; 1}$, sodass für alle $n in NN without
+  {0}$ $(a_(n + 1))/a_n = q$. Oder anders gesagt
+
+  $ a_(n +1) = q dot a_n $
+
+#theorem([
+    Für jede geometrische Folge $(a_n)$ gilt $a_n = a_1 dot q^(n - 1)$, weil $a_1
+    = a_1 dot q^0$, weil $q^0$ für $q in NN without {0}$ immer $1$ ist.
+
+    $ a_1 = a_1 dot q^0 \
+    a_2 = a_1 dot q^1 \
+    a_3 = a_2 dot q^1 = a_1 dot q^2 \
+    ... $
+  ])
+])
+
+#remark([
+  === Konstante Folgen
+  $q$ #footnote[siehe @geometrischeFolgen] darf nicht $1$ sein, denn folglich
+  wäre $forall n in NN : thick a_(n
+  + 1) = a_n$.
+
+  Solche Folgen nennen wir *konstante Folgen*.
+])
+
+#definition([
+  === Alternierende Folgen
+  Folgen, deren aufeinanderfolgende Folgenglieder unterschiedliche Vorzeichen
+  besitzen, nennen wir *alternierend*.
+
+  $ forall n in NN without {0} : thick a_n dot a_(n+1) < 0 $
+])
+
 == Monotonieverhalten
 
 #definition([
-  //TODO: Definition hinzufügen
-  Hier kommt später noch eine Definition hin.
+  === Strenge Monotonie
+  Eine Folge $(a_n)$, deren nächstes Folgeglied immer größer ist als das
+  vorhergehende, nennt man *streng monoton steigend*.
+
+  $ forall n in NN : thick a_n < a_(n + 1) $
+
+  #remark([
+    Nicht streng monoton steigend sind jedoch alle Folgen für die gilt
+
+    $ exists n in NN : thick a_n >= a_(n + 1) $
+  ])
+
+  Wenn das nächste Folgeglied immer kleiner ist als das vorhergehende, dann
+  nennt man sie analog dazu *streng monoton fallend*.
+
+  $ forall n in NN : thick a_n > a_(n + 1) $
+
+  #remark([
+    Nicht streng monoton fallend sind jedoch alle Folgen für die gilt
+
+    $ exists n in NN : thick a_n <= a_(n + 1) $
+  ])
+])
+
+#definition([
+  === Einfache Monotonie
+  Folgen, die auch aufeinanderfolgende gleiche Folgeglieder aufweisen, sonst
+  allerdings monoton steigen oder fallen, nennt man *monoton steigend* bzw.
+  *monoton fallend*.
+
+  $ forall n in NN : thick a_n <= a_(n + 1) \
+  "bzw." forall n in NN : thick a_n >= a_(n + 1) $
 ])

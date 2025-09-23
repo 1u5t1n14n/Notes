@@ -18,7 +18,7 @@
   stroke: rgb("#EE6983")
 )
 #let example(body) = noteBlock(
-  [=== Beispiel] + body,
+  body,
   fill: rgb("#F7FBFC"),
   stroke: rgb("#BAB26F")
 )
@@ -35,3 +35,5 @@
   fill: rgb("#AFCBEA"),
   stroke: rgb("#3D8AE2")
 )
+
+#let endOfProof = "Quod erat Demonstrandum"
