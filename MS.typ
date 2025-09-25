@@ -547,7 +547,7 @@
   $ forall n in NN : thick a_n < a_(n + 1) $
 
   #remark([
-    Nicht streng monoton steigend sind jedoch alle Folgen für die gilt
+    Nicht streng monoton steigend sind jedoch alle Folgen, für die gilt
 
     $ exists n in NN : thick a_n >= a_(n + 1) $
   ])
@@ -558,9 +558,15 @@
   $ forall n in NN : thick a_n > a_(n + 1) $
 
   #remark([
-    Nicht streng monoton fallend sind jedoch alle Folgen für die gilt
+    Nicht streng monoton fallend sind jedoch alle Folgen, für die gilt
 
     $ exists n in NN : thick a_n <= a_(n + 1) $
+  ])
+
+  #example([
+    //TODO: Beweis beenden.
+    === Beispielbeweis
+    Betrachten wir die Folge $(c_n) : c_n = (n-1)/n$.
   ])
 ])
 
@@ -572,4 +578,50 @@
 
   $ forall n in NN : thick a_n <= a_(n + 1) \
   "bzw." forall n in NN : thick a_n >= a_(n + 1) $
+])
+
+= Beweise
+== Beweistechniken
+#definition([
+  === Hinrichtung und Rückrichtung
+  Beweise können _Genau dann, wenn ..._ Aussagen, die in zwei Richtungen
+  funktionieren sein.
+
+  #example([
+    === Satz vom Nullprodukt als Beispiel
+    $a dot b = 0$ für $a,b in RR$ gilt genau dann, wenn $a = 0 or b = 0$.
+
+    \
+
+    *Hinrichtung* "$==>$" \
+    + Wir nehmen an, dass $a dot b = 0$
+      Sei nun $a != 0$. Jetzt können wir durch Null teilen.
+
+      $
+        a dot b &= 0 wide | div a \
+        b &= 0
+      $
+
+    + Analog gilt dies auch für $b != 0$.
+
+    Es folgt, dass wenn $a dot b = 0$, muss mindestens einer der Faktoren $a$
+    oder $b$ Null sein.
+
+    \
+
+    *Rückrichtung* "$<==$" \
+    + Wir nehmen an, dass $a = 0$. Somit gilt
+
+      $ a dot b = 0 dot b = 0 $
+
+    + Analog gilt dies für $b = 0$.
+
+    Es folgt, dass wenn mindestens einer der Faktoren Null ist, dann ist auch
+    das Produkt Null.
+
+    $
+      \ \ \
+      endOfProof
+    $
+  ])
 ])
