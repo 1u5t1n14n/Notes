@@ -564,9 +564,21 @@
   ])
 
   #example([
-    //TODO: Beweis beenden.
-    === Beispielbeweis
-    Betrachten wir die Folge $(c_n) : c_n = (n-1)/n$.
+    === Beispielbeweis <herausgegriffen>
+    Betrachten wir die Folge $(c_n) : c_n = (n-1)/n$ mit $n in NN and n >= 1$.
+    Dazu gehen wir zuerst von einer streng monotonen Steigung aus und stellen
+    dann um.
+
+    $
+      c_n &< c_(n + 1) \
+      (n - 1)/n &< n/(n + 1) wide &&| dot n \
+      n - 1 &< (n^2)/(n + 1) &&|  dot (n + 1) \
+      n^2 - 1 &< n^2 &&| - n^2 \
+      -1 < 0 \ \ \
+      endOfProof
+    $
+
+    Die Vermutung ist *wahr*, da eine wahre Ungleichung am Ende steht.
   ])
 ])
 
@@ -580,12 +592,35 @@
   "bzw." forall n in NN : thick a_n >= a_(n + 1) $
 ])
 
+== Teilfolgen
+#remark([
+  === Folgen mit Systematik
+  In @herausgegriffen könnten bezüglich der Folge $(c_n) : c_n = (n - 1)/n$
+  systematisch Folgenglieder "herausgegriffen" werden, z.B. $c_1$, $c_10$,
+  $c_100$, ..., $c_(10^(k - 1))$. \
+  Diese Folgenglieder kann man als Neue Folge auffassen, die ein Teil der
+  Folge $(c_n)$ ist.
+])
+
+#definition([
+  === Definition
+  Die Folge $(t_n)$ ist Teilfolge der Folge $(a_n)$. \
+  Ist $n_i$ mit $(i = 1; 2; ...; k in NN without {0})$ eine streng monoton
+  wachsende Folge natürlicher Zahle, so heißt $(a_(n_i)) = (t_n)$ Teilfolge von
+  $(a_n)$.
+])
+
+#theorem([
+  === Teilfolgensatz
+  Jede Folge $(a_n)$ besitzt eine monotone Teilfolge.
+])
+
 = Beweise
 == Beweistechniken
 #definition([
   === Hinrichtung und Rückrichtung
   Beweise können _Genau dann, wenn ..._ Aussagen, die in zwei Richtungen
-  funktionieren sein.
+  funktionieren, sein.
 
   #example([
     === Satz vom Nullprodukt als Beispiel
