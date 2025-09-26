@@ -248,7 +248,7 @@
   //TODO: Bild hinzufügen
   === Surjektivität, Injektivität und Bijektivität <injSurBij>
   Eine Abbildung $f : X -> Y$ heißt *surjektiv*. wenn $forall y in Y : exists x
-  in X : thick f(x) = y$.
+  in X : f(x) = y$.
 
   In der Sprache der Relationen spricht man von *Rechtstotalität*. Man könnte
   die Surjektivität einer Abbildung mit $f : X ->> Y$ ausdrücken.
@@ -304,7 +304,7 @@
 
   //TODO: Warum ist das der Ansatz?
   + Damit $f$ *surjektiv* ist, muss auch die Definition #footnote(<iSB>)
-    $forall y in Y : exists x in X colon thick f(x) = y$ erfüllt sein.
+    $forall y in Y : exists x in X colon f(x) = y$ erfüllt sein.
 
     $
       y &= x/(x + 1) wide &&| dot (x + 1) \
@@ -448,13 +448,84 @@
   ])
 ])
 
+= Funktionen <funktion>
+== Symmetrie
+
+#definition([
+  === Gerade Funktionen
+  Bei geraden Funktionen haben *Gegenzahlen* den gleichen Funktionswert.
+  
+  $ f(x) = f(-x) $
+
+  Gerade Funktionen sind *achsensymmetrisch*.
+
+  #example([
+    === Beispielbeweis
+    Betrachten wir die Funktion $f(x) = x^4 - 3$.
+
+    $
+      f(x) &= f(-x) \
+      (-x)^4 - 3 &= x^4 - 3 \
+      ((-x) (-x))^2 - 3 &= x^4 - 3 \
+      (x^2)^2 - 3 &= x^4 - 3 \
+      x^4 - 3 = x^4 - 3 \ \ \
+      endOfProof
+    $
+
+    Die Funktion $f$ ist achsensymmetrisch und gerade.
+  ])
+
+  === Ungerade Funktionen
+  Bei ungeraden Funktionen haben Gegenzahlen Gegenzahlen als Funktionswerte.
+
+  $ f(x) = -f(-x) $
+
+  Ungerade Funktionen sind *punktsymmetrisch*.
+])
+
+#theorem([
+  #set enum(numbering: "(1)")
+  === Exponentenkriterium für Symmetrie ganzrationaler Funktionen
+  Wir betrachten die Funktionsgleichung *ganzrationaler Funktionen* in
+  Polynomform.
+
+  $ f(x) = a_n x^n + ... + a_1 x^1 + a_0 x^0 $
+
+  + Hat $x$ in der Funktionsgleichung nur gerade Exponenten, so ist die
+    Funktion *gerade* und *achsensymmetrisch*, denn es gilt
+
+    $ forall x in D(f) : f(x) = f(-x) $
+
+  + Hat $x$ in der Funktionsgleichung nur ungerade Exponenten, so ist die
+    Funktion ungerade und punktsymmetrisch, denn es gilt
+
+    $ forall x in D(f) : f(x) = -f(-x) $
+
+  #set enum(numbering: "1.")
+
+  #example([
+    === Beweis für Achsensymmetrie
+    $
+      (-x)^(2n) = ((-x)^2)^n = x^(2n) \
+
+      f(x) &= a_(2n) x^(2n) + a_(2(n - 1)) x^(2(n - 1)) + ... + a_0 x^0 \
+
+      f(-x) &= a_(2n) (-x)^(2n) + a_(2(n - 1)) (-x)^(2(n - 1)) + ... + a_0
+      (-x)^0 \
+      f(-x) &= a_(2n) x^(2n) + a_(2(n - 1)) x^(2(n - 1)) + ... + a_0 x^0 \
+      &= f(x) \ \ \
+      endOfProof
+    $
+  ])
+])
+
 = Folgen
 == Der Folgenbegriff
 
 #definition([
   === Folgen
-  Eine Funktion, deren Definitionsbereich die Menge der natürlichen Zahlen ist,
-  heißt *Zahlenfolge*, kurz *Folge*.
+  Eine Funktion #footnote[siehe @funktion], deren Definitionsbereich die Menge
+  der natürlichen Zahlen ist, heißt *Zahlenfolge*, kurz *Folge*.
 ])
 
 #remark([
@@ -502,7 +573,7 @@
 #definition([
   === Geometrische Folgen <geometrischeFolgen>
   Eine Folge $(a_n)$ heißt geometrisch, wenn $exists q in RR without {0; 1}
-  thick forall n in NN without {0} : (a_(n + 1))/a_n = q$
+  forall n in NN without {0} : (a_(n + 1))/a_n = q$
 
   Es gibt genau ein $q in RR without {0; 1}$, sodass für alle $n in NN without
   {0}$ $(a_(n + 1))/a_n = q$. Oder anders gesagt
@@ -513,18 +584,17 @@
     Für jede geometrische Folge $(a_n)$ gilt $a_n = a_1 dot q^(n - 1)$, weil $a_1
     = a_1 dot q^0$, weil $q^0$ für $q in NN without {0}$ immer $1$ ist.
 
-    $ a_1 = a_1 dot q^0 \
-    a_2 = a_1 dot q^1 \
-    a_3 = a_2 dot q^1 = a_1 dot q^2 \
-    ... $
+    $ a_1 &= a_1 dot q^0 \
+    a_2 &= a_1 dot q^1 \
+    a_3 &= a_2 dot q^1 = a_1 dot q^2 \
+    &... $
   ])
 ])
 
 #remark([
   === Konstante Folgen
   $q$ #footnote[siehe @geometrischeFolgen] darf nicht $1$ sein, denn folglich
-  wäre $forall n in NN : thick a_(n
-  + 1) = a_n$.
+  wäre $forall n in NN : a_(n + 1) = a_n$.
 
   Solche Folgen nennen wir *konstante Folgen*.
 ])
@@ -534,7 +604,7 @@
   Folgen, deren aufeinanderfolgende Folgenglieder unterschiedliche Vorzeichen
   besitzen, nennen wir *alternierend*.
 
-  $ forall n in NN without {0} : thick a_n dot a_(n+1) < 0 $
+  $ forall n in NN without {0} : a_n dot a_(n+1) < 0 $
 ])
 
 == Monotonieverhalten
@@ -544,23 +614,23 @@
   Eine Folge $(a_n)$, deren nächstes Folgeglied immer größer ist als das
   vorhergehende, nennt man *streng monoton steigend*.
 
-  $ forall n in NN : thick a_n < a_(n + 1) $
+  $ forall n in NN : a_n < a_(n + 1) $
 
   #remark([
     Nicht streng monoton steigend sind jedoch alle Folgen, für die gilt
 
-    $ exists n in NN : thick a_n >= a_(n + 1) $
+    $ exists n in NN : a_n >= a_(n + 1) $
   ])
 
   Wenn das nächste Folgeglied immer kleiner ist als das vorhergehende, dann
   nennt man sie analog dazu *streng monoton fallend*.
 
-  $ forall n in NN : thick a_n > a_(n + 1) $
+  $ forall n in NN : a_n > a_(n + 1) $
 
   #remark([
     Nicht streng monoton fallend sind jedoch alle Folgen, für die gilt
 
-    $ exists n in NN : thick a_n <= a_(n + 1) $
+    $ exists n in NN : a_n <= a_(n + 1) $
   ])
 
   #example([
@@ -588,8 +658,8 @@
   allerdings monoton steigen oder fallen, nennt man *monoton steigend* bzw.
   *monoton fallend*.
 
-  $ forall n in NN : thick a_n <= a_(n + 1) \
-  "bzw." forall n in NN : thick a_n >= a_(n + 1) $
+  $ forall n in NN : a_n <= a_(n + 1) \
+  "bzw." forall n in NN : a_n >= a_(n + 1) $
 ])
 
 == Teilfolgen
