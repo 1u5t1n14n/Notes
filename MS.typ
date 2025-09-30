@@ -118,7 +118,7 @@
 
 #definition([
   //TODO: Bild hinzufügen
-  === Abbildung, Funktion
+  === Abbildung, Funktion <graph>
   Es seien $X$ und $Y$ nichtleere Mengen.
 
   + Eine Vorschrift $f$, die jedem Element von $X$ genau ein Element von $Y$
@@ -215,6 +215,7 @@
 ])
 
 == Verkettung von Abbildungen
+
 #definition([
   === Verkettung
   Es seien $X$, $Y$, $Z$ nichtleere Mengen und $f : X -> Y$ und $g:  
@@ -322,6 +323,7 @@
 ])
 
 == Umkehrabbildung
+
 #definition([
   === Inverse Abbildung <inversAbb>
   Ist die Abbildung $f : X -> Y$ bijektiv, so ist die inverse Abbildung
@@ -449,6 +451,15 @@
 ])
 
 = Funktionen <funktion>
+
+== Funktionseigenschaften
+
+#definition([
+  === Nullstellen
+  Für eine Funktion $f$ ist $x_N in D(f)$ eine Nullstelle von $f$, wenn $f(x_N)
+  = 0$.
+])
+
 == Symmetrie
 
 #definition([
@@ -514,6 +525,53 @@
       (-x)^0 \
       f(-x) &= a_(2n) x^(2n) + a_(2(n - 1)) x^(2(n - 1)) + ... + a_0 x^0 \
       &= f(x) \ \ \
+      endOfProof
+    $
+  ])
+])
+
+== Globalverhalten
+
+#definition([
+  === Monotonie
+  Eine Funktion $f$ ist streng monoton fallend, genau dann wenn
+
+  $ forall x_1, x_2 in D(f) : x_1 < x_2 <=> f(x_1) > f(x_2) $
+])
+
+#definition([
+  === Grenzwerte
+  Betrachten wir $f(x) = (1/2)^x$.
+
+  $Gamma_f$, der Graph #footnote[siehe @graph] <graphFooter> von $f$, verläuft
+  für $x --> oo$ gegen $y = 1$ und für $x -> -oo$ gegen $y = oo$. Um das kurz
+  und knapp auszudrücken, wird die _Limes_-Schreibweise verwendet.
+
+  $ lim_(x -> oo) f(x) = 1 $
+
+  Der _Limes_ von $f(x)$ für $x$ gegen unendlich ist $1$. D.h., dass sich die
+  Funktionswerte für sehr große $x$-Werte beliebig nah an $y = 1$ annähern,
+  diesen aber nicht unbedingt erreichen.
+
+  $ lim_(x -> -oo) f(x) = oo $
+])
+
+#theorem([
+  === Globalverhalten bei ganzrationalen Funktionen
+  Der Graph #footnote(<graphFooter>) einer ganzrationalen Funktion $f$ mit
+  $f(x) = a_n x^n + ... + a_1 x + a_0$ mit $a_n != 0$ verhält sich für $x ->
+  plus.minus oo$ wie der Graph von $g$ mit $g(x) = a_n x^n$.
+
+  #example([
+    === Beweis
+    Sei $f$ mit $f(x) = a_n x^n + ... + a_1 x + a_0$ mit $a_n != 0$ eine
+    ganzrationale Funktion. Dann gilt mit $lim_(x -> oo) a/x^n = 0$
+
+    $
+      lim_(x -> oo) f(x) &= lim_(x -> oo) (x^n (a_n + a_(n - 1)/x + a_(n -
+    2)/x^2 + ... + a_1/x^(n - 1) + a_0/x^n)) \
+      &= lim_(x -> oo) (x^n (a_n)) = lim_(x -> oo) a_n x^n \
+      &= lim_(x -> oo) g(x) \ \ \
       endOfProof
     $
   ])
@@ -663,6 +721,7 @@
 ])
 
 == Teilfolgen
+
 #remark([
   === Folgen mit Systematik
   In @herausgegriffen könnten bezüglich der Folge $(c_n) : c_n = (n - 1)/n$
@@ -687,6 +746,7 @@
 
 = Beweise
 == Beweistechniken
+
 #definition([
   === Hinrichtung und Rückrichtung
   Beweise können _Genau dann, wenn ..._ Aussagen, die in zwei Richtungen
