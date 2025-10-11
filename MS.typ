@@ -1,9 +1,7 @@
 #import "Template.typ": *
 
 #set heading(numbering: "1.1.")
-#set page(
-  numbering: "1"
-)
+#set page(numbering: "1")
 #set text(
   lang: "de",
   size: 10pt,
@@ -88,7 +86,7 @@
   $ X times Y = {(x; y) | x in X and y in Y} $
 
   #footnote[$(x; y)$ ist ein geordnetes Paar.]
-  #footnote[$(x; y) = (x; w) <=> x = v thick y = w$]
+  #footnote[$(x; y) = (x; w) <=> x = v wide y = w$]
 ])
 
 == Zahlbereiche
@@ -138,42 +136,43 @@
       Funktion.
     ])
 
-  + $D(f)$ ist die *Definitionsmenge* #footnote[Definitionsbereich bei
-    Funktionen] von der Vorschrift $f$.
+  + $D(f)$ ist die *Definitionsmenge* #footnote(<funkyColdMedina>) von der
+    Vorschrift $f$.
 
-  + $B(f)$ ist die *Bildungsmenge* #footnote[Wertebereich bei
-    Funktionen] von $f$, wobei $B(f) = {y in Y | y = f(x) "mit" x in D(f)}$
+  + $B(f)$ ist die *Bildungsmenge* #footnote[siehe @funktionsBegriffe für
+    Funktionen] <funkyColdMedina> von $f$, wobei $B(f) = {y in Y | y = f(x)
+    "mit" x in D(f)}$
 
   + $f(x) in Y$ heißt *Bildpunkt* bzw. *Funktionswert* von $x$ unter $f$.
 
     Ist $y in Y$, so heißt jedes $x in X$ mit $f(x) = y$ *ein Urbild* bzw.
     *Argument* von $y$ unter $f$.
 
-  + Die Menge aller Urpunkte von $y$ unter $f$ bezeichnen wir mit $f^(-1)(y)
-    := {x in X | f(x) = y}$. Zu $f^(-1)$ sagen wir auch *das Urbild* von $y$
-    unter $f$.
+  + Die Menge aller Urpunkte von $y$ unter $f$ bezeichnen wir mit $f^(-1)(y) :=
+    {x in X | f(x) = y}$. Zu $f^(-1)$ sagen wir auch *das Urbild* von $y$ unter
+    $f$.
 
     #tldr([
       *Das Urbild* ist die Menge aller *Urbilder*.
     ])
 
     $X = D(f)$ heißt *Definitionsbereich* von $f$ und $Y = B(f)$ heißt
-    *Wertebereich* von $f$.
+  *Wertebereich* von $f$.
 
-    Die Menge $"im"(f) := {f(x) | x in X} = {y in Y | exists x in X}$ mit
-    $f(x) = y$ heißt *Bild* von $f$.
+    Die Menge $i m(f) := {f(x) | x in X} = {y in Y | exists x in X}$ mit $f(x)
+    = y$ heißt *Bild* von $f$.
 
   + Die Menge $ Gamma_f := {(x, f(x)) | x in X} subset X times Y$
     #footnote[siehe @kartesischesProdukt] heißt der Graph von $f$.
 
-  + Zwei Abbildungen $f, g : X -> Y$ heißen gleich ($f = g$), wenn
-    $f(x) = g(x)$ $forall x in X$.
+  + Zwei Abbildungen $f, g : X -> Y$ heißen gleich ($f = g$), wenn $f(x) =
+    g(x)$ $forall x in X$.
 
   #example([
     === Beispiel
     Wir betrachten die Funktion $f(x) = sin(x)$.
 
-    Für $X_1 = [0; pi/2]$ wäre das Bild $"im"(f(X_1)) = [0; 1]$.
+    Für $X_1 = [0; pi/2]$ wäre das Bild $i m(f(X_1)) = [0; 1]$.
 
     //TODO: Check, ob das hier stimmt
     Für $Y_1 = [ - 1/2; 1/2]$ wäre $f^(-1)(Y_1) = {x in RR | - 1/2 <= sin(x) <=
@@ -184,9 +183,29 @@
   ])
 ])
 
+#theorem([
+  #set enum(numbering: "1)")
+  === Satz über Bilder und Urbilder
+  Sei $f : X -> Y$ eine Abbildung, $A, A_1, A_2 subset X$ und $B, B_1, B_2
+  subset Y$. Dann gilt
+
+  + $f(A_1 union A_2) = f(A_1) union f(A_2)$
+
+  + $f(A_1 inter A_2) = f(A_1) inter f(A_2)$
+
+  + $f(X without A) = f(X) without f(A)$
+
+  + $f^(-1)(B_1 union B_2) = f^(-1)(B_1) union f^(-1)(B_2)$
+
+  + $f^(-1)(B_1 inter B_2) = f^(-1)(B_1) inter f^(-1)(B_2)$
+
+  + $f^(-1)(Y without B) = X without f^(-1)(B)$
+
+  #set enum(numbering: "1.")
+])
+
 #remark([
   #set enum(numbering: "(1)")
-
   === Verschiedene Abbildungen
   + Es sei $X$ eine nichtleere Menge. Die *Identität* auf $X$ ist definiert
     durch
@@ -281,45 +300,88 @@
     Eine Abbildung ist bijektiv, wenn jedem $x in X$ genau ein $y in Y$
     zugeordnet wird und jedes $y in Y$ einem $x in X$ zugeordnet wird.
   ])
+
+  #example([
+    === Beispielbeweis
+    Betrachten wir die Abbildung $f : x |-> x/(x + 1)$ mit $f : RR without {-1}
+    -> RR$. Wir wollen nun herausfinden, ob $f$ injektiv, surjektiv oder sogar
+    bijektiv, also beides, ist.
+
+    + Damit $f$ *injektiv* ist, muss die Definition #footnote[siehe @injSurBij]
+      <iSB> erfüllt sein. Also muss für $x_1, x_2 in X$ mit $f(x_1) = f(x_2)$
+      $x_1 = x_2$. Dafür setzen wir sie gleich.
+
+      $
+        x_1/(x_1 + 1) &= x_2/(x_2 + 1) wide &&| dot (x_2 + 1) \
+        (x_1 x_2 + x_1)/(x_1 + 1) &= x_2 &&| dot (x_1 + 1) \
+        x_1 x_2 + x_1 &= x_1 x_2 + x_2 &&| - x_1 x_2 \
+        x_1 &= x_2 \ \ \
+        &endOfProof
+      $
+
+      Somit ist $f$ injektiv. Da $x_1 = x_2$ ist die Definition erfüllt.
+
+    //TODO: Warum ist das der Ansatz?
+    + Damit $f$ *surjektiv* ist, muss auch die Definition #footnote(<iSB>)
+      $forall y in Y : exists x in X colon f(x) = y$ erfüllt sein.
+
+      $
+        y &= x/(x + 1) wide &&| dot (x + 1) \
+        y x + y &= x &&| -y -x \
+        y x - x &= -y <=> x (y - 1) = -y &&| dot 1/(y - 1) \
+        x &= - y/(y - 1)
+      $
+
+      $- y/(y - 1)$ ist für $y = 1$ nicht definiert und somit ist $f$ nicht
+      surjektiv, da ein $y in Y$ existiert für das es kein $x in X$ gibt.
+
+    + $f$ ist kann folglich nicht *bijektiv* sein, da es dafür surjektiv und
+      injektiv sein müsste. Es wäre bijektiv für $f : RR without {-1} -> RR
+      without {1}$.
+  ])
 ])
 
 #example([
-  === Beispielbeweis
-  Betrachten wir die Abbildung $f : x |-> x/(x + 1)$ mit $f : RR without {-1}
-  -> RR$. Wir wollen nun herausfinden, ob $f$ injektiv, surjektiv oder sogar
-  bijektiv, also beides, ist.
-
-  + Damit $f$ *injektiv* ist, muss die Definition #footnote[siehe @injSurBij]
-    <iSB> erfüllt sein. Also muss für $x_1, x_2 in X$ mit $f(x_1) = f(x_2)$
-    $x_1 = x_2$. Dafür setzen wir sie gleich.
+  === Hinrichtungs- und Rückrichtungsbeweise
+  #set enum(numbering: "1)")
+  *Injektivität* \
+  + "$==>$" \ \
+    Sei $f$ injektiv. \
+    Wir fixieren ein Element $x_0 in X$ und definieren $g : Y -> X$ durch
 
     $
-      x_1/(x_1 + 1) &= x_2/(x_2 + 1) wide &&| dot (x_2 + 1) \
-      (x_1 x_2 + x_1)/(x_1 + 1) &= x_2 &&| dot (x_1 + 1) \
-      x_1 x_2 + x_1 &= x_1 x_2 + x_2 &&| - x_1 x_2 \
-      x_1 &= x_2 \ \ \
-      &endOfProof
+      g(y) := cases(
+        x &"falls" y in i m(f) and f(x) = y,
+        x_0 &"falls" y in.not i m(f)
+      )
     $
 
-    Somit ist $f$ injektiv. Da $x_1 = x_2$ ist die Definition erfüllt.
+    Dann ist $g$ *wohldefiniert* und es gilt $g(f(x)) = x$ für alle $x in X$. \
+    $g$ ist also eine Linksinverse #footnote[siehe @linksRechts] von $f$.
 
-  //TODO: Warum ist das der Ansatz?
-  + Damit $f$ *surjektiv* ist, muss auch die Definition #footnote(<iSB>)
-    $forall y in Y : exists x in X colon f(x) = y$ erfüllt sein.
+    "$<==$" \ \
+    Sei $g : Y -> X$ eine Linksinverse von $f$. \
+    Seien $x_1, x_2 in X$ zwei Punkte mit $f(x_1) = f(x_2)$. \
+    Dann gilt $x_1 = g(f(x_1)) = g(f(x_2)) = x_2$ und somit $x_1 = x_2$. \
+    Folglich ist $f$ injektiv.
 
-    $
-      y &= x/(x + 1) wide &&| dot (x + 1) \
-      y x + y &= x &&| -y -x \
-      y x - x &= -y <=> x (y - 1) = -y &&| dot 1/(y - 1) \
-      x &= - y/(y - 1)
-    $
+  *Surjektivität*
+  + "$==>$" \ \
+    Sei $f$ surjektiv. \
+    Für jedes $y in Y$ wählen wir ein Urbild $x(y) in X$ aus. \
+    Dann ist die Abbildung $h : Y -> X$ mit $h(x) := x(y)$ wohldefiniert und es
+    gilt $f(h(y)) = f(x(y)) = y$ für alle $y in Y$. \
+    $h$ ist also eine Rechtsinverse von $f$.
 
-    $- y/(y - 1)$ ist für $y = 1$ nicht definiert und somit ist $f$ nicht
-    surjektiv, da ein $y in Y$ existiert für das es kein $x in X$ gibt.
+  + "$<==$" \ \
+    Sei $h : Y -> X$ eine Rechtsinverse von $f$. \
+    Dann gilt $f(h(y)) = y$ für alle $y in Y$. \
+    Also ist $h(y) in X$ ein Urbild von $y$ unter $f$. \
+    Folglich ist $f$ surjektiv. \
 
-  + $f$ ist kann folglich nicht *bijektiv* sein, da es dafür surjektiv und
-    injektiv sein müsste. Es wäre bijektiv für $f : RR without {-1} -> RR
-    without {1}$.
+  //TODO: Hier noch Bijektivität einbringen.
+
+  #set enum(numbering: "1.")
 ])
 
 == Umkehrabbildung
@@ -375,7 +437,7 @@
 
 #theorem([
   #set enum(numbering: "(1)")
-  === Satz über Links- und Rechtsinverse
+  === Satz über Links- und Rechtsinverse <linksRechts>
   Sei $f : X -> Y$ eine Abbildung. Dann gilt
 
   + $f$ ist genau dann injektiv, wenn es eine Abbildung $g : Y -> X$ gibt,
@@ -450,12 +512,41 @@
   ])
 ])
 
-= Funktionen <funktion>
+= Funktionen
 
 == Funktionseigenschaften
 
 #definition([
-  === Nullstellen
+  === Zahlenmengenkriterium <funktion>
+  Sei $f$ eine Zuordnung von der Menge $X$ in die Menge $Y$, d.h. $f : X -> Y$,
+  wobei $X$, $Y$ Zahlenmengen sind. $f$ heißt *Funktion* genau dann, wenn jedem
+  $x in X$ genau ein $y in Y$ zugeordnet wird.
+])
+
+#remark([
+  #set enum(numbering: "(1)")
+  === Begriffe <funktionsBegriffe>
+  + Die Menge $X$ ist der *Definitionsbereich* $D_f$ von $f$. Die Elemente von
+    $X$ heißen *Argumente*.
+
+  + Die zugeordneten Elemente aus der Menge $Y$ heißen *Funktionswerte*. Sie
+    bilden den *Wertebereich* $W_f$ der Funktion. Es gilt $W_f subset.eq Y$.
+
+  + Für die FUnktionswere $y$ wird auch die Symbolik $f(x)$ verwendet, d.h.
+    $f(x)$ ist der Funktionswert zum Argument $x$, z.B. $f(2) = 3$ bedeutet,
+    dass $3$ der Funktionswert des Arguments $2$ ist.
+
+  + Die Angabe einer Funktion mittels Funktionsterm wird entweder mit $f : f(x)
+    = 2x + 1$ oder mit $f: RR -> RR$; $x |-> 2 x + 1$ festgelegt.
+
+    Der Term wird bei ersterer Angabe _Funktion $f$: Funktionswert ist gleich
+  Funktionsterm_ gesprochen.
+
+  #set enum(numbering: "1.")
+])
+
+#definition([
+  === Nullstellen <nullstellen>
   Für eine Funktion $f$ ist $x_N in D(f)$ eine Nullstelle von $f$, wenn $f(x_N)
   = 0$.
 ])
@@ -530,13 +621,20 @@
   ])
 ])
 
-== Globalverhalten
+== Verhalten
 
 #definition([
   === Monotonie
   Eine Funktion $f$ ist streng monoton fallend, genau dann wenn
 
   $ forall x_1, x_2 in D(f) : x_1 < x_2 <=> f(x_1) > f(x_2) $
+])
+
+#definition([
+  === Globalverhalten
+  Sei $f$ eine Funktion. Das *Globalverhalten* von $f$ beschreibt das Verhalten
+  der Funktionswerte, wenn die Argumente unendlich groß oder unendlich klein
+  werden.
 ])
 
 #definition([
@@ -577,6 +675,173 @@
   ])
 ])
 
+== Verschiebung
+
+#theorem([
+  === Verschiebung einer Funktion in $y$-Richtung
+  Um eine beliebige Funktion $f(x)$ um $c$ Einheiten in $y$-Richtung zu
+  verschieben, sei die verschobene Funktion $f^*(x) = f(x) + c$.
+])
+
+#theorem([
+  === Verschiebung einer Funktion in $x$-Richtung
+  Um eine beliebige Funktion $f(x)$ um $d$ Einheiten in $x$-Richtung zu
+  verschieben, sei die verschobene Funktion $f^*(x) = f(x - d)$.
+])
+
+== Lineare Funktionen
+
+#definition([
+  === Funktionsgleichung
+  Ist $f$ eine ganzrationale Funktion 1. Grades, so wird sie auch *lineare
+  Funktion* genannt. Ihr Graph ist eine *Gerade*.
+
+  Ihre Funktionsgleichung lautet $f(x) = m x + n$ mit $m, n in RR$, wobei $m$
+  die *Steigung* der Geraden und $Y(0|n)$ der Schnittpunkt mit der $y$-Achse
+  ist.
+])
+
+#theorem([
+  #set enum(numbering: "1)")
+  === Steigung linearer Funktionen
+  Seien $f$ und $g$ zwei lineare Funktionen mit den Steigungen $m_f$ und $m_g$.
+  Dann gilt
+
+  + Die Graphen #footnote(<graphFooter>) von $f$ und $g$ sind genau dann
+    *parallel* zueinander, wenn $m_f = m_g$.
+
+  + Die Graphen von $f$ und $g$ sind genau dann *orthogonal* zueinander, wenn
+    $m_f dot m_g = -1$ gilt.
+
+    #remark([
+      Falls man die Steigung einer Geraden $g$ berechnen wollte, die
+      *orthogonal* zur Geraden $f$ ist, kann man diese Formel umstellen.
+
+      $
+        m_f dot m_g &= -1 wide | div m_f \
+        m_g &= - 1/m_f = - (m_f)^(-1)
+      $
+    ])
+
+  #example([
+    === Beweis
+    Seien $f$ und $g$ zwei lineare Funktionen mit den Steigungen $m_f$ und
+    $m_g$.
+
+    + Wir nehmen an, dass $f$ und $g$ genau einen Schnittpunkt besitzen. Dann
+      $exists! x in D_f inter D_g : f(x) = g(x)$
+
+      $
+        f(x) &= g(x) \
+        m_f x + n_f &= m_g x + n_g wide &&"mit" m_f = m_g = m \
+        m x + n_f &= m x + n_g &&| - m x \
+        n_f &= n_g
+      $
+
+      Für $n_f != n_g$ gilt $exists.not x in D_f inter D_g : f(x) = g(x)$. Zwei
+      Geraden, die keinen gemeinsamen Punkt haben, sind *parallel*.
+
+      Für $n_f = n_g$ gilt $forall x in D_f inter D_g : f(x) = g(x)$. Zwei
+      Geraden, die unendlich viele gemeinsame Punkte haben, sind *identisch*.
+
+      $ endOfProof $
+
+    + Ohne Beschränkung der Allgemeinheit #footnote[Nur gewisse Fälle werden
+      aufgezeigt, da die restlichen Fälle _trivial_ sind.] legen wir fest, dass
+      sich $f$ und $g$ im Ursprung unter einem rechten Winkel treffen.
+
+      - Es gilt $m_f = (Delta y)/(Delta x)$, wobei $Delta x$ und $Delta y$ die
+        Katheten eines Steigungsdreiecks von $f$ sind.
+
+      - Dreht man die Gerade $f$ samt Steigungsdreieck um $90 degree$ um den
+        Ursprung, so erhält man die gerade $g$, mit kongruentem
+        Steigungsdreieck und $m_g = (Delta x)/(-Delta y)$.
+
+      - Es folgt $m_f dot m_g = (Delta y)/(Delta x) (Delta x)/(-Delta y) = -1$
+  ])
+
+  #set enum(numbering: "1.")
+])
+
+== Quadratische Funktionen
+
+#definition([
+  === Definition
+  Eine quadratische Funktion ist eine ganzrationale Funktion 2. Grades mit der
+  *allgemeinen Form*
+
+  $ f(x) = a x^2 + b x +c $
+
+  Der Graph #footnote(<graphFooter>) ist eine nach oben oder unten geöffnete
+  Parabel. Maßgeblich für die Lage der Parabel ist ihr *Scheitelpunkt*. Dessen
+  Koordinaten $S (x_S | y_S)$ lassen sich direkt aus der *Scheitelpunktform*
+  der Funktionsgleichung ablesen
+
+  $ f(x) = a (x - x_S)^2 + y_2 $
+])
+
+#theorem([
+  #set enum(numbering: "(1)")
+  === Nullstellen quadratischer Funktionen
+  + Die Nullstellen #footnote[siehe @nullstellen] einer quadratischen Funktion
+    in Normalform $f(x) = x^2 + p x + q$ können mit der $p q$-Formel bestimmt
+    werden.
+
+    $ x_(1, 2) = - p/2 plus.minus sqrt((p/2)^2 - q) $
+
+  + Sind $x_1$ und $x_2$ Nullstellen der Funktion $f$ mit $f(x) = a x^2 + b x +
+    c$, so lässt sich der Funktionsterm in *faktorisierter Form* schreiben.
+
+    $ f(x) = a (x - x_1) (x - x_2) $
+
+    Die Nullstellen lassen sich direkt aus den *Linearfaktoren* $(x - x_1)$ und
+    $(x - x_2)$ ablesen.
+
+  #set enum(numbering: "1.")
+])
+
+#theorem([
+  === Satz von Vieta
+  Sind $x_1$ und $x_2$ Lösungen der Gleichung $0 = x^2 + p x + q$, dann gilt
+
+  $ x_1 + x_2 = -p wide x_1 dot x_2 = q $
+
+  #example([
+    === Beweis
+    Seien $x_(1, 2) = - p/2 plus.minus sqrt((p/2)^2 - q)$ die beiden Lösungen
+    der quadratischen Gleichung $x^2 + p x +q = 0$. Dann gilt
+
+    - für die Summe der Nullstellen
+
+      $
+        x_1 + x_2 &= (- p/2 + sqrt((p/2)^2 - q)) + (- p/2 - sqrt((p/2)^2 - q))
+        \
+        &= - p/2 - p/2 = -p \ \ \
+        endOfProof
+      $
+
+    - für das Produkt der Nullstellen
+
+      $
+        x_1 dot x_2 &= (- p/2 + sqrt((p/2)^2 - q)) dot (- p/2 - sqrt((p/2)^2 -
+        q)) \
+        &= (p/2)^2 - (sqrt((p/2)^2 - q))^2 wide "dritte binomische Formel" \
+        &= (p/2)^2 - ((p/2)^2 - q) = q \ \ \
+        endOfProof
+      $
+
+    #remark([
+      Alternativ lassen sich diese Zusammenhänge auch mit dem Ausmultiplizieren
+      der faktorisierten Form aufzeigen.
+    ])
+  ])
+
+  #remark([
+    Somit gilt auch, dass *ganzzahlige Nullstellen Teiler* von $q$ sein müssen
+    und die *Summe der Nullstellen die Gegenzahl* von $p$ muss.
+  ])
+])
+
 = Folgen
 == Der Folgenbegriff
 
@@ -597,9 +862,9 @@
   $n$ ist der Folgenindex, die Indexzahl, mit $n in NN$, wobei zumeist $n >= 1$
   $n$ das Argument.
 
-  $a_n$ ist das $n$-te Folgenglied, d.h. der Funktionswert zum Argument $n$. In
-  der üblichen Notation von Funktionen sollte $a_n$ besser als $a(n)$
-  geschrieben werden.
+  $a_n$ ist das $n$-te Folgenglied, d.h. der Funktionswert zum Argument
+  #footnote[siehe @funktionsBegriffe] $n$. In der üblichen Notation von
+  Funktionen sollte $a_n$ besser als $a(n)$ geschrieben werden.
 
   $3n - 4$ ist Term für die Berechnung des $n$-ten Folgegliedes.
 ])
@@ -702,16 +967,17 @@
       (n - 1)/n &< n/(n + 1) wide &&| dot n \
       n - 1 &< (n^2)/(n + 1) &&|  dot (n + 1) \
       n^2 - 1 &< n^2 &&| - n^2 \
-      -1 < 0 \ \ \
+      -1 &< 0 \ \ \
       endOfProof
     $
 
-    Die Vermutung ist *wahr*, da eine wahre Ungleichung am Ende steht.
+    Die Vermutung ist *wahr* für alle $n in NN$, da eine wahre Ungleichung am
+    Ende steht.
   ])
 ])
 
 #definition([
-  === Einfache Monotonie
+  === Einfache Monotonie <monoton>
   Folgen, die auch aufeinanderfolgende gleiche Folgeglieder aufweisen, sonst
   allerdings monoton steigen oder fallen, nennt man *monoton steigend* bzw.
   *monoton fallend*.
@@ -742,6 +1008,127 @@
 #theorem([
   === Teilfolgensatz
   Jede Folge $(a_n)$ besitzt eine monotone Teilfolge.
+
+  #example([
+    === Beweis
+    Sei eine Gipfelstelle die Indexzahl $n$, sodass $forall m, n in NN : m >= n
+    : a_n >= a_m$.
+
+    #tldr([
+      Alle nachfolgenden Folgenglieder $a_m$ sind kleiner als $a_n$ bzw. nach
+      $a_n$ kommt kein Folgeglied, das größer ist als $a_n$.
+    ])
+
+    Nun lässt sich eine Fallunterscheidung durchführen.
+
+    #set enum(numbering: "I.")
+
+    + Es gibt unendlich viele Gipfelstellen. \
+      Nummeriert man die Gipfelstellen in der Reihenfolge ihres Auftretens,
+      folgt
+
+      $ a_n_1 >= a_n_2 >= a_n_3 >= ... $
+
+      D.h. die Gipfelstellen bilden eine monoton fallende #footnote[siehe
+      @monoton] Teilfolge.
+
+    + Es gibt endlich viele Gipfelstellen. \
+      Sei $n_L$ die letzte Gipfelstelle. Wir betrachten $a_n_L$. Dann gilt
+      $a_n_L > a_(n_L + 1)$
+
+      Da $a_n_L$ die letzte Gipfelstelle war, siind alle nachfolgenden
+      Folgeglieder keine Gipfelstellen, d.h. für jedes dieser Folgeglieder
+      $a_n^*$ gibt es mindestens ein Folgeglied $a_n^(**)$ mit $a_n^* <
+      a_n^(**) < a_n_L$.
+
+      D.h. wir erhalten eine monoton steigende Folge.
+
+      $
+        a_(n_L + 1) < a_(n_L + 1) ^* < a_(n_L + 1)^(**) < ... \ \ \
+        endOfProof
+      $
+
+    #set enum(numbering: "1.")
+  ])
+])
+
+== Beschränktheit von Folgen
+
+#definition([
+  === Schranken
+  In @herausgegriffen wurde die Folge $(c_n) : c_n = (n-1)/n$ betrachtet. \
+  Man kann "beobachten", dass $forall n in NN : 0 <= c_n < 1$, d.h. die
+  Folgenglieder unter- und überschreiten einen bestimmten Wert nicht.
+])
+
+#definition([
+  === Untere und obere Schranken, Maxi- und Minima <schranken>
+  + Eine reelle Zahl $u$ heißt *untere Schranke* der Folge $(a_n)$, wenn für
+    alle $n in NN$ gilt $u <= a_n$.
+
+  + Eine reelle Zahl $o$ heißt *obere Schranke* von $(a_n)$, wenn $forall n in
+    NN : o >= a_n$.
+
+  + Eine reelle Zahl $"min" a_n$ heißt *Minimum* von $(a_n)$, wenn es ein $k in
+    NN$, so dass für alle $n in NN$ gilt $"min" a_n = a_k <= a_n$.
+
+  + Eine reelle Zahl $"max" a_n$ heißt *Maximum* von $(a_n)$, wenn $exists k in
+    NN : forall n in NN : "max" a_n = a_k >= a_n$.
+
+  #example([
+    === Beispiel
+    Betrachten wir die Folge $(a_n): a_n = -(4n)/(n+2)$. Zunächst benötigt man
+    eine Vermutung. Dazu werden einige Folgenglieder berechnet.
+
+    $
+      a_1 &= -(4 dot 1)/(1 + 3) = -4/3 \
+      a_10 &= -(4 dot 10)/(10 + 3) = -40/13 \
+      a_100 &= -(4 dot 100)/(100 + 3) = -400/103
+    $
+
+    Man kann beobachten, dass sich die Folge mit wachsendem Argument an $-4$
+    annnähert. Darum vermuten wir zunächst, dass *eine* untere Schranke $-4$
+    ist, $forall n in NN : -4 <= a_n$.
+
+    $
+      -4 &<= a_n \
+      -4 &<= -(4n)/(n + 2) wide &&| dot (n + 2) \
+      -4(n + 2) &<= -4n \
+      -4n - 8 &<= -4n &&| + 4n \
+      -8 &<= 0 \ \ \
+      endOfProof
+    $
+
+    Die Vermutung $-4 <= a_n$ ist *wahr* für alle $n in NN$.
+  ])
+])
+
+#theorem([
+  === Vielschrankensatz
+  Falls eine Folge $(a_n)$ eine untere Schranke besitzt, so besitzt sie
+  unendlich viele.
+
+  #example([
+    === Beweis
+    Sei $u <= a_n$ für alle $n in NN$. Wähle $x in RR$ mit $x < u$.
+
+    D.h. $x < u <= a_n$, folgt $x <= a_n$ und somit existieren unendlich viele
+    untere Schranken.
+  ])
+])
+
+#definition([
+  === _Suprema_ und _Infima_
+  Die größte untere Schranke #footnote[siehe @schranken] nennt man *untere
+  Grenze* oder _Infimum_ $"inf" a_n$ der Folge $(a_n)$. \
+  Die kleinste obere Schranke nennt man *obere Grenze* oder _Supremum_ $"sup"
+  a_n$ der Folge $(a_n)$.
+
+  #example([
+    === Schritte zum Nachweis
+    Die beliebige Folge $(a_n)$ besitzt die untere Grenze $"inf" a_n$. Es sei
+    $k in RR$ mit $"inf" a_n < k$.
+  ])
 ])
 
 = Beweise
@@ -758,7 +1145,7 @@
 
     \
 
-    *Hinrichtung* "$==>$" \
+    *Hinrichtung* #footnote[siehe revolutionäres Frankreich] "$==>$" \
     + Wir nehmen an, dass $a dot b = 0$
       Sei nun $a != 0$. Jetzt können wir durch Null teilen.
 
@@ -784,9 +1171,6 @@
     Es folgt, dass wenn mindestens einer der Faktoren Null ist, dann ist auch
     das Produkt Null.
 
-    $
-      \ \ \
-      endOfProof
-    $
+    $ endOfProof $
   ])
 ])
