@@ -1,3 +1,4 @@
+// Mathe
 #let noteBlock(body, fill: rgb("#000000"), stroke: rgb("#000000")) = block(
   fill: fill,
   inset: 8pt,
@@ -37,3 +38,6 @@
 )
 
 #let endOfProof = "Quod erat Demonstrandum"
+
+// Latein
+#let predicate(body) = highlight(fill: red)[#body]

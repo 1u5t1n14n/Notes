@@ -1,6 +1,6 @@
 #import "Template.typ": *
 
-#set highlight(radius: 3pt, extent: 1pt)
+#set highlight(radius: 0.3em, extent: 0.2em)
 #set heading(numbering: "I.")
 #set page(
   numbering: "I"
@@ -9,56 +9,64 @@
   lang: "de",
   size: 10pt,
 
-  //font: "Georgia"
-  //font: "Inter"
-  font: "Jost*"
+  //font: "Georgia",
+  //font: "Inter",
+  font: "Jost*",
 )
 
 #outline()
 #pagebreak()
 
-= Seneca
+= Seneca <seneca>
 == _Epistulae morales_
 
 #let immo = "Im Gegenteil"
 
 #grid(
   columns: (1fr, 1fr),
-  gutter: 5pt,
+  gutter: 0.65em,
   [Seneca Lucilio suo salutem.],
-  [Seneca grüßt seinen Lucilius.],
+  [Seneca #footnote[siehe @seneca] grüßt seinen Lucilius.],
 
-  [Libenter ex his, qui a te veniunt, cognovi te familiariter cum services tuis
-  vivere.],
-  [Gern habe ich von diesen, die von dir kanen, gehört, dass du
+  [Libenter ex his, qui a te #predicate[veniunt], #predicate[cognovi] te
+  familiariter cum services tuis vivere.],
+  [Gern habe ich von diesen, die von dir kamen, gehört, dass du
   freundschaftlich mit deinen Sklaven lebst.],
 
-  [Hoc prudentiam tuam, hoc eruditionem decet.],
+  [Hoc prudentiam tuam, hoc eruditionem #predicate[decet].],
   [Dies passt zu deiner Klugheit und zu deiner Erziehung.],
 
-  ["Servi sunt!" - "Immo homines."],
-  [],
+  ["Servi #predicate[sunt]!" - "Immo homines."],
+  ["Sie sind Sklaven!" - "#immo, Menschen."],
 
-  ["Servi sunt!" - "Immo contubernales."],
-  [],
+  ["Servi #predicate[sunt]!" - "Immo contubernales."],
+  ["Sie sind Sklaven!" - "#immo, Hausgenossen."],
 
-  [ "Servi sunt!" - "Immo humiles amici."],
-  [],
+  [ "Servi #predicate[sunt]!" - "Immo humiles amici."],
+  ["Sie sind Sklaven!" - "#immo, niedrige Freunde."],
 
-  ["Servi sunt!" - "Immo conservi, si cogitaveris tantunde in utrosque licere
-  fortunae.],
-  [],
+  ["Servi #predicate[sunt]!" - "Immo conservi, si #predicate[cogitaveris]
+  tantunde in utrosque licere fortunae.],
+  ["Sie sind Sklaven!" - "#immo, Mitsklaven, wenn du berücksichtigst, dass dem
+  Schicksal gegenüber beiden ebensoviel erlaubt ist."],
 
-  [Itaque rideo istos, qui turpe existimant cum servo suo cenare.],
-  [],
+  [Itaque #predicate[rideo] istos, qui turpe #predicate[existimant] cum servo
+  suo cenare.],
+  [Deshalb lache ich über diese, die es für schändlich halten, mit ihren
+  Sklaven zu essen.],
 
-  [Est ille plus quam capit, et ingenti aviditate onerat distentum ventrum, ut
-  maiore opera omnia egerat quam ingessit.],
-  [],
+  [#predicate[Est] ille plus quam #predicate[capit], et ingenti aviditate
+  #predicate[onerat] distentum ventrum, ut maiore opera omnia
+  #predicate[egerat] quam #predicate[ingessit].],
+  //TODO: Übersetz das mal richtig
+  [Er isst jenes mehr als er fängt, und durch unglaublich große Giert
+  belastet.],
 
-  [At infelicibus servis labra movere non licet.],
-  [],
+  [At infelicibus servis labra movere non #predicate[licet].],
+  [Aber den unglücklichen Sklaven ist es nicht erlaubt, ihre Lippen zu
+  bewegen.],
 
-  [Sic fit, ut isti de domino loquantur, quibus coram domino loqui non licet.],
-  [],
+  [Sic #predicate[fit], ut isti de domino #predicate[loquantur], quibus coram
+  domino loqui non #predicate[licet].],
+  [So geschieht es, dass],
 )
