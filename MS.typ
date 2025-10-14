@@ -1,30 +1,17 @@
 #import "Template.typ": *
-
-#set heading(numbering: "1.1.")
-#set page(numbering: "1")
-#set text(
-  lang: "de",
-  size: 10pt,
-
-  //font: "Georgia"
-  //font: "Inter"
-  font: "Jost*"
-)
-
-#outline()
-#pagebreak()
+#show: template
 
 = Mengen und Zahlbereiche
 == Mengen
 
-#definition([
+#definition[
   === Definition nach Cantor
   Unter einer *Menge* verstehen wir eine Zusammenfassung von bestimmten,
   wohlunterschiedenen Objekten unserer Anschauung oder unseres Denkens, welche
   *Elemente* der Menge heißen, zu einem Ganzen.
-])
+]
 
-#remark([
+#remark[
   === Mengeneigenschaften
   Sei $M$ eine Menge. Dann heißt
 
@@ -48,9 +35,9 @@
   - Definition der Eigenschaften, z.B. $M = {n in NN | n mod 5 = 0}$.
 
   - Graphisch, z.B. als Venn-Diagramm.
-])
+]
 
-#definition([
+#definition[
   === Mengenbeziehungen
   Seien $X$ und $Y$ Mengen.
 
@@ -62,9 +49,9 @@
 
   - Die Mengen $X$ und $Y$ heißen *gleich*, wenn $X subset.eq Y and Y subset.eq
     X$.
-])
+]
 
-#definition([
+#definition[
   === Vereinigung, Durchschnitt und Mengendifferenz
   Seien $X$ und $Y$ Mengen. Dann heißt
 
@@ -76,9 +63,9 @@
     $X$ und $Y$.
 
   - $X without Y := {x | x in X and x in.not Y}$ *Differenz* von $X$ und $Y$.
-])
+]
 
-#definition([
+#definition[
   === Kartesisches Produkt <kartesischesProdukt>
   Seien $X$ und $Y$ Mengen, dann ist ihr kartesisches Produkt definiert durch
   die Kreuzmenge aus beiden.
@@ -87,11 +74,11 @@
 
   #footnote[$(x; y)$ ist ein geordnetes Paar.]
   #footnote[$(x; y) = (x; w) <=> x = v wide y = w$]
-])
+]
 
 == Zahlbereiche
 
-#remark([
+#remark[
   === Bezeichnung der Zahlbereiche
   $NN$ Menge der natürlichen Zahlen mit $0$
 
@@ -109,12 +96,12 @@
   union {0} union RR^+$
 
   $CC$ Menge der komplexen Zahlen
-])
+]
 
 = Abbildungen
 == Abbildung, Bild, Urbild, Definitions- und Wertebereich
 
-#definition([
+#definition[
   //TODO: Bild hinzufügen
   === Abbildung, Funktion <graph>
   Es seien $X$ und $Y$ nichtleere Mengen.
@@ -130,11 +117,11 @@
     Handelt es sich bei $X$ und $Y$ um reine Zahlenmengen (z.B. $RR$), so
     bezeichnen wir die Abbildung $f$ auch als *Funktion*.
 
-    #tldr([
+    #tldr[
       Jedem $x$ muss ein $y$ zugeordnet werden.
       Wenn $X$ und $Y$ reine Zahlenmengen sind, ist die Abbildung eine
       Funktion.
-    ])
+    ]
 
   + $D(f)$ ist die *Definitionsmenge* #footnote(<funkyColdMedina>) von der
     Vorschrift $f$.
@@ -152,9 +139,9 @@
     {x in X | f(x) = y}$. Zu $f^(-1)$ sagen wir auch *das Urbild* von $y$ unter
     $f$.
 
-    #tldr([
+    #tldr[
       *Das Urbild* ist die Menge aller *Urbilder*.
-    ])
+    ]
 
     $X = D(f)$ heißt *Definitionsbereich* von $f$ und $Y = B(f)$ heißt
   *Wertebereich* von $f$.
@@ -168,7 +155,7 @@
   + Zwei Abbildungen $f, g : X -> Y$ heißen gleich ($f = g$), wenn $f(x) =
     g(x)$ $forall x in X$.
 
-  #example([
+  #example[
     === Beispiel
     Wir betrachten die Funktion $f(x) = sin(x)$.
 
@@ -180,10 +167,10 @@
     + k pi]$.
 
     Der Definitionsbereich $D(f)$ = $ZZ$ und der Wertebereich $B(f) = [-1; 1]$.
-  ])
-])
+  ]
+]
 
-#theorem([
+#theorem[
   #set enum(numbering: "1)")
   === Satz über Bilder und Urbilder
   Sei $f : X -> Y$ eine Abbildung, $A, A_1, A_2 subset X$ und $B, B_1, B_2
@@ -202,9 +189,9 @@
   + $f^(-1)(Y without B) = X without f^(-1)(B)$
 
   #set enum(numbering: "1.")
-])
+]
 
-#remark([
+#remark[
   #set enum(numbering: "(1)")
   === Verschiedene Abbildungen
   + Es sei $X$ eine nichtleere Menge. Die *Identität* auf $X$ ist definiert
@@ -223,19 +210,19 @@
   + Ist $X subset RR$, so heißt jede Abbildung $f : X -> RR$ *reelle
     Funktion*.
 
-    #example([
+    #example[
       === Beispiel
       Die Logarithmusfunktion ist eine reelle Funktion.
       $ ln : RR^+ -> RR &\
       x &|-> ln(x) $
-    ])
+    ]
 
   #set enum(numbering: "1.")
-])
+]
 
 == Verkettung von Abbildungen
 
-#definition([
+#definition[
   === Verkettung
   Es seien $X$, $Y$, $Z$ nichtleere Mengen und $f : X -> Y$ und $g:  
   Y -> Z$ zwei Abbildungen. Dann heißt die Abbildung
@@ -247,9 +234,9 @@
   $g$.
 
   Wir sagen auch "$g$ nach $f$", d.h. $f$ wird zuerst angewendet, danach $g$.
-])
+]
 
-#theorem([
+#theorem[
   === Assoziativität <assoziativitaet>
   Seien $f : X -> Y$, $g : Y -> Z$ und $h : Z -> W$
   Abbildungen.
@@ -260,11 +247,11 @@
   $ h compose (g compose f) ) (h compose g) compose f $
 
   Dies nennt man *Assoziativität der Verkettung*.
-])
+]
 
 == Abbildungseigenschaften
 
-#definition([
+#definition[
   //TODO: Bild hinzufügen
   === Surjektivität, Injektivität und Bijektivität <injSurBij>
   Eine Abbildung $f : X -> Y$ heißt *surjektiv*. wenn $forall y in Y : exists x
@@ -273,10 +260,10 @@
   In der Sprache der Relationen spricht man von *Rechtstotalität*. Man könnte
   die Surjektivität einer Abbildung mit $f : X ->> Y$ ausdrücken.
 
-  #tldr([
+  #tldr[
     Eine Abbildung ist surjektiv, wenn es zu jedem $y in Y$ *mindestens* ein $x
     in X$ gibt.
-  ])
+  ]
 
   //TODO: Bild hinzufügen
   Eine Abbildung $f : X -> Y$ heißt *injektiv*, wenn $forall x_1, x_2 in X
@@ -287,21 +274,21 @@
   ausdrücken, wobei der Pfeil eine Ähnlichkeit mit einer Teilmenge ($subset$)
   aufweist.
 
-  #tldr([
+  #tldr[
     Eine Abbildung heißt injektiv, wenn es zu jedem $y in Y$ *maximal* ein $x
     in X$ gibt.
-  ])
+  ]
 
   //TODO: Bild hinzufügen
   Eine Abbildung ist *bijektiv*, wenn sie sowohl subjektiv als auch injektiv
   ist. Diese Abbildung nennen wir auch eineindeutige Zuordnung.
 
-  #tldr([
+  #tldr[
     Eine Abbildung ist bijektiv, wenn jedem $x in X$ genau ein $y in Y$
     zugeordnet wird und jedes $y in Y$ einem $x in X$ zugeordnet wird.
-  ])
+  ]
 
-  #example([
+  #example[
     === Beispielbeweis
     Betrachten wir die Abbildung $f : x |-> x/(x + 1)$ mit $f : RR without {-1}
     -> RR$. Wir wollen nun herausfinden, ob $f$ injektiv, surjektiv oder sogar
@@ -338,10 +325,10 @@
     + $f$ ist kann folglich nicht *bijektiv* sein, da es dafür surjektiv und
       injektiv sein müsste. Es wäre bijektiv für $f : RR without {-1} -> RR
       without {1}$.
-  ])
-])
+  ]
+]
 
-#example([
+#example[
   === Hinrichtungs- und Rückrichtungsbeweise
   #set enum(numbering: "1)")
   *Injektivität* \
@@ -382,11 +369,11 @@
   //TODO: Hier noch Bijektivität einbringen.
 
   #set enum(numbering: "1.")
-])
+]
 
 == Umkehrabbildung
 
-#definition([
+#definition[
   === Inverse Abbildung <inversAbb>
   Ist die Abbildung $f : X -> Y$ bijektiv, so ist die inverse Abbildung
   $f^(-1) : Y -> X$ zu $f$ definiert durch
@@ -396,7 +383,7 @@
 
   $y |-> f^(-1)(y) := $ das eindeutig bestimmte Urbild von $y$ unter $f$.
 
-  #remark([
+  #remark[
     Sei $f : X -> Y$ bijektiv. Dann ist $f^(-1) : Y -> X$ ebenfalls
     bijektiv und es gilt aufgrund der Definition
 
@@ -404,9 +391,9 @@
     f compose f^(-1) = I d_Y \
     (f^(-1))^(-1) = f $
 
-  ])
+  ]
 
-  #example([
+  #example[
     #set enum(numbering: "(1)")
     === Beispiel
 
@@ -432,10 +419,10 @@
       exp: x -> e^x $
 
     #set enum(numbering: "1.")
-  ])
-])
+  ]
+]
 
-#theorem([
+#theorem[
   #set enum(numbering: "(1)")
   === Satz über Links- und Rechtsinverse <linksRechts>
   Sei $f : X -> Y$ eine Abbildung. Dann gilt
@@ -455,14 +442,14 @@
 
   #set enum(numbering: "1.")
 
-  #remark([
+  #remark[
     Nur für *bijektive* Abbildungen gibt es Umkehrabbildungen. Bei nur
     surjektiv oder injektiven Abbildungen existiert ein Urbild $f^(-1)$, eine
     Menge mit keinem, einem oder anderen Elementen.
-  ])
-])
+  ]
+]
 
-#theorem([
+#theorem[
   === Satz über die Verkettung bijektiver Abbildungen
   Seien $f : X -> Y$ und $g : Y -> Z$ zwei bijektive Abbildungen. \
   Dann ist auch ihre Verkettung $g compose f$ bijektiv und für ihre inversen
@@ -470,7 +457,7 @@
 
   $ (g compose f)^(-1) = f^(-1) compose g^(-1) $
 
-  #example([
+  #example[
     === Beweis
     Für die inversen Abbildungen $f^(-1) : Y -> X$ und $g^(-1) : Z -> Y$ gilt
     #footnote[siehe @inversAbb]
@@ -509,21 +496,21 @@
       => &exists f^(-1) compose g^(-1) = (g compose f)^(-1) \ \ \
       endOfProof
     $
-  ])
-])
+  ]
+]
 
 = Funktionen
 
 == Funktionseigenschaften
 
-#definition([
+#definition[
   === Zahlenmengenkriterium <funktion>
   Sei $f$ eine Zuordnung von der Menge $X$ in die Menge $Y$, d.h. $f : X -> Y$,
   wobei $X$, $Y$ Zahlenmengen sind. $f$ heißt *Funktion* genau dann, wenn jedem
   $x in X$ genau ein $y in Y$ zugeordnet wird.
-])
+]
 
-#remark([
+#remark[
   #set enum(numbering: "(1)")
   === Begriffe <funktionsBegriffe>
   + Die Menge $X$ ist der *Definitionsbereich* $D_f$ von $f$. Die Elemente von
@@ -543,17 +530,17 @@
   Funktionsterm_ gesprochen.
 
   #set enum(numbering: "1.")
-])
+]
 
-#definition([
+#definition[
   === Nullstellen <nullstellen>
   Für eine Funktion $f$ ist $x_N in D(f)$ eine Nullstelle von $f$, wenn $f(x_N)
   = 0$.
-])
+]
 
 == Symmetrie
 
-#definition([
+#definition[
   === Gerade Funktionen
   Bei geraden Funktionen haben *Gegenzahlen* den gleichen Funktionswert.
   
@@ -561,7 +548,7 @@
 
   Gerade Funktionen sind *achsensymmetrisch*.
 
-  #example([
+  #example[
     === Beispielbeweis
     Betrachten wir die Funktion $f(x) = x^4 - 3$.
 
@@ -575,7 +562,7 @@
     $
 
     Die Funktion $f$ ist achsensymmetrisch und gerade.
-  ])
+  ]
 
   === Ungerade Funktionen
   Bei ungeraden Funktionen haben Gegenzahlen Gegenzahlen als Funktionswerte.
@@ -583,9 +570,9 @@
   $ f(x) = -f(-x) $
 
   Ungerade Funktionen sind *punktsymmetrisch*.
-])
+]
 
-#theorem([
+#theorem[
   #set enum(numbering: "(1)")
   === Exponentenkriterium für Symmetrie ganzrationaler Funktionen
   Wir betrachten die Funktionsgleichung *ganzrationaler Funktionen* in
@@ -605,7 +592,7 @@
 
   #set enum(numbering: "1.")
 
-  #example([
+  #example[
     === Beweis für Achsensymmetrie
     $
       (-x)^(2n) = ((-x)^2)^n = x^(2n) \
@@ -618,26 +605,26 @@
       &= f(x) \ \ \
       endOfProof
     $
-  ])
-])
+  ]
+]
 
 == Verhalten
 
-#definition([
+#definition[
   === Monotonie
   Eine Funktion $f$ ist streng monoton fallend, genau dann wenn
 
   $ forall x_1, x_2 in D(f) : x_1 < x_2 <=> f(x_1) > f(x_2) $
-])
+]
 
-#definition([
+#definition[
   === Globalverhalten
   Sei $f$ eine Funktion. Das *Globalverhalten* von $f$ beschreibt das Verhalten
   der Funktionswerte, wenn die Argumente unendlich groß oder unendlich klein
   werden.
-])
+]
 
-#definition([
+#definition[
   === Grenzwerte
   Betrachten wir $f(x) = (1/2)^x$.
 
@@ -652,15 +639,15 @@
   diesen aber nicht unbedingt erreichen.
 
   $ lim_(x -> -oo) f(x) = oo $
-])
+]
 
-#theorem([
+#theorem[
   === Globalverhalten bei ganzrationalen Funktionen
   Der Graph #footnote(<graphFooter>) einer ganzrationalen Funktion $f$ mit
   $f(x) = a_n x^n + ... + a_1 x + a_0$ mit $a_n != 0$ verhält sich für $x ->
   plus.minus oo$ wie der Graph von $g$ mit $g(x) = a_n x^n$.
 
-  #example([
+  #example[
     === Beweis
     Sei $f$ mit $f(x) = a_n x^n + ... + a_1 x + a_0$ mit $a_n != 0$ eine
     ganzrationale Funktion. Dann gilt mit $lim_(x -> oo) a/x^n = 0$
@@ -672,26 +659,26 @@
       &= lim_(x -> oo) g(x) \ \ \
       endOfProof
     $
-  ])
-])
+  ]
+]
 
 == Verschiebung
 
-#theorem([
+#theorem[
   === Verschiebung einer Funktion in $y$-Richtung
   Um eine beliebige Funktion $f(x)$ um $c$ Einheiten in $y$-Richtung zu
   verschieben, sei die verschobene Funktion $f^*(x) = f(x) + c$.
-])
+]
 
-#theorem([
+#theorem[
   === Verschiebung einer Funktion in $x$-Richtung
   Um eine beliebige Funktion $f(x)$ um $d$ Einheiten in $x$-Richtung zu
   verschieben, sei die verschobene Funktion $f^*(x) = f(x - d)$.
-])
+]
 
 == Lineare Funktionen
 
-#definition([
+#definition[
   === Funktionsgleichung
   Ist $f$ eine ganzrationale Funktion 1. Grades, so wird sie auch *lineare
   Funktion* genannt. Ihr Graph ist eine *Gerade*.
@@ -699,9 +686,9 @@
   Ihre Funktionsgleichung lautet $f(x) = m x + n$ mit $m, n in RR$, wobei $m$
   die *Steigung* der Geraden und $Y(0|n)$ der Schnittpunkt mit der $y$-Achse
   ist.
-])
+]
 
-#theorem([
+#theorem[
   #set enum(numbering: "1)")
   === Steigung linearer Funktionen
   Seien $f$ und $g$ zwei lineare Funktionen mit den Steigungen $m_f$ und $m_g$.
@@ -713,7 +700,7 @@
   + Die Graphen von $f$ und $g$ sind genau dann *orthogonal* zueinander, wenn
     $m_f dot m_g = -1$ gilt.
 
-    #remark([
+    #remark[
       Falls man die Steigung einer Geraden $g$ berechnen wollte, die
       *orthogonal* zur Geraden $f$ ist, kann man diese Formel umstellen.
 
@@ -721,9 +708,9 @@
         m_f dot m_g &= -1 wide | div m_f \
         m_g &= - 1/m_f = - (m_f)^(-1)
       $
-    ])
+    ]
 
-  #example([
+  #example[
     === Beweis
     Seien $f$ und $g$ zwei lineare Funktionen mit den Steigungen $m_f$ und
     $m_g$.
@@ -758,14 +745,14 @@
         Steigungsdreieck und $m_g = (Delta x)/(-Delta y)$.
 
       - Es folgt $m_f dot m_g = (Delta y)/(Delta x) (Delta x)/(-Delta y) = -1$
-  ])
+  ]
 
   #set enum(numbering: "1.")
-])
+]
 
 == Quadratische Funktionen
 
-#definition([
+#definition[
   === Definition
   Eine quadratische Funktion ist eine ganzrationale Funktion 2. Grades mit der
   *allgemeinen Form*
@@ -778,9 +765,9 @@
   der Funktionsgleichung ablesen
 
   $ f(x) = a (x - x_S)^2 + y_2 $
-])
+]
 
-#theorem([
+#theorem[
   #set enum(numbering: "(1)")
   === Nullstellen quadratischer Funktionen
   + Die Nullstellen #footnote[siehe @nullstellen] einer quadratischen Funktion
@@ -798,15 +785,15 @@
     $(x - x_2)$ ablesen.
 
   #set enum(numbering: "1.")
-])
+]
 
-#theorem([
+#theorem[
   === Satz von Vieta
   Sind $x_1$ und $x_2$ Lösungen der Gleichung $0 = x^2 + p x + q$, dann gilt
 
   $ x_1 + x_2 = -p wide x_1 dot x_2 = q $
 
-  #example([
+  #example[
     === Beweis
     Seien $x_(1, 2) = - p/2 plus.minus sqrt((p/2)^2 - q)$ die beiden Lösungen
     der quadratischen Gleichung $x^2 + p x +q = 0$. Dann gilt
@@ -830,28 +817,28 @@
         endOfProof
       $
 
-    #remark([
+    #remark[
       Alternativ lassen sich diese Zusammenhänge auch mit dem Ausmultiplizieren
       der faktorisierten Form aufzeigen.
-    ])
-  ])
+    ]
+  ]
 
-  #remark([
+  #remark[
     Somit gilt auch, dass *ganzzahlige Nullstellen Teiler* von $q$ sein müssen
     und die *Summe der Nullstellen die Gegenzahl* von $p$ muss.
-  ])
-])
+  ]
+]
 
 = Folgen
 == Der Folgenbegriff
 
-#definition([
+#definition[
   === Folgen
   Eine Funktion #footnote[siehe @funktion], deren Definitionsbereich die Menge
   der natürlichen Zahlen ist, heißt *Zahlenfolge*, kurz *Folge*.
-])
+]
 
-#remark([
+#remark[
   === Notation
   Im Allgemeinen wird die Zuordnungsvorschrift in Form einer Gleichung gegeben.
 
@@ -867,9 +854,9 @@
   Funktionen sollte $a_n$ besser als $a(n)$ geschrieben werden.
 
   $3n - 4$ ist Term für die Berechnung des $n$-ten Folgegliedes.
-])
+]
 
-#definition([
+#definition[
   === Rekursion und Explikation
   Wird die Zuordnungsvorschrift einer Folge mit einem expliziten Term, z.B. $3n
   - 4$, dann spricht man von einer *expliziten* Bildungsvorschrift.
@@ -881,19 +868,19 @@
 
   $ (a_n) : a_1 = -1 and a_n = a_(n - 1) + 3 $
 
-  #tldr([
+  #tldr[
     Wenn das Berechnen mit *einfachem* Rechenaufwand verbunden ist, der Term
     also nicht auf vorhergehende oder nachfolgende Folgenglieder zurückgreift,
     dann ist die Bildungsvorschrift *explizit*.
 
     Wenn der Bildungsterm auf vorhergehende oder nachfolgende Folgenglieder
     zurückgreift, dann ist die Zuordnungsvorschrift *rekursiv*.
-  ])
-])
+  ]
+]
 
 == Verschiedene Folgen
 
-#definition([
+#definition[
   === Geometrische Folgen <geometrischeFolgen>
   Eine Folge $(a_n)$ heißt geometrisch, wenn $exists q in RR without {0; 1}
   forall n in NN without {0} : (a_(n + 1))/a_n = q$
@@ -903,7 +890,7 @@
 
   $ a_(n +1) = q dot a_n $
 
-#theorem([
+#theorem[
     Für jede geometrische Folge $(a_n)$ gilt $a_n = a_1 dot q^(n - 1)$, weil $a_1
     = a_1 dot q^0$, weil $q^0$ für $q in NN without {0}$ immer $1$ ist.
 
@@ -911,52 +898,52 @@
     a_2 &= a_1 dot q^1 \
     a_3 &= a_2 dot q^1 = a_1 dot q^2 \
     &... $
-  ])
-])
+  ]
+]
 
-#remark([
+#remark[
   === Konstante Folgen
   $q$ #footnote[siehe @geometrischeFolgen] darf nicht $1$ sein, denn folglich
   wäre $forall n in NN : a_(n + 1) = a_n$.
 
   Solche Folgen nennen wir *konstante Folgen*.
-])
+]
 
-#definition([
+#definition[
   === Alternierende Folgen
   Folgen, deren aufeinanderfolgende Folgenglieder unterschiedliche Vorzeichen
   besitzen, nennen wir *alternierend*.
 
   $ forall n in NN without {0} : a_n dot a_(n+1) < 0 $
-])
+]
 
 == Monotonieverhalten
 
-#definition([
+#definition[
   === Strenge Monotonie
   Eine Folge $(a_n)$, deren nächstes Folgeglied immer größer ist als das
   vorhergehende, nennt man *streng monoton steigend*.
 
   $ forall n in NN : a_n < a_(n + 1) $
 
-  #remark([
+  #remark[
     Nicht streng monoton steigend sind jedoch alle Folgen, für die gilt
 
     $ exists n in NN : a_n >= a_(n + 1) $
-  ])
+  ]
 
   Wenn das nächste Folgeglied immer kleiner ist als das vorhergehende, dann
   nennt man sie analog dazu *streng monoton fallend*.
 
   $ forall n in NN : a_n > a_(n + 1) $
 
-  #remark([
+  #remark[
     Nicht streng monoton fallend sind jedoch alle Folgen, für die gilt
 
     $ exists n in NN : a_n <= a_(n + 1) $
-  ])
+  ]
 
-  #example([
+  #example[
     === Beispielbeweis <herausgegriffen>
     Betrachten wir die Folge $(c_n) : c_n = (n-1)/n$ mit $n in NN and n >= 1$.
     Dazu gehen wir zuerst von einer streng monotonen Steigung aus und stellen
@@ -973,10 +960,10 @@
 
     Die Vermutung ist *wahr* für alle $n in NN$, da eine wahre Ungleichung am
     Ende steht.
-  ])
-])
+  ]
+]
 
-#definition([
+#definition[
   === Einfache Monotonie <monoton>
   Folgen, die auch aufeinanderfolgende gleiche Folgeglieder aufweisen, sonst
   allerdings monoton steigen oder fallen, nennt man *monoton steigend* bzw.
@@ -984,40 +971,40 @@
 
   $ forall n in NN : a_n <= a_(n + 1) \
   "bzw." forall n in NN : a_n >= a_(n + 1) $
-])
+]
 
 == Teilfolgen
 
-#remark([
+#remark[
   === Folgen mit Systematik
   In @herausgegriffen könnten bezüglich der Folge $(c_n) : c_n = (n - 1)/n$
   systematisch Folgenglieder "herausgegriffen" werden, z.B. $c_1$, $c_10$,
   $c_100$, ..., $c_(10^(k - 1))$. \
   Diese Folgenglieder kann man als Neue Folge auffassen, die ein Teil der
   Folge $(c_n)$ ist.
-])
+]
 
-#definition([
+#definition[
   === Definition
   Die Folge $(t_n)$ ist Teilfolge der Folge $(a_n)$. \
   Ist $n_i$ mit $(i = 1; 2; ...; k in NN without {0})$ eine streng monoton
   wachsende Folge natürlicher Zahle, so heißt $(a_(n_i)) = (t_n)$ Teilfolge von
   $(a_n)$.
-])
+]
 
-#theorem([
+#theorem[
   === Teilfolgensatz
   Jede Folge $(a_n)$ besitzt eine monotone Teilfolge.
 
-  #example([
+  #example[
     === Beweis
     Sei eine Gipfelstelle die Indexzahl $n$, sodass $forall m, n in NN : m >= n
     : a_n >= a_m$.
 
-    #tldr([
+    #tldr[
       Alle nachfolgenden Folgenglieder $a_m$ sind kleiner als $a_n$ bzw. nach
       $a_n$ kommt kein Folgeglied, das größer ist als $a_n$.
-    ])
+    ]
 
     Nun lässt sich eine Fallunterscheidung durchführen.
 
@@ -1049,19 +1036,19 @@
       $
 
     #set enum(numbering: "1.")
-  ])
-])
+  ]
+]
 
 == Beschränktheit von Folgen
 
-#definition([
+#definition[
   === Schranken
   In @herausgegriffen wurde die Folge $(c_n) : c_n = (n-1)/n$ betrachtet. \
   Man kann "beobachten", dass $forall n in NN : 0 <= c_n < 1$, d.h. die
   Folgenglieder unter- und überschreiten einen bestimmten Wert nicht.
-])
+]
 
-#definition([
+#definition[
   === Untere und obere Schranken, Maxi- und Minima <schranken>
   + Eine reelle Zahl $u$ heißt *untere Schranke* der Folge $(a_n)$, wenn für
     alle $n in NN$ gilt $u <= a_n$.
@@ -1075,7 +1062,7 @@
   + Eine reelle Zahl $"max" a_n$ heißt *Maximum* von $(a_n)$, wenn $exists k in
     NN : forall n in NN : "max" a_n = a_k >= a_n$.
 
-  #example([
+  #example[
     === Beispiel
     Betrachten wir die Folge $(a_n): a_n = -(4n)/(n+2)$. Zunächst benötigt man
     eine Vermutung. Dazu werden einige Folgenglieder berechnet.
@@ -1100,46 +1087,46 @@
     $
 
     Die Vermutung $-4 <= a_n$ ist *wahr* für alle $n in NN$.
-  ])
-])
+  ]
+]
 
-#theorem([
+#theorem[
   === Vielschrankensatz
   Falls eine Folge $(a_n)$ eine untere Schranke besitzt, so besitzt sie
   unendlich viele.
 
-  #example([
+  #example[
     === Beweis
     Sei $u <= a_n$ für alle $n in NN$. Wähle $x in RR$ mit $x < u$.
 
     D.h. $x < u <= a_n$, folgt $x <= a_n$ und somit existieren unendlich viele
     untere Schranken.
-  ])
-])
+  ]
+]
 
-#definition([
+#definition[
   === _Suprema_ und _Infima_
   Die größte untere Schranke #footnote[siehe @schranken] nennt man *untere
   Grenze* oder _Infimum_ $"inf" a_n$ der Folge $(a_n)$. \
   Die kleinste obere Schranke nennt man *obere Grenze* oder _Supremum_ $"sup"
   a_n$ der Folge $(a_n)$.
 
-  #example([
+  #example[
     === Schritte zum Nachweis
     Die beliebige Folge $(a_n)$ besitzt die untere Grenze $"inf" a_n$. Es sei
     $k in RR$ mit $"inf" a_n < k$.
-  ])
-])
+  ]
+]
 
 = Beweise
 == Beweistechniken
 
-#definition([
+#definition[
   === Hinrichtung und Rückrichtung
   Beweise können _Genau dann, wenn ..._ Aussagen, die in zwei Richtungen
   funktionieren, sein.
 
-  #example([
+  #example[
     === Satz vom Nullprodukt als Beispiel
     $a dot b = 0$ für $a,b in RR$ gilt genau dann, wenn $a = 0 or b = 0$.
 
@@ -1172,5 +1159,5 @@
     das Produkt Null.
 
     $ endOfProof $
-  ])
-])
+  ]
+]

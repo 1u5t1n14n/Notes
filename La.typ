@@ -1,21 +1,10 @@
 #import "Template.typ": *
+#show: template
 
-#set highlight(radius: 0.3em, extent: 0.2em)
 #set heading(numbering: "I.")
 #set page(
   numbering: "I"
 )
-#set text(
-  lang: "de",
-  size: 10pt,
-
-  //font: "Georgia",
-  //font: "Inter",
-  font: "Jost*",
-)
-
-#outline()
-#pagebreak()
 
 = Seneca <seneca>
 == _Epistulae morales_
@@ -59,8 +48,8 @@
   #predicate[onerat] distentum ventrum, ut maiore opera omnia
   #predicate[egerat] quam #predicate[ingessit].],
   //TODO: Übersetz das mal richtig
-  [Er isst jenes mehr als er fängt, und durch unglaublich große Giert
-  belastet.],
+  [Irgendwas passiert, damit alle mit mehr Mühe rausbringen als
+  hineinbringen.],
 
   [At infelicibus servis labra movere non #predicate[licet].],
   [Aber den unglücklichen Sklaven ist es nicht erlaubt, ihre Lippen zu
@@ -69,4 +58,14 @@
   [Sic #predicate[fit], ut isti de domino #predicate[loquantur], quibus coram
   domino loqui non #predicate[licet].],
   [So geschieht es, dass],
+
+  [At illi, quibus non tantum coram dominis, sed cum ipsis #predicate[erat]
+  sermo, parati #predicate[erant] pro domino porrigere cervicem.],
+  [],
+
+  [Proverbium #predicate[est] totidem hostes esse quot servos.],
+  [],
+
+  [Non #predicate[habemus] illos hostes, sed #predicate[facimus].],
+  [],
 )

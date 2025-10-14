@@ -1,3 +1,22 @@
+#let template(doc) = {
+  set highlight(radius: 0.3em, extent: 0.2em)
+  set heading(numbering: "1.1.")
+  set page(numbering: "1")
+  set text(
+    lang: "de",
+    size: 10pt,
+
+    //font: "Georgia"
+    //font: "Inter"
+    font: "Jost*"
+  )
+
+  outline()
+  pagebreak()
+
+  doc
+}
+
 // Mathe
 #let noteBlock(body, fill: rgb("#000000"), stroke: rgb("#000000")) = block(
   fill: fill,
