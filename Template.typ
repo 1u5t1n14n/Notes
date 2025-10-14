@@ -11,6 +11,8 @@
     font: "Jost*"
   )
 
+  set grid(columns: (1fr, 1fr), gutter: 0.65em)
+
   outline()
   pagebreak()
 
