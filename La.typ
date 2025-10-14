@@ -10,7 +10,8 @@
 == Aufstand im Bad
 #grid(
   [Cornelius Plinius Acilio suo salutem.],
-  [Cornelius Plinius grüßt seinen Acilius.],
+  [Cornelius Plinius grüßt seinen Acilius #footnote[Der Addressat ist
+  anderweitig nicht belegt.].],
 
   [Rem atrocem nec tantum epistula dignam Larcius Macedo, vir praetorius, a
   servis suis passus est, superbus alioqui dominus et saevus, et qui servisse
@@ -33,7 +34,7 @@
 
   [Ille, sive quia non sentiebat, sive quia se non sentire simulabat, immobilis
   et extentus fidem peractae mortis implevit.],
-  [Jener, entweder weil er nichts fühlte, oder wil er vorgab, nichts zu fühlen,
+  [Jener, entweder weil er nichts fühlte, oder weil er vorgab, nichts zu fühlen,
   erbrachte unbeweglich und hingestreckt den Beweis seines vollendeten Todes.],
 
   [Tum demum quasi aestu solutus effertur; excipiunt servi fideliores,
@@ -55,8 +56,10 @@
   [Ipse paucis diebus aegre focilatus non sine ultionis solacio decessit, ita
   vivus vindicatus, ut occisi solent.],
   [Er selbst starb, für wenige Tage mit großer Mühe wiederbelebt, nicht ohne
-  den Trost der Rache, weil er lebend so gerächt wurde, wie normalerweise die
-  Toten.],
+  den Trost der Rache, weil er lebend so gerächt #footnote[Die Ermordung des
+  Herrn durch seine Sklaven hatte nach römischem Recht die Hinrichtung aller
+  Sklaven des Haushalts, auch der unbeteiligten, zur Folge.] wurde, wie
+  normalerweise die Toten.],
 
   [Vides, quot periculis, quot contumeliis, quot ludibriis simus obnoxii; nec
   est, quod quisquam possit esse securus, quia sit remissus et mitis; non enim
