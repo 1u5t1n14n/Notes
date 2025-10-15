@@ -103,7 +103,7 @@
 
 #definition[
   //TODO: Bild hinzufügen
-  === Abbildung, Funktion <graph>
+  === Abbildungen und Funktionen <graph>
   Es seien $X$ und $Y$ nichtleere Mengen.
 
   + Eine Vorschrift $f$, die jedem Element von $X$ genau ein Element von $Y$
@@ -501,7 +501,7 @@
 
 = Funktionen
 
-== Funktionseigenschaften
+== Grundlagen zum Funktionsbegriff
 
 #definition[
   === Zahlenmengenkriterium <funktion>
@@ -528,6 +528,56 @@
 
     Der Term wird bei ersterer Angabe _Funktion $f$: Funktionswert ist gleich
   Funktionsterm_ gesprochen.
+
+  #set enum(numbering: "1.")
+]
+
+#example[
+  #set enum(numbering: "(1)")
+  === Grundlegende Funktionstypen
+  + Sei $f : RR -> RR$ eine Abbildung mit $f(x) = m x + n$ $m, n in RR$.
+
+    Dann heißt die Abbildung *lineare Funktion* #footnote[siehe @linear]. Ihr
+    Graph #footnote[siehe @graph] eine Gerade.
+
+  + Sei $f : RR -> RR$ eine Abbildung mit $f(x) = a x^2 + b x + c$ $a, b, c in
+    RR$ $a != 0$.
+
+    Dann heißt die Abbildung *quadratische Funktion* #footnote[siehe @quadrat].
+    Ihr Graph ist eine nach oben oder unten geöffnete Parabel.
+
+  + Sei $q$ eine rationale Zahl.
+
+    Dann heißt die Funktion $f : RR -> RR$ mit $f(x) = x^q$ *Potenzfunktion*.
+    Insbesondere heißt die Funktion $f : RR^+ -> RR$ mit $f(x) = x^(1/m) =
+    root(m, x)$ mit $m in NN$ *Wurzelfunktion*.
+
+  + Seien $a_0, a_1, ..., a_n in RR$ und $p(x) := limits(sum)_(k = 0)^n a_k x^k
+    = a_n x^n + ... + a_1 x + a_0$ ein *Polynom*.
+
+    Dann heißt die Funktion $f : RR -> RR$ mit $f(x) = p(x)$ *ganzrationale
+    Funktion*. Der höchste Exponent mit $a_k != 0$ heißt *Grad* von $p$ und $a_0$
+    bis $a_n$ heißen *Koeffizienten*.
+
+  + Sind $p$ und $q$ ganzrationale Funktionen, so nennt man die Funktion $f$
+    mit $f(x) = p(x)/q(x)$ eine *gebrochen rationale Funktion*.
+
+    Die Funktion $f$ ist an den Nullstellen #footnote[siehe @nullstellen] ihres Nenners
+    $q$ nicht definiert. Diese Nullstellen heißen *Definitionslücken* von $f$ und
+    gehören nicht zum Definitionsbereich.
+
+  + Eine Funktion $f : RR -> RR$ der Form $f(x) = a dot b^x$ mit $a, b in RR$,
+    $a != 0$, $b != 1$ heißt *Exponentialfunktion*, da das Argument im
+    Exponenten steht. $b$ heißt Basis.
+
+  + Eine Funktion $f : RR^+ -> RR$ der Form $f(x) = a dot log_b(x)$ mit $a, b
+    in RR$, $a != 0$, $b != 0$, $b != 1$ heißt *Logarithmusfunktion* zur Basis
+    $b$.
+
+  + Die Funktionen $s : RR -> RR$ mit $s(x) = sin(x)$ und $c : RR -> RR$ mit
+    $c(x) = cos(x)$ heißen *Sinusfunktion* und *Kosinusfunktion*. Des Weiteren
+    heißt die Funktion $t$ mit $tan(x) = s(x)/c(x)$ *Tangensfunktion*. $s$, $c$
+    und $t$ sind die elementaren *trigonometrischen Funktionen*.
 
   #set enum(numbering: "1.")
 ]
@@ -676,7 +726,7 @@
   verschieben, sei die verschobene Funktion $f^*(x) = f(x - d)$.
 ]
 
-== Lineare Funktionen
+== Lineare Funktionen <linear>
 
 #definition[
   === Funktionsgleichung
@@ -750,7 +800,7 @@
   #set enum(numbering: "1.")
 ]
 
-== Quadratische Funktionen
+== Quadratische Funktionen <quadrat>
 
 #definition[
   === Definition
