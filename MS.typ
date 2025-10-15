@@ -27,12 +27,24 @@
 
   Wir können Mengen auf verschiedene Weisen darstellen.
 
-  - Wortvorschriften, z.B $M$ ist die Menge aller natürlichen Zahlen, die durch
-    $5$ teilbar ist.
+  - Wortvorschriften
 
-  - Auflistung der Elemente, z.B. $M = { 0; 5; 10; dots}$.
+    #example[
+      Z.B. $M$ ist die Menge aller natürlichen Zahlen, die durch $5$ teilbar
+      ist.
+    ]
 
-  - Definition der Eigenschaften, z.B. $M = {n in NN | n mod 5 = 0}$.
+  - Auflistung der Elemente
+
+    #example[
+      Z.B. $M = { 0; 5; 10; dots}$
+    ]
+
+  - Definition der Eigenschaften
+
+    #example[
+      Z.B. $M = {n in NN | n mod 5 = 0}$
+    ]
 
   - Graphisch, z.B. als Venn-Diagramm.
 ]
@@ -44,7 +56,7 @@
   - $X$ heißt *Teilmenge* von $Y$ ($X subset.eq Y$), wenn jedes Element von $X$
     auch in $Y$ ist.
 
-  - $X$ heißt *echte Teilmenge* von $Y$ ($X subset Y$), wenn jedes Element vin
+  - $X$ heißt *echte Teilmenge* von $Y$ ($X subset Y$), wenn jedes Element von
     $X subset.eq Y and X eq.not Y$.
 
   - Die Mengen $X$ und $Y$ heißen *gleich*, wenn $X subset.eq Y and Y subset.eq
@@ -56,6 +68,10 @@
   Seien $X$ und $Y$ Mengen. Dann heißt
 
   - $X inter Y := {x | x in X and x in Y}$ *Durchschnitt* von $X$ und $Y$.
+
+    #tldr[
+      Durchschnitt ist eine Schnittmenge.
+    ]
 
   - $X union Y := {x | x in X or x in Y}$ *Vereinigung* von $X$ und $Y$.
 
@@ -72,8 +88,9 @@
 
   $ X times Y = {(x; y) | x in X and y in Y} $
 
-  #footnote[$(x; y)$ ist ein geordnetes Paar.]
-  #footnote[$(x; y) = (x; w) <=> x = v wide y = w$]
+  #footnote[$(x; y)$ ist ein geordnetes Paar #footnote[$(x; y) = (x; w) <=> x =
+  v wide y = w$].]
+  
 ]
 
 == Zahlbereiche
@@ -111,17 +128,13 @@
 
     $forall x in D(f) subset.eq X$ gibt es genau ein $y = f(x) in Y$.
 
-    $ f : X &-> Y \
-    x &|-> y $
+    $
+      f : X &-> Y \
+      x &|-> y
+    $
 
     Handelt es sich bei $X$ und $Y$ um reine Zahlenmengen (z.B. $RR$), so
     bezeichnen wir die Abbildung $f$ auch als *Funktion*.
-
-    #tldr[
-      Jedem $x$ muss ein $y$ zugeordnet werden.
-      Wenn $X$ und $Y$ reine Zahlenmengen sind, ist die Abbildung eine
-      Funktion.
-    ]
 
   + $D(f)$ ist die *Definitionsmenge* #footnote(<funkyColdMedina>) von der
     Vorschrift $f$.
@@ -144,7 +157,7 @@
     ]
 
     $X = D(f)$ heißt *Definitionsbereich* von $f$ und $Y = B(f)$ heißt
-  *Wertebereich* von $f$.
+    *Wertebereich* von $f$.
 
     Die Menge $i m(f) := {f(x) | x in X} = {y in Y | exists x in X}$ mit $f(x)
     = y$ heißt *Bild* von $f$.
