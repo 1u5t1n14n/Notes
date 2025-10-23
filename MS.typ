@@ -1017,12 +1017,9 @@
       (n - 1)/n &< n/(n + 1) wide &&| dot n \
       n - 1 &< (n^2)/(n + 1) &&|  dot (n + 1) \
       n^2 - 1 &< n^2 &&| - n^2 \
-      -1 &< 0 \ \ \
+      -1 &< 0 && "wahr für alle" n in NN \ \ \
       endOfProof
     $
-
-    Die Vermutung ist *wahr* für alle $n in NN$, da eine wahre Ungleichung am
-    Ende steht.
   ]
 ]
 
@@ -1145,11 +1142,9 @@
       -4 &<= -(4n)/(n + 2) wide &&| dot (n + 2) \
       -4(n + 2) &<= -4n \
       -4n - 8 &<= -4n &&| + 4n \
-      -8 &<= 0 \ \ \
+      -8 &<= 0 && "wahr für alle" n in NN \ \ \
       endOfProof
     $
-
-    Die Vermutung $-4 <= a_n$ ist *wahr* für alle $n in NN$.
   ]
 ]
 
@@ -1174,11 +1169,55 @@
   Die kleinste obere Schranke nennt man *obere Grenze* oder _Supremum_ $"sup"
   a_n$ der Folge $(a_n)$.
 
-  #example[
+  #remark[
     === Schritte zum Nachweis
     Die beliebige Folge $(a_n)$ besitzt die untere Grenze $"inf" a_n$. Es sei
     $k in RR$ mit $"inf" a_n < k$.
   ]
+
+  #example[
+    === Beispielnachweis
+    Betrachten wir die Folge $(b_n) : b_n = (6n - 1)/(4n)$ mit $n >= 1$.
+
+    Zuerst äußern wir die Vermutung, dass das _Supremum_ bei $"sup" b_n = 3/2$
+    liegt. Zuerst muss bewiesen werden, dass $"sup" b_n$ eine obere Schranke
+    ist. Danach, dass es ein _Supremum_ ist.
+
+    + $"sup" b_n$ ist eine obere Schranke.
+
+      Sei $n in N$.
+
+      $
+        3/2 &>= (6n - 1)/(4n) wide &&| dot 4n\
+        12/2 n &>= 6n - 1 \
+        6n &>= 6n - 1 &&| - 6n \
+        0 &>= - 1 && "wahr für alle" n in NN \ \ \
+        endOfProof
+      $
+
+    + $"sup" b_n$ ist ein _Supremum_.
+
+      Sei $epsilon > 0$.
+
+      $
+        b_n &> "sup" b_n - epsilon \
+        "D.h." (6n - 1)/(4n) &> 3/2 - epsilon wide &&| dot 4n\
+        6n - 1 &> 6n - 4 n epsilon &&| - 6n \
+        - 1 &> - 4 n epsilon &&| div epsilon \
+        - 1/epsilon &> - 4 n &&| dot (-1) \
+        1/epsilon &< 4 n &&| div 4 \
+        1/(4 epsilon) &< n && "wahr für alle " n in NN \ \ \
+        endOfProof
+      $
+
+    Dementsprechend ist $3/2$ das _Supremum_ der Folge $(b_n)$.
+  ]
+]
+
+#remark[
+  === Supremumsaxiom
+  Im Bereich der *reellen* Zahlen besitzt jede nach oben beschränkte Folge ein
+  Supremum.
 ]
 
 = Beweise
