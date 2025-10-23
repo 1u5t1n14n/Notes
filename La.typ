@@ -76,7 +76,7 @@
 = Seneca <seneca>
 == _Epistulae morales_
 
-#let immo = "Im Gegenteil"
+#let immo = "Aber auch"
 
 #grid(
   [Seneca Lucilio suo salutem.],
@@ -91,34 +91,33 @@
   [Dies passt zu deiner Klugheit und zu deiner Erziehung.],
 
   ["Servi #predicate[sunt]!" - "Immo homines."],
-  ["Sie sind Sklaven!" - "#immo, Menschen."],
+  ["Sie sind Sklaven!" - "#immo Menschen."],
 
   ["Servi #predicate[sunt]!" - "Immo contubernales."],
-  ["Sie sind Sklaven!" - "#immo, Hausgenossen."],
+  ["Sie sind Sklaven!" - "#immo Hausgenossen."],
 
   [ "Servi #predicate[sunt]!" - "Immo humiles amici."],
-  ["Sie sind Sklaven!" - "#immo, niedrige Freunde."],
+  ["Sie sind Sklaven!" - "#immo niedrige Freunde."],
 
   ["Servi #predicate[sunt]!" - "Immo conservi, si #predicate[cogitaveris]
   tantunde in utrosque licere fortunae.],
-  ["Sie sind Sklaven!" - "#immo, Mitsklaven, wenn du berücksichtigst, dass dem
+  ["Sie sind Sklaven!" - "#immo Mitsklaven, wenn du berücksichtigst, dass dem
   Schicksal gegenüber beiden ebensoviel erlaubt ist."],
 
   [Itaque #predicate[rideo] istos, qui turpe #predicate[existimant] cum servo
   suo cenare.],
-  [Deshalb lache ich über diese, die es für schändlich halten, mit seinem
+  [Deshalb lache ich über diese, die es für schändlich halten, mit ihrem
   Sklaven zu essen.],
 
   [#predicate[Est] ille plus quam #predicate[capit], et ingenti aviditate
   #predicate[onerat] distentum ventrum, ut maiore opera omnia
   #predicate[egerat] quam #predicate[ingessit].],
-  [Er isst mehr als er greift, und durch gewaltige Gier belastete er den
-  überlasteten Rücken, damit mit er es mit mehr Mühe herausbrachte, als er es
-  hineingebracht hat.],
+  [Jener isst mehr, als er fassen kann, und belastet seinen überdehnten Magen,
+  so dass er mit größerer Mühe alles von sich gibt, als er sich zugeführt
+  hat.],
 
   [At infelicibus servis labra movere non #predicate[licet].],
-  [Aber den unglücklichen Sklaven ist es nicht erlaubt, ihre Lippen zu
-  bewegen.],
+  [Aber den armen Sklaven ist es nicht erlaubt, ihre Lippen zu bewegen.],
 
   [Sic #predicate[fit], ut isti de domino #predicate[loquantur], quibus coram
   domino loqui non #predicate[licet].],
@@ -126,14 +125,16 @@
   Herren nicht erlaubt ist.],
 
   [At illi, quibus non tantum coram dominis, sed cum ipsis #predicate[erat]
-  sermo, parati #predicate[erant] pro domino porrigere cervicem.],
-  [],
+  #footnote[_dativus possessivus_] sermo, parati #predicate[erant] pro domino
+  porrigere cervicem.],
+  [Doch jene, denen es nicht nur erlaubt war, im Beisein des Herren, sondern
+  sogar mit ihm zu reden, waren bereit für ihn ihren Kopf hinzuhalten.],
 
   [Proverbium #predicate[est] totidem hostes esse quot servos.],
-  [],
+  [Es gibt ein Sprichwort, dass man so viele Feinde hat wie Sklaven.],
 
   [Non #predicate[habemus] illos hostes, sed #predicate[facimus].],
-  [],
+  [Wir haben nicht jene als Feinde, sondern machen sie zu solchen.],
 )
 
 = Glossar
