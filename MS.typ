@@ -966,8 +966,8 @@
 
 #remark[
   === Konstante Folgen
-  $q$ #footnote[siehe @geometrischeFolgen] darf nicht $1$ sein, denn folglich
-  wäre $forall n in NN : a_(n + 1) = a_n$.
+  $q$ #footnote[siehe @geometrischeFolgen] darf nicht $1$ sein und $a_1$ nicht
+  $0$, denn folglich wäre $forall n in NN : a_(n + 1) = a_n$.
 
   Solche Folgen nennen wir *konstante Folgen*.
 ]
@@ -1154,7 +1154,7 @@
   unendlich viele.
 
   #example[
-    === Beweis
+    === Beweis #footnote[siehe @vorBehauptung]
     Sei $u <= a_n$ für alle $n in NN$. Wähle $x in RR$ mit $x < u$.
 
     D.h. $x < u <= a_n$, folgt $x <= a_n$ und somit existieren unendlich viele
@@ -1168,6 +1168,15 @@
   Grenze* oder _Infimum_ $"inf" a_n$ der Folge $(a_n)$. \
   Die kleinste obere Schranke nennt man *obere Grenze* oder _Supremum_ $"sup"
   a_n$ der Folge $(a_n)$.
+
+  #tldr[
+    Eine reelle Zahl $i$ ist genau dann ein _Infimum_ der Folge $(a_n)$, wenn
+
+    + $forall n in NN : i <= a_n$, also $i$ eine untere Schranke ist.
+
+    + $forall epsilon > 0 exists n in NN : i + epsilon > a_n$, es also die
+      größte untere Schranke ist.
+  ]
 
   #remark[
     === Schritte zum Nachweis
@@ -1206,9 +1215,12 @@
         - 1 &> - 4 n epsilon &&| div epsilon \
         - 1/epsilon &> - 4 n &&| dot (-1) \
         1/epsilon &< 4 n &&| div 4 \
-        1/(4 epsilon) &< n && "wahr für alle " n in NN \ \ \
+        1/(4 epsilon) &< n \ \ \
         endOfProof
       $
+
+    Aufgrund der Unendlichkeit der natürlichen Zahlen immer eine natürliche
+    Zahl für die gilt $1/(4 epsilon) < n$. Somit ist diese Aussage wahr.
 
     Dementsprechend ist $3/2$ das _Supremum_ der Folge $(b_n)$.
   ]
@@ -1262,4 +1274,14 @@
 
     $ endOfProof $
   ]
+]
+
+#example[
+  === Aufbau <vorBehauptung>
+  _Wenn $A$, dann $B$._
+
+  $A$ ist die *Vorraussetzung*, unter der $B$ gilt.
+  $B$ ist somit die *Behauptung*.
+
+  Nun folge die *Argumentation*.
 ]
