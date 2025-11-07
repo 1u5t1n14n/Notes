@@ -566,7 +566,7 @@
     root(m, x)$ mit $m in NN$ *Wurzelfunktion*.
 
   + Seien $a_0, a_1, ..., a_n in RR$ und $p(x) := limits(sum)_(k = 0)^n a_k x^k
-    = a_n x^n + ... + a_1 x + a_0$ ein *Polynom*.
+    = #polynom$ ein *Polynom*.
 
     Dann heißt die Funktion $f : RR -> RR$ mit $f(x) = p(x)$ *ganzrationale
     Funktion*. Der höchste Exponent mit $a_k != 0$ heißt *Grad* von $p$ und $a_0$
@@ -641,7 +641,7 @@
   Wir betrachten die Funktionsgleichung *ganzrationaler Funktionen* in
   Polynomform.
 
-  $ f(x) = a_n x^n + ... + a_1 x^1 + a_0 x^0 $
+  $ f(x) = #polynom$
 
   + Hat $x$ in der Funktionsgleichung nur gerade Exponenten, so ist die
     Funktion *gerade* und *achsensymmetrisch*, denn es gilt
@@ -707,13 +707,13 @@
 #theorem[
   === Globalverhalten bei ganzrationalen Funktionen
   Der Graph #footnote(<graphFooter>) einer ganzrationalen Funktion $f$ mit
-  $f(x) = a_n x^n + ... + a_1 x + a_0$ mit $a_n != 0$ verhält sich für $x ->
-  plus.minus oo$ wie der Graph von $g$ mit $g(x) = a_n x^n$.
+  $f(x) = #polynom$ mit $a_n != 0$ verhält sich für $x -> plus.minus oo$ wie
+  der Graph von $g$ mit $g(x) = a_n x^n$.
 
   #example[
     === Beweis
-    Sei $f$ mit $f(x) = a_n x^n + ... + a_1 x + a_0$ mit $a_n != 0$ eine
-    ganzrationale Funktion. Dann gilt mit $lim_(x -> oo) a/x^n = 0$
+    Sei $f$ mit $f(x) = #polynom$ mit $a_n != 0$ eine ganzrationale Funktion.
+    Dann gilt mit $lim_(x -> oo) a/x^n = 0$
 
     $
       lim_(x -> oo) f(x) &= lim_(x -> oo) (x^n (a_n + a_(n - 1)/x + a_(n -
@@ -887,8 +887,62 @@
   ]
 
   #remark[
-    Somit gilt auch, dass *ganzzahlige Nullstellen Teiler* von $q$ sein müssen
-    und die *Summe der Nullstellen die Gegenzahl* von $p$ muss.
+    Somit gilt auch, dass *ganzzahlige Nullstellen Teiler* von $q$ sein
+    #footnote[siehe @teiler] müssen und die *Summe der Nullstellen die
+    Gegenzahl* von $p$ sein muss.
+  ]
+]
+
+== Allgemeine ganzrationale Funktionen
+
+#theorem[
+  === Fundamentalsatz der Algebra für reelle Zahlen
+  Sei $f(x) = #polynom$ mit $a_n != 0$ ein Polynom $n$-ten Grades. Dann hat $f$
+  höchstens $n$ Nullstellen $x_1, ..., x_n in RR$.
+]
+
+#theorem[
+  === Satz zur Abspaltung von Linearfaktoren
+  Sei $f$ eine ganzrationale Funktion $n$-ten Grades.
+
+  Wenn $x_N in RR$ eine Nullstelle von $f$ ist, dann gilt $f(x) = (x - x_N) dot
+  g(x)$, wobei $g$ eine ganzrationale Funktion $(n - 1)$-Grades ist.
+
+  #remark[
+    Wenn $f$ in Polynomform #footnote[$f(x) = #polynom$] vorliegt, dann ist das
+    Polynom ohne Rest durch den $(x - x_N)$ Linearfaktor teilbar. Das Ergebnis
+    ist $g$.
+  ]
+
+  #example[
+    === Beweis
+    //TODO: !!!
+    siehe Skript
+  ]
+]
+
+#theorem[
+  === Teilerkriterium für Nullstellen ganzrationaler Funktionen <teiler>
+  Sei $f$ mit $f(x) = #polynom$ eine ganzrationale Funktion mit ausschließlich
+  ganzzahligen Koeffizienten $a_n, a_(n - 1), ..., a_0 in ZZ$.
+
+  Sei $x_N$ mit $x_N in ZZ$ eine Nullstelle von $f$, dann ist $x_N$ Teiler des
+  absoluten Glieds $a_0$. #footnote[siehe Lemma von Gauß]
+
+  #example[
+    === Beweis
+    Sei $f(x) = #polynom$, wobei $forall n in NN a_n in ZZ$.
+
+    $
+      f(x_N) &= 0 \
+      #polynom &= 0 wide &&| -a_0 \
+      a_n x^n + a_(n - 1) x^(n - 1) +... + a_1 x &= -a_0 \
+      x_N (a_n x^(n - 1) + a_(n - 1) x^(n - 2) + ... + a_1) &= -a_0 \ \ \
+      endOfProof
+    $
+
+    Durch bloße Multiplikation und Addition auf der einen Seite ist klar, dass
+    $-a_0$ und somit $a_0$ nur ganzzahlig sein kann.
   ]
 ]
 
@@ -966,8 +1020,8 @@
 
 #remark[
   === Konstante Folgen
-  $q$ #footnote[siehe @geometrischeFolgen] darf nicht $1$ sein und $a_1$ nicht
-  $0$, denn folglich wäre $forall n in NN : a_(n + 1) = a_n$.
+  $q$ #footnote[siehe @geometrischeFolgen] darf nicht $1$ oder $0$ sein und
+  $a_1$ nicht $0$, denn folglich wäre $forall n in NN : a_(n + 1) = a_n$.
 
   Solche Folgen nennen wir *konstante Folgen*.
 ]
@@ -1083,7 +1137,7 @@
       Sei $n_L$ die letzte Gipfelstelle. Wir betrachten $a_n_L$. Dann gilt
       $a_n_L > a_(n_L + 1)$
 
-      Da $a_n_L$ die letzte Gipfelstelle war, siind alle nachfolgenden
+      Da $a_n_L$ die letzte Gipfelstelle war, sind alle nachfolgenden
       Folgeglieder keine Gipfelstellen, d.h. für jedes dieser Folgeglieder
       $a_n^*$ gibt es mindestens ein Folgeglied $a_n^(**)$ mit $a_n^* <
       a_n^(**) < a_n_L$.
