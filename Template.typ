@@ -1,7 +1,7 @@
+#let titlePage(title: []) = {
+}
+
 #let template(doc) = {
-  set highlight(radius: 0.3em, extent: 0.2em)
-  set heading(numbering: "1.1.")
-  set page(numbering: "1")
   set text(
     lang: "de",
     size: 10pt,
@@ -11,8 +11,21 @@
     font: "Jost*"
   )
 
-  set grid(columns: (1fr, 1fr), gutter: 0.65em)
+  set page(fill: rgb("#FFD700"), margin: (top: 15em, rest: 20em))
+  line(start: (0%, 0%), end: (85em, 0%), stroke: (thickness: 2pt))
+  align(horizon + left)[
+    #text(size: 24pt, [Betrachtungen der Tafel]) \
+    #text(size: 16pt, [und andere Überlegungen])
+  ]
+  align(bottom + left)[#datetime.today().display("[year].[month].[day]")]
 
+  set page(fill: none, margin: auto)
+  set grid(columns: (1fr, 1fr), gutter: 0.65em)
+  set highlight(radius: 0.3em, extent: 0.2em)
+  set heading(numbering: "1.1.")
+  set page(numbering: "1")
+
+  pagebreak()
   outline()
   pagebreak()
 
@@ -59,6 +72,7 @@
 )
 
 #let endOfProof = "Quod erat Demonstrandum"
+#let polynom = $a_n x^n + a_(n - 1) x^(n - 1) + ... + a_1 x + a_0$
 
 // Latein
 #let predicate(body) = highlight(fill: red)[#body]
