@@ -1,7 +1,4 @@
-#let titlePage(title: []) = {
-}
-
-#let template(doc) = {
+#let template(color: "#FF0000", title: [], doc) = {
   set text(
     lang: "de",
     size: 10pt,
@@ -11,11 +8,11 @@
     font: "Jost*"
   )
 
-  set page(fill: rgb("#FFD700"), margin: (top: 15em, rest: 20em))
+  set page(fill: rgb(color), margin: (top: 15em, rest: 15em))
   line(start: (0%, 0%), end: (85em, 0%), stroke: (thickness: 2pt))
   align(horizon + left)[
-    #text(size: 24pt, [Betrachtungen der Tafel]) \
-    #text(size: 16pt, [und andere Überlegungen])
+    #text(size: 24pt, title) \ \
+    #text(size: 16pt, [J. F.])
   ]
   align(bottom + left)[#datetime.today().display("[year].[month].[day]")]
 

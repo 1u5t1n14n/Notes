@@ -1,5 +1,8 @@
 #import "Template.typ": *
-#show: template
+#show: template.with(
+  title: [Betrachtungen der Tafel \ und andere Überlegungen],
+  color: "#FF0000"
+)
 
 = Mengen und Zahlbereiche
 == Mengen
@@ -899,10 +902,44 @@
   === Fundamentalsatz der Algebra für reelle Zahlen
   Sei $f(x) = #polynom$ mit $a_n != 0$ ein Polynom $n$-ten Grades. Dann hat $f$
   höchstens $n$ Nullstellen $x_1, ..., x_n in RR$.
+
+  #example[
+    === Beweis
+    *Induktionsanfang* #footnote[siehe @induktion] \
+    Ist $n = 1$, dann ist $f_1(x) = a_1 x + a_0$. $f_1$ hat genau eine
+    Nullstelle.
+
+    $ x_N = - a_0/a_1 $
+
+    *Induktionsvorraussetzung* \
+    Es gelte, dass $f$ ein Polynom $n$-ten Grades ist. Dieses hat höchstens $n$
+    Nullstellen.
+
+    *Induktionsbehauptung* \
+    Ein Polynom vom Grad $n + 1$ hat höchstens $n + 1$ Nullstellen.
+
+    Nun folgt die Argumentation.
+
+    + $f$ hat keine reelle Nullstelle. Folglich hat $f$ höchstens $n + 1$
+      Nullstellen.
+
+    + $f$ hat mindestens eine reelle Nullstelle $x_N$. Diese kann nach dem
+      Abspaltungssatz #footnote[siehe @abspalten] abgespalten werden.
+
+      $
+        f(x) &= (x - x_N) dot g(x)
+      $
+
+      $g$ ist ein Polynom $n$-ten Grades und hat somit höchstens $n$
+      Nullstellen #footnote[siehe Induktionsvorraussetzung]. Zusammen mit der
+      Abgespaltenen Nullstelle ergibt dies $n + 1$ Nullstellen.
+
+    $ endOfProof $
+  ]
 ]
 
 #theorem[
-  === Satz zur Abspaltung von Linearfaktoren
+  === Satz zur Abspaltung von Linearfaktoren <abspalten>
   Sei $f$ eine ganzrationale Funktion $n$-ten Grades.
 
   Wenn $x_N in RR$ eine Nullstelle von $f$ ist, dann gilt $f(x) = (x - x_N) dot
@@ -922,6 +959,37 @@
 ]
 
 #theorem[
+  === Zerlegung in Linearfaktoren
+  Sei $f$ ein Polynom $n$-ten Grades. $f$ kann genau dann in die Form $f(x) =
+  (x - x_1) (x - x_2) dot ... dot (x - x_m) dot f_(n - m)(x)$ zerlegt werden,
+  wenn $f$ genau $m$ Nullstellen hat (die nicht alle verschieden sein müssen)
+  #footnote[siehe @vielfachheit].
+
+  Dabei ist $f_(n - m)$ ein Restpolynom vom Grad $n - m$, das keine weiteren
+  Nullstellen hat.
+]
+
+#definition[
+  === Vielfachheit von Nullstellen <vielfachheit>
+  Die Vielfachheit von Nullstellen gibt an, wie oft eine Nullstelle in einem
+  Polynom auftritt.
+
+  Die Vielfachheit wirkt sich auf den Graphen aus.
+
+  #example[
+    === Beispiel
+    Im Polynom $f(x) = 1/2 (x - 3)^3 (x + 4)$ hat die Nullstelle $3$ eine
+    Vielfachheit von $3$, weil sie dreimal vorkommt.
+  ]
+
+  #remark[
+    === Bemerkung
+    Ist $f$ so weit wie möglich faktorisiert, dann lässt sich die Vielfachheit
+    einer Nullstelle ablesen am Exponenten des zugehörigen Linearfaktoren.
+  ]
+]
+
+#theorem[
   === Teilerkriterium für Nullstellen ganzrationaler Funktionen <teiler>
   Sei $f$ mit $f(x) = #polynom$ eine ganzrationale Funktion mit ausschließlich
   ganzzahligen Koeffizienten $a_n, a_(n - 1), ..., a_0 in ZZ$.
@@ -937,7 +1005,9 @@
       f(x_N) &= 0 \
       #polynom &= 0 wide &&| -a_0 \
       a_n x^n + a_(n - 1) x^(n - 1) +... + a_1 x &= -a_0 \
-      x_N (a_n x^(n - 1) + a_(n - 1) x^(n - 2) + ... + a_1) &= -a_0 \ \ \
+      x_N (a_n x^(n - 1) + a_(n - 1) x^(n - 2) + ... + a_1) &= -a_0 \
+      x_N in ZZ quad (a_n x^(n - 1) + a_(n - 1) x^(n - 2) + ... + a_1) in ZZ
+      quad "folglich" -a_0 in ZZ \ \ \
       endOfProof
     $
 
@@ -1338,4 +1408,17 @@
   $B$ ist somit die *Behauptung*.
 
   Nun folge die *Argumentation*.
+]
+
+#definition[
+  === Beweis durch vollständige Induktion <induktion>
+  Bei einer vollständigen Induktion wird zunächst ein *Induktionsanfang*
+  definiert. Hier wird die Wahrheit der Aussage anhand eines Beispiels
+  demonstriert.
+
+  Danach folgt die *Induktionsvorraussetzung*, in der die Aussage als wahr
+  vorrausgesetzt wird.
+
+  Diese wird dann in der *Induktionsbehauptung* benutzt, um die Aussage zu
+  beweisen.
 ]

@@ -1,5 +1,8 @@
 #import "Template.typ": *
-#show: template
+#show: template.with(
+  title: [Der Kommunikative Mensch],
+  color: "#FF00FF"
+)
 
 = Kommunikation
 == Watzlawick'sches Beziehungs-Inhalts-Modell
