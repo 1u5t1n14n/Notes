@@ -11,7 +11,7 @@
   set page(fill: rgb(color), margin: (top: 15em, rest: 15em))
   line(start: (0%, 0%), end: (85em, 0%), stroke: (thickness: 2pt))
   align(horizon + left)[
-    #text(size: 24pt, title) \ \
+    #text(size: 24pt, [Betrachtungen der Tafel \ und andere Überlegungen]) \ \
     #text(size: 16pt, [J. F.])
   ]
   align(bottom + left)[#datetime.today().display("[year].[month].[day]")]

@@ -1,8 +1,5 @@
 #import "Template.typ": *
-#show: template.with(
-  title: [Epistulae Mortis],
-  color: "#FCC70A"
-)
+#show: template.with(color: "#FCC70A")
 
 // Ist halt Latein, deswegen kommen
 // römische Zahlen schon hart

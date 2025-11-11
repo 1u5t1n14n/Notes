@@ -1,8 +1,5 @@
 #import "Template.typ": *
-#show: template.with(
-  title: [Gesetze der Unterrichtsgestaltung],
-  color: "#ADD8E6"
-)
+#show: template.with(color: "#ADD8E6")
 
 = Gravitation
 == Keplersche Gesetze

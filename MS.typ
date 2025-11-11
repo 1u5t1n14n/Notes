@@ -1,8 +1,5 @@
 #import "Template.typ": *
-#show: template.with(
-  title: [Betrachtungen der Tafel \ und andere Überlegungen],
-  color: "#FF0000"
-)
+#show: template.with(color: "#FF0000")
 
 = Mengen und Zahlbereiche
 == Mengen
@@ -578,9 +575,9 @@
   + Sind $p$ und $q$ ganzrationale Funktionen, so nennt man die Funktion $f$
     mit $f(x) = p(x)/q(x)$ eine *gebrochen rationale Funktion*.
 
-    Die Funktion $f$ ist an den Nullstellen #footnote[siehe @nullstellen] ihres Nenners
-    $q$ nicht definiert. Diese Nullstellen heißen *Definitionslücken* von $f$ und
-    gehören nicht zum Definitionsbereich.
+    Die Funktion $f$ ist an den Nullstellen #footnote[siehe @nullstellen] ihres
+    Nenners $q$ nicht definiert. Diese Nullstellen heißen *Definitionslücken* von
+    $f$ und gehören nicht zum Definitionsbereich.
 
   + Eine Funktion $f : RR -> RR$ der Form $f(x) = a dot b^x$ mit $a, b in RR$,
     $a != 0$, $b != 1$ heißt *Exponentialfunktion*, da das Argument im
