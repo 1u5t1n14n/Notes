@@ -1,5 +1,5 @@
 #import "Template.typ": *
-#show: template.with(color: "#FF00FF")
+#show: template.with(color: "#FF00FF", title: "Deutsch")
 
 = Kommunikation
 == Watzlawick'sches Beziehungs-Inhalts-Modell

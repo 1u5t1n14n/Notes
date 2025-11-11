@@ -1,5 +1,5 @@
 #import "Template.typ": *
-#show: template.with(color: "#ADD8E6")
+#show: template.with(color: "#ADD8E6", title: "Physik")
 
 = Gravitation
 == Keplersche Gesetze

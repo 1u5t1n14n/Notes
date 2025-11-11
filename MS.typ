@@ -1,5 +1,5 @@
 #import "Template.typ": *
-#show: template.with(color: "#FF0000")
+#show: template.with(color: "#FF0000", title: "Mathematik")
 
 = Mengen und Zahlbereiche
 == Mengen

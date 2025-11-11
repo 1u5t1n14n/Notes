@@ -1,4 +1,4 @@
-#let template(color: "#FF0000", title: [], doc) = {
+#let template(color: "#FF0000", author: "J. F.", title: "", doc) = {
   set text(
     lang: "de",
     size: 10pt,
@@ -12,10 +12,14 @@
   line(start: (0%, 0%), end: (85em, 0%), stroke: (thickness: 2pt))
   align(horizon + left)[
     #text(size: 24pt, [Betrachtungen der Tafel \ und andere Überlegungen]) \ \
-    #text(size: 16pt, [J. F.])
+    #text(size: 16pt, title)
   ]
-  align(bottom + left)[#datetime.today().display("[year].[month].[day]")]
+  align(bottom + right)[
+    #author \
+    #datetime.today().display("[year].[month].[day]")
+  ]
 
+  set document(title: title, author: author, date: datetime(day: 2, month: 1, year: 2009))
   set page(fill: none, margin: auto)
   set grid(columns: (1fr, 1fr), gutter: 0.65em)
   set highlight(radius: 0.3em, extent: 0.2em)
