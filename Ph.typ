@@ -107,7 +107,7 @@
 
   $
     W_"homogen" = m dot g dot (h_2 - h_1) \
-    W_"radial" = G dot m dot (1/r_1 - 1/r_2)
+    W_"radial" = G dot m_1 dot m_2 dot (1/r_1 - 1/r_2)
   $
 ]
 
