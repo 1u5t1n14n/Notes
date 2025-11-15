@@ -6,13 +6,13 @@
 #set heading(numbering: "I.")
 #set page(numbering: "I")
 
-= Plinius <plinius>
+= _Domini et Servi_: Die Sklaven in Rom
 == Aufstand im Bad
 
 #grid(
   [Cornelius Plinius Acilio suo salutem.],
-  [Cornelius Plinius #footnote[siehe @plinius] grüßt seinen Acilius
-  #footnote[Der Addressat ist anderweitig nicht belegt.].],
+  [Cornelius Plinius grüßt seinen Acilius #footnote[Der Addressat ist
+  anderweitig nicht belegt.].],
 
   [Rem atrocem nec tantum epistula dignam Larcius Macedo, vir praetorius, a
   servis suis passus est, superbus alioqui dominus et saevus, et qui servisse
@@ -73,14 +73,13 @@
   [],
 )
 
-= Seneca <seneca>
 == _Epistulae morales_
 
 #let immo = "Aber auch"
 
 #grid(
   [Seneca Lucilio suo salutem.],
-  [Seneca #footnote[siehe @seneca] grüßt seinen Lucilius.],
+  [Seneca grüßt seinen Lucilius.],
 
   [Libenter ex his, qui a te #predicate[veniunt], #predicate[cognovi] te
   familiariter cum services tuis vivere.],
@@ -137,20 +136,101 @@
   [Wir haben nicht jene als Feinde, sondern machen sie zu solchen.],
 )
 
+= Frauen in Rom
+== Sallust über Sempronia
+
+#grid(
+  [Sed in iis erat Sempronia, quae multa saepe virilis audaciae facinora
+  conmiserat.],
+  [Aber unter diesen war Sempronia, welche viele Verbrechen mit oft männlichem
+  Mut begangen atte.],
+
+  [Haec mulier genere atque forma, praeterea viro, liberis satis fortunata
+  fuit; litteris Graecis Latinis docta, psallere (et) saltare egantius quam
+  necesse est probae, multa alia, quae instrumentaluxuriae sunt.],
+  [Diese Frau war durch ihre Herkunft und Gestalt, außerdem durch ihren Mann
+  und ihre Kinder zur genüge wohlhabend; sie war gebildet in den Sprachen
+  Latein und Griechisch, sie konnte singen und tanzen, sogar eleganter als für
+  eine anständige Frau notwendig, und noch vieles andere, welches Mittel des
+  Luxus ist.],
+)
+
 = Glossar
 == Vokabeln
 
 #grid(
   columns: (1fr, 1fr, 1fr),
-  [_frangere_], [_frango_, _fregi_, _fractum_], [zerbrechen],
-  [_continere_], [_contineo_, _continui_, _contentum_], [festhalten, verbinden, enthalten],
-  [_saevitia_], [_saevitiae_ f.], [Grausamkeit, Strenge],
-  [_novitas_], [_novitatis_ f.], [Neuheit, das Ungewöhnliche],
-  [_evadere_], [_evado_, _evasi_, _evasum_], [herausgehen, entkommen],
-  [_confugere_], [_confugio_, _confugi_, -], [(sich) flüchten],
-  [_murena_], [_murenae_ f.], [Muräne],
-  [_mittere_], [_mitto_, _misi_, _missum_], [werfen, freilassen, schicken],
-  [_movere_], [_moveo_, _movi_, _motum_], [bewegen],
-  [_vis_], [_vis_ f.], [Macht],
-  [_autem_], [], [aber, hingegen; aber auch],
+  [atrox], [grässlich, schrecklich], [_atrocis_],
+  [epistula], [Brief, Zuschrift], [_epistulae_ f.],
+  [dignus], [würdig], [-_a_, -_um_],
+  [superbus], [hochmütig, stolz], [-_a_, -_um_],
+  [parum], [zu wenig], [],
+  [immo], [aber ja, gewiss doch, im Gegenteil, keineswegs, ja sogar], [],
+  [nimium], [allzu (sehr)], [],
+  [meminisse], [sich erinnern, daran denken], [_memini_],
+  [lavare], [waschen, baden], [_lavavo_, _lavavi_, _lavatum_],
+  [cicrumsistere], [bedrängen, umringen], [_circumsisto_, _circumstiti_, -],
+  [faucis], [Kehle], [_faucium_ f.],
+  [invadere], [angreifen, eindringen], [_invado_, _invasi_, _invasum_],
+  [verberare], [schlagen, prügeln], [_verbero_, _verberavi_, _verberatum_],
+  [pectus], [Brust, Herz], [_pectoris_ n.],
+  [foedus], [hässlich, abscheulich], [-_a_, -_um_],
+  [venter], [Bauch], [_ventris_ m.],
+  [verenda], [Schamteile], [_verendorum_ n. Pl.],
+  [contundere], [zerschlagen, zerquetschen], [_contundo_, _contundi_, _contusum_],
+  [exanimis], [leblos], [-_e_],
+  [abicere], [hinabwerfen, abwerfen, fallen lassen], [_abicio_, _abieci_, _abiectum_],
+  [fervens], [glühend, brennend], [_ferventis_],
+  [an], [oder (etwa), ob], [],
+  [experiri], [erproben, versuchen], [_experior_, _expertus sum_],
+  [aegre], [mit Mühe, kaum], [],
+  [agitare], [heftig bewegen, wiederholt bewegen, hin und her treiben], [_agito_, _agitavi_, _agitatum_],
+  [comprehendere], [zusammenfassen, verbinden], [_comprehendo_, _comprehendi_, _comprehensum_],
+  [decedere], [weggehen, sich entfernen], [_decedo_, _decessi_, _decessum_],
+  [fides], [Glaube, Vertrauen], [_fidei_ f.],
+  [sentire], [fühlen, empfinden, wahrnehmen], [_sentio_, _sensi_, _sensum_],
+  [solacium], [Trost], [_solacii_ n.],
+  [ultio], [Rache, Strafe], [_ultionis_ f.],
+  [ululatus], [Geheul, Geschrei], [_ululatus_ m.],
+  [vindicare], [beanspruchen, als Eigentum fordern], [_vindico_, _vindicavi_, _vindicatum_],
+  [frangere], [zerbechen], [_frango_, _fregi_, _fractum_],
+  [continere], [festhalten, verbinden, enthalten], [_contineo_, _continui_, _contentum_],
+  [saevitia], [Grausamkeit, Strenge], [_savitiae_ f.],
+  [novitas], [Neuheit, das Ungewöhnliche], [_novitatis_ f.],
+  [evadere], [herausgehen, entkommen], [_evado_, _evasi_, _evasum_],
+  [confugere], [(sich) flüchten], [_confugio_, _confugi_, -],
+  [murena], [Muräne], [_murenae_ f.],
+  [mittere], [werfen, schicken, freilassen], [_mitto_, _misi_, _missum_],
+  [movere], [bewegen], [_moveo_, _movi_, _motum_],
+  [vis], [Macht], [_vis_ f.],
+  [autem], [aber, hingegen; aber auch], [],
+  [fieri], [(zu etwas) werden, entstehen], [_fio_, _factus sum_],
+  [facilitas], [Gutmütigkeit, Leichtigkeit], [_facilitatis_ f.],
+  [manumittere], [freilassen], [_manumitto_, _manumisi_, _manumissum_],
+  [permittere], [erlauben, anvertrauen], [_permitto_, _permisi_, _permissum_],
+  [testamentum], [Testament, letzter Wille], [_testamenti_ n.],
+  [dumtaxat], [natürlich, lediglich], [],
+  [acquiescere], [zur Ruhe kommen, Trost finden], [_acquiesco_, _acquievi_, _acquiectum_],
+  [debilitare], [lähmen, entmutigen], [_debilito_, _debilitavi_, _debilitatum_],
+  [verum], [aber, sondern, doch], [],
+  [voluptas], [Lust, Spaß], [_voluptatis_ f.],
+  [libens], [gern], [_libentis, libenter_],
+  [tu], [du], [_tui_, _tibi_, _te_, _te_],
+  [humilis], [niedrig, unbedeutend], [_humile, humiliter_],
+  [fortuna], [Schicksal, Glück, Erfolg], [_fortunae_ f.],
+  [conservus], [Mitsklave], [_conservi_ m.],
+  [licere], [erlaubt sein], [_liceo_, _licui_, _licitum_],
+  [qui], [welches], [_quae_, _quod<br>cuius_],
+  [prudentia], [Kenntnis, Erfahrung, Klugheit], [_prudentiae_ f.],
+  [decere], [\+ Akk.: zu (etwas) passen, angemessen sein], [_deceo_, _decui_],
+  [luxuria], [Luxus], [_luxuriae_ f.],
+  [virilis], [dem Manne eigen, männlich], [-_is_, -_e_],
+  [facinus], [Handlung, Verbrechen], [_facinoris_],
+  [necesse est], [es ist nötig],
+  [elegans], [elegant, fein], [_elegantis_],
+  [saltare], [tanzen], [_salto_, _saltavi_, _saltatum_],
+  [psallere], [singen, spielen], [_psallo_, _psalli_, -],
+  [comittere], [begene, beginnen], [_comitto_, _comisi_, _comissum_],
+  [fortunatus], [begütert, reich], [-_a_, -_um_],
+  [sed], [aber, sondern], [],
 )
