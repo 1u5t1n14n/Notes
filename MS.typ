@@ -126,7 +126,7 @@
   + Eine Vorschrift $f$, die jedem Element von $X$ genau ein Element von $Y$
     zuordnet, heißt *Abbildung* von $X$ nach $Y$.
 
-    $forall x in D(f) subset.eq X$ gibt es genau ein $y = f(x) in Y$.
+    $forall x in D_f subset.eq X$ gibt es genau ein $y = f(x) in Y$.
 
     $
       f : X &-> Y \
@@ -136,12 +136,12 @@
     Handelt es sich bei $X$ und $Y$ um reine Zahlenmengen (z.B. $RR$), so
     bezeichnen wir die Abbildung $f$ auch als *Funktion*.
 
-  + $D(f)$ ist die *Definitionsmenge* #footnote(<funkyColdMedina>) von der
+  + $D_f$ ist die *Definitionsmenge* #footnote(<funkyColdMedina>) von der
     Vorschrift $f$.
 
-  + $B(f)$ ist die *Bildungsmenge* #footnote[siehe @funktionsBegriffe für
-    Funktionen] <funkyColdMedina> von $f$, wobei $B(f) = {y in Y | y = f(x)
-    "mit" x in D(f)}$
+  + $B_f$ ist die *Bildungsmenge* #footnote[siehe @funktionsBegriffe für
+    Funktionen] <funkyColdMedina> von $f$, wobei $B_f = {y in Y | y = f(x)
+    "mit" x in D_f}$
 
   + $f(x) in Y$ heißt *Bildpunkt* bzw. *Funktionswert* von $x$ unter $f$.
 
@@ -156,7 +156,7 @@
       *Das Urbild* ist die Menge aller *Urbilder*.
     ]
 
-    $X = D(f)$ heißt *Definitionsbereich* von $f$ und $Y = B(f)$ heißt
+    $X = D_f$ heißt *Definitionsbereich* von $f$ und $Y = B_f$ heißt
     *Wertebereich* von $f$.
 
     Die Menge $i m(f) := {f(x) | x in X} = {y in Y | exists x in X}$ mit $f(x)
@@ -179,7 +179,7 @@
     1/2}$ oder $f^(-1)(Y_1) = limits(union.big)_(k in ZZ) [- pi/6 + k pi; pi/6
     + k pi]$.
 
-    Der Definitionsbereich $D(f)$ = $ZZ$ und der Wertebereich $B(f) = [-1; 1]$.
+    Der Definitionsbereich $D_f = ZZ$ und der Wertebereich $B_f = [-1; 1]$.
   ]
 ]
 
@@ -597,7 +597,7 @@
 
 #definition[
   === Nullstellen <nullstellen>
-  Für eine Funktion $f$ ist $x_N in D(f)$ eine Nullstelle von $f$, wenn $f(x_N)
+  Für eine Funktion $f$ ist $x_N in D_f$ eine Nullstelle von $f$, wenn $f(x_N)
   = 0$.
 ]
 
@@ -646,12 +646,12 @@
   + Hat $x$ in der Funktionsgleichung nur gerade Exponenten, so ist die
     Funktion *gerade* und *achsensymmetrisch*, denn es gilt
 
-    $ forall x in D(f) : f(x) = f(-x) $
+    $ forall x in D_f : f(x) = f(-x) $
 
   + Hat $x$ in der Funktionsgleichung nur ungerade Exponenten, so ist die
     Funktion ungerade und punktsymmetrisch, denn es gilt
 
-    $ forall x in D(f) : f(x) = -f(-x) $
+    $ forall x in D_f : f(x) = -f(-x) $
 
   #set enum(numbering: "1.")
 
@@ -677,7 +677,7 @@
   === Monotonie
   Eine Funktion $f$ ist streng monoton fallend, genau dann wenn
 
-  $ forall x_1, x_2 in D(f) : x_1 < x_2 <=> f(x_1) > f(x_2) $
+  $ forall x_1, x_2 in D_f : x_1 < x_2 <=> f(x_1) > f(x_2) $
 ]
 
 #definition[
@@ -685,23 +685,6 @@
   Sei $f$ eine Funktion. Das *Globalverhalten* von $f$ beschreibt das Verhalten
   der Funktionswerte, wenn die Argumente unendlich groß oder unendlich klein
   werden.
-]
-
-#definition[
-  === Grenzwerte
-  Betrachten wir $f(x) = (1/2)^x$.
-
-  $Gamma_f$, der Graph #footnote[siehe @graph] <graphFooter> von $f$, verläuft
-  für $x --> oo$ gegen $y = 1$ und für $x -> -oo$ gegen $y = oo$. Um das kurz
-  und knapp auszudrücken, wird die _Limes_-Schreibweise verwendet.
-
-  $ lim_(x -> oo) f(x) = 1 $
-
-  Der _Limes_ von $f(x)$ für $x$ gegen unendlich ist $1$. D.h., dass sich die
-  Funktionswerte für sehr große $x$-Werte beliebig nah an $y = 1$ annähern,
-  diesen aber nicht unbedingt erreichen.
-
-  $ lim_(x -> -oo) f(x) = oo $
 ]
 
 #theorem[
@@ -737,6 +720,127 @@
   === Verschiebung einer Funktion in $x$-Richtung
   Um eine beliebige Funktion $f(x)$ um $d$ Einheiten in $x$-Richtung zu
   verschieben, sei die verschobene Funktion $f^*(x) = f(x - d)$.
+]
+
+== Grenzwerte
+
+#definition[
+  === Syntax und Semantik
+  Betrachten wir $f(x) = (1/2)^x$.
+
+  $Gamma_f$, der Graph #footnote[siehe @graph] <graphFooter> von $f$, verläuft
+  für $x --> oo$ gegen $y = 1$ und für $x -> -oo$ gegen $y = oo$. Um das kurz
+  und knapp auszudrücken, wird die _Limes_-Schreibweise #footnote[siehe
+  römisches Germanien] verwendet.
+
+  $ lim_(x -> oo) f(x) = 1 $
+
+  Der _Limes_ von $f(x)$ für $x$ gegen unendlich ist $1$. D.h., dass sich die
+  Funktionswerte für sehr große $x$-Werte beliebig nah an $y = 1$ annähern,
+  diesen aber nicht unbedingt erreichen.
+
+  $ lim_(x -> -oo) f(x) = oo $
+]
+
+#theorem[
+  #set enum(numbering: "(1)")
+  === Grenzwerte für Funktionen
+  Sind $f, g : D -> RR$ Funktionen und existieren #footnote[konvergieren nicht
+  gegen Unendlich, sondern gegen eine Zahl] ihre Grenzwerte $limits(lim)_(x
+  -> oo) f(x) = b$ und $limits(lim)_(x -> oo) g(x) = c$, dann gilt Folgendes.
+
+  + $limits(lim)_(x -> oo) (f(x) + g(x) = b + c$
+
+  + $limits(lim)_(x -> oo) (f(x) dot g(x)) = b dot c$, falls $b, g != 0$.
+
+  + $limits(lim)_(x -> oo) (f(x)/g(x)) = b/c$
+
+  + $limits(lim)_(x -> oo) (a dot f(x)) = a dot b$
+
+  #set enum(numbering: "1.")
+]
+
+#remark[
+  === Lokales Grenzvertverhalten
+  Für $limits(lim)_(x -> x_0) f(x)$ mit $x_0 in D$ existieren ein linksseitiger
+  und ein rechtsseitiger Grenzwert.
+
+  Der linksseitige Grenzwert nähert sich von *links nach rechts* an und hat
+  verschiedene Darstellungsmöglichkeiten.
+
+  $
+    lim_(x -> x_0^-) f(x) &= lim_(x -> x_0) f(x) "mit" x < x_0 \
+    &= lim_(x -> x_0 \ x < x_0) f(x) \
+    &= lim_(x arrow.tr x_0) f(x)
+  $
+
+  Der rechtsseitige Grenzwert nähert sich von *rechts nach links* an und hat
+  verschiedene Darstellungsmöglichkeiten.
+
+  $
+    lim_(x -> x_0^+) f(x) &= lim_(x -> x_0) f(x) "mit" x > x_0 \
+    &= lim_(x -> x_0 \ x > x_0) f(x) \
+    &= lim_(x arrow.br x_0) f(x)
+  $
+
+  Zur Berechnung nutzt man eine konvergente Folge #footnote[siehe @folgen].
+
+  $
+    (x_n) : x_n = x_0 + 1/n "für" x > x_0 \
+    (x_n) : x_n = x_0 - 1/n "für" x < x_0 \
+  $
+
+  Danach ersetzt man in der Grenzwertberechnung jedes Argument $x$ durch die
+  Folge.
+
+  $ lim_(x -> x_0^+) f(x) = lim_(n -> oo) f(x) $
+
+  #example[
+    === Beispiel <grenzSpiel>
+    Betrachten wir $f(x) = x^2$ und $x_0 = 2$.
+
+    Zuerst berechnen wir den linksseitigen Grenzwert. // Weil's Spaß
+                                                      // macht.
+
+    $
+      lim_(x -> 2^-) f(x) &= lim_(x -> 2^-) x^2 = lim_(n -> oo) (2 - 1/n)^2 \
+      &= lim_(n -> oo) (4 - 4/n - 1/(n^2)) \
+      &= 4
+    $
+
+    Nun kann man ihn auch rechtsseitig bestimmen.
+
+    $
+      lim_(x -> 2^+) f(x) &= lim_(x -> 2^+) x^2 = lim_(n -> oo) (2 + 1/n)^2 \
+      &= lim_(n -> oo) (4 + 4/n + 1/(n^2)) \
+      &= 4
+    $
+  ]
+]
+
+#theorem[
+  === Satz für die Stetigkeit
+  Eine Funktion $f : D_f -> RR$ ist in $x_0 in D_f$ genau dann stetig, wenn
+  links- und rechtsseitiger Grenzwert existieren und mit dem Funktionswert von
+  $x_0$ übereinstimmen.
+
+  $ lim_(x -> x_0^-) f(x) = f(x_0) = lim_(x -> x_0^+) f(x) $
+
+  #example[
+    Nehmen wir das Beispiel aus @grenzSpiel.
+
+    $ lim_(x -> 2^-) f(x) = f(2) = lim_(x -> 2^+) = 2 $
+
+    Somit ist $f$ stetig.
+  ]
+]
+
+#definition[
+  === Unstetigkeitsstelle
+  Ist eine Funktion $f$ aus der Stelle $x_0 in D_F$ nicht stetig, so heißt
+  $x_0$ Unstetigkeitsstelle.
+
+  #tldr[Ist $x_0$ nicht stetig, so ist $x_0$ nicht stetig.]
 ]
 
 == Lineare Funktionen <linear>
@@ -1013,7 +1117,7 @@
   ]
 ]
 
-= Folgen
+= Folgen <folgen>
 == Der Folgenbegriff
 
 #definition[
