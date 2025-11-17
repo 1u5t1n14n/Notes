@@ -573,7 +573,8 @@
     bis $a_n$ heißen *Koeffizienten*.
 
   + Sind $p$ und $q$ ganzrationale Funktionen, so nennt man die Funktion $f$
-    mit $f(x) = p(x)/q(x)$ eine *gebrochen rationale Funktion*.
+    mit $f(x) = p(x)/q(x)$ eine *gebrochen-rationale Funktion* #footnote[siehe
+    @gebrochenRacional].
 
     Die Funktion $f$ ist an den Nullstellen #footnote[siehe @nullstellen] ihres
     Nenners $q$ nicht definiert. Diese Nullstellen heißen *Definitionslücken* von
@@ -997,7 +998,7 @@
   ]
 ]
 
-== Allgemeine ganzrationale Funktionen
+== Ganzrationale Funktionen <ganzRational>
 
 #theorem[
   === Fundamentalsatz der Algebra für reelle Zahlen
@@ -1117,6 +1118,52 @@
   ]
 ]
 
+== Gebrochen-rationale Funktionen <gebrochenRacional>
+
+#definition[
+  === Zusammensetzung
+  Es seien $z : z(x) = limits(sum)_(i = 0)^k a_i x^i$ und $n : n(x) =
+  limits(sum)_(j = 0)^l b_j x^j$ ganzrationale Funktionen #footnote[siehe
+  @ganzRational] <ganzRacional> mit reellen Koeffizienten $a_i$ bzw. $b_j$
+  und $a_k != 0$ bzw. $b_l != 0$. Die Funktion $f$ heißt *rationale Funktion*
+  $f : f(x) = (z(x))/(n(x))$ mit $n != 0$. //?
+]
+
+#remark[
+  #set enum(numbering: "(1)")
+  //TODO: Hier weitermachen!
+  === Begriffsnutzungen
+  + $z$ wird *Zählerfunktion* mit dem *Zählergrad* $k$ und $n$ wird
+    *Nennerfunktion* mit dem *Nennergrad* $l$ genannt.
+
+  + Ist $l = 0$, so ist die rationale Funktion eine ganzrationale Funktion
+    #footnote(<ganzRacional>).
+
+    $ f(x) = (2 x^3 - 4 x^2 + 1)/(2 x^0) = x^3 - 2 x^2 + 1/2 $
+
+  + Der Definitionsbereich #footnote[siehe @funktionsBegriffe] einer rationalen
+    Funktion ist $D_f = RR without { x_N | n(x_N) = 0 }$.
+
+  + Ist $l != 0$, so ist $f$ eine *gebrochen-rationale* Funktion.
+
+    $ f(x) = (x^2 - 1)/(x^3 - x) "mit" D_f = RR without { -1; 0; 1} $
+
+  + Sind $l != 0$ und $k < l$, so ist $f$ eine *echt gebrochen-rationale*
+    Funktion.
+
+    $ f(x) = (x + 11)/(x^3 + 8) "mit" D_f without {-2} $
+
+  + Sind $l != 0$ und $k > l$, so ist $f$ eine *unecht gebrochen-rationale*
+    Funktion. Der Funktionsterm jeder unecht gebrochen-rationalen Funktion kann
+    unter Verwendung der Linearfaktorzerlegung als Summe eines ganzrationalen und
+    echt gebrochen-rationalen Funktionsterms geschrieben werden.
+
+    $ f(x) = (2 x^3 - x^2 + 2)/(x^2 - x) = 2x + 2/(x^2 - x) "mit" D_f = RR
+    without { 0; 1} $
+
+  #set enum(numbering: "1.")
+]
+
 = Folgen <folgen>
 == Der Folgenbegriff
 
@@ -1178,9 +1225,9 @@
 
   $ a_(n +1) = q dot a_n $
 
-#theorem[
+  #theorem[
     Für jede geometrische Folge $(a_n)$ gilt $a_n = a_1 dot q^(n - 1)$, weil $a_1
-    = a_1 dot q^0$, weil $q^0$ für $q in NN without {0}$ immer $1$ ist.
+    = a_1 dot q^0$, weil $q^0$ für $q in NN without {0}$ immer $1$ wäre.
 
     $ a_1 &= a_1 dot q^0 \
     a_2 &= a_1 dot q^1 \
