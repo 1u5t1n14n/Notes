@@ -573,7 +573,7 @@
     bis $a_n$ heißen *Koeffizienten*.
 
   + Sind $p$ und $q$ ganzrationale Funktionen, so nennt man die Funktion $f$
-    mit $f(x) = p(x)/q(x)$ eine *gebrochen-rationale Funktion* #footnote[siehe
+    mit $f(x) = p(x)/q(x)$ eine *rationale Funktion* #footnote[siehe
     @gebrochenRacional].
 
     Die Funktion $f$ ist an den Nullstellen #footnote[siehe @nullstellen] ihres
@@ -842,6 +842,34 @@
   $x_0$ Unstetigkeitsstelle.
 
   #tldr[Ist $x_0$ nicht stetig, so ist $x_0$ nicht stetig.]
+
+  #remark[
+    Es wird zwischen Unstetigkeitsstellen *erster* und *zweiter Art*
+    unterschieden.
+
+    + $x_0$ ist eine Unstetigkeitsstelle *erster Art*, falls links- und
+      rechtsseitiger Grenzwert existieren und endlich sind, aber nicht mit dem
+      Funktionswert an der Stelle $x_0$ übereinstimmen.
+
+      Falls links- und rechtsseitiger Grenzwert übereinstimmen wird $x_0$ als
+      *hebbare Unstetigkeitsstelle* bezeichnet, da die Stelle durch Änderung von
+      $f(x_0)$ stetig werden kann.
+
+      $ lim_(x -> x_0^-) f(x) = lim_(x -> x_0^+) f(x) != f(x_0) $
+
+      Falls links- und rechtsseitiger Grenzwert nicht übereinstimmen wird $x_0$
+      als *Sprungstelle* (mit Sprung $sigma$) bezeichnet, da die Funktion
+      sinnbildlich springt.
+
+      $
+        lim_(x -> x_0^-) f(x) != lim_(x -> x_0^+) f(x) != f(x_0) wide
+        sigma = | lim_(x -> x_0^-) f(x) - lim_(x -> x_0^+) f(x) |
+      $
+
+    + $x_0$ ist eine Unstetigkeitsstelle *zweiter Art*, falls mindestens der
+      links- oder der rechtsseitige Grenzwert nur *uneigentlich* oder *gar
+      nicht* existieren.
+  ]
 ]
 
 == Lineare Funktionen <linear>
@@ -1006,7 +1034,7 @@
   höchstens $n$ Nullstellen $x_1, ..., x_n in RR$.
 
   #example[
-    === Beweis
+    === Beweis <induktionBeispiel>
     *Induktionsanfang* #footnote[siehe @induktion] \
     Ist $n = 1$, dann ist $f_1(x) = a_1 x + a_0$. $f_1$ hat genau eine
     Nullstelle.
@@ -1118,7 +1146,7 @@
   ]
 ]
 
-== Gebrochen-rationale Funktionen <gebrochenRacional>
+== Rationale Funktionen <gebrochenRacional>
 
 #definition[
   === Zusammensetzung
@@ -1136,27 +1164,29 @@
   + $z$ wird *Zählerfunktion* mit dem *Zählergrad* $k$ und $n$ wird
     *Nennerfunktion* mit dem *Nennergrad* $l$ genannt.
 
-  + Ist $l = 0$, so ist die rationale Funktion eine ganzrationale Funktion
-    #footnote(<ganzRacional>).
+  + Ist $l = 0$ oder lässt sich $f(x)$ zu einem ganzrationalen Term mit
+    *Definitionslücke* umformen, so ist die rationale Funktion eine
+    ganzrationale Funktion #footnote(<ganzRacional>).
 
     $ f(x) = (2 x^3 - 4 x^2 + 1)/(2 x^0) = x^3 - 2 x^2 + 1/2 $
 
   + Der Definitionsbereich #footnote[siehe @funktionsBegriffe] einer rationalen
     Funktion ist $D_f = RR without { x_N | n(x_N) = 0 }$.
 
-  + Ist $l != 0$, so ist $f$ eine *gebrochen-rationale* Funktion.
+  + Ist $l != 0$, so ist $f$ eine *rationale* Funktion.
 
     $ f(x) = (x^2 - 1)/(x^3 - x) "mit" D_f = RR without { -1; 0; 1} $
 
-  + Sind $l != 0$ und $k < l$, so ist $f$ eine *echt gebrochen-rationale*
+  + Sind $l != 0$ und $k < l$, so ist $f$ eine *echt gebrochene rationale*
     Funktion.
 
     $ f(x) = (x + 11)/(x^3 + 8) "mit" D_f without {-2} $
 
-  + Sind $l != 0$ und $k > l$, so ist $f$ eine *unecht gebrochen-rationale*
-    Funktion. Der Funktionsterm jeder unecht gebrochen-rationalen Funktion kann
-    unter Verwendung der Linearfaktorzerlegung als Summe eines ganzrationalen und
-    echt gebrochen-rationalen Funktionsterms geschrieben werden.
+  + Sind $l != 0$ und $k > l$, so ist $f$ eine *unecht gebrochene rationale*
+    Funktion. Der Funktionsterm jeder unecht gebrochenen rationalen Funktion
+    kann unter Verwendung der Linearfaktorzerlegung als Summe eines
+    ganzrationalen und echt gebrochenen rationalen Funktionsterms geschrieben
+    werden.
 
     $ f(x) = (2 x^3 - x^2 + 2)/(x^2 - x) = 2x + 2/(x^2 - x) "mit" D_f = RR
     without { 0; 1} $
@@ -1237,7 +1267,7 @@
 ]
 
 #remark[
-  === Konstante Folgen
+  === Konstante Folgen <konstanteFolgen>
   $q$ #footnote[siehe @geometrischeFolgen] darf nicht $1$ oder $0$ sein und
   $a_1$ nicht $0$, denn folglich wäre $forall n in NN : a_(n + 1) = a_n$.
 
@@ -1406,8 +1436,7 @@
     $
 
     Man kann beobachten, dass sich die Folge mit wachsendem Argument an $-4$
-    annnähert. Darum vermuten wir zunächst, dass *eine* untere Schranke $-4$
-    ist, $forall n in NN : -4 <= a_n$.
+    annnähert. Darum vermuten wir zunächst *eine* untere Schranke bei $-4$
 
     $
       -4 &<= a_n \
@@ -1426,7 +1455,7 @@
   unendlich viele.
 
   #example[
-    === Beweis #footnote[siehe @vorBehauptung]
+    === Beweis
     Sei $u <= a_n$ für alle $n in NN$. Wähle $x in RR$ mit $x < u$.
 
     D.h. $x < u <= a_n$, folgt $x <= a_n$ und somit existieren unendlich viele
@@ -1498,10 +1527,71 @@
   ]
 ]
 
-#remark[
+#theorem[
   === Supremumsaxiom
   Im Bereich der *reellen* Zahlen besitzt jede nach oben beschränkte Folge ein
   Supremum.
+]
+
+== Grenzwerte bei Folgen
+
+#theorem[
+  === Grenzwerte konstanter Folgen
+  Sei $(a_n) : a_n = c$ mit $c in RR$ eine konstante Folge #footnote[siehe
+  @konstanteFolgen]. Dann gilt
+
+  $ lim_(n -> oo) a_n = lim_(n -> oo) c = c $
+]
+
+#remark[
+  === Geometrische Nullfolgen
+  Jede geometrische Folge #footnote[siehe @geometrischeFolgen] $(a_n) : a_n =
+  a_1 dot q^(n - 1)$ ist für alle $q$ mit $|q| < 1$ eine *Nullfolge*.
+
+  #example[
+    === Beweis
+    Seien $epsilon > 0$, $n in NN$ und $|q| < 1$.
+
+    $
+      | a_n - 0 | = | a_n | = | a_1 dot q^(n - 1) | &< epsilon \
+      | a_1 | dot | q^(n - 1) | = | a_1 | dot | q^n/q | a_1/q | dot | q^n | &<
+      epsilon \
+      | a_1/q | dot | q |^n &< epsilon &&| div | a_1/q | \
+      | q |^n &< epsilon dot | q/a_1 | wide &&| log_(|q|)(...) \
+      n &> log_(|q|)(epsilon | q/a_1 |)
+    $
+
+    Das Relationszeichen wurde umgedreht, weil $0 < |q| < 1$ und somit die
+    Logarithmusgesetze #footnote[$x_1 < x_2 <=> log_a (x_1) > log_a (x_2)$]
+    dies verlangen.
+
+    Aufgrund der Unendlichkeit der natürlichen Zahlen finden wir immer ein $n
+    in NN$, für das diese Bedingung stimmt.
+  ]
+]
+
+#definition[
+  === Bestimmte Divergenz
+  $(a_n)$ ist *bestimmt divergent*, falls $limits(lim)_(n -> oo) a_n =
+  plus.minus oo$.
+
+  $ lim_(n -> oo) a_n = oo := forall k in RR^+ exists n in NN : a_n > k $
+
+  Die Folge $(a_n)$ ist bestimmt divergent genau dann, wenn $limits(lim)_(n ->
+  oo) 1/a_n = 0$, $(a_n)$ also eine *Nullfolge* ist.
+]
+
+// Konvergenzkriterien
+
+#theorem[
+  === Beschränkungskonvergenzsatz
+  Sei $(a_n)$ eine Folge.
+
+  Wenn $(a_n)$ nicht beschränkt ist, so ist $(a_n)$ nicht konvergent.
+
+  #tldr[
+    Wenn $(a_n)$ konvergent ist, so ist $(a_n)$ beschränkt.
+  ]
 ]
 
 = Beweise
@@ -1549,7 +1639,7 @@
 ]
 
 #example[
-  === Aufbau <vorBehauptung>
+  === Aufbau
   _Wenn $A$, dann $B$._
 
   $A$ ist die *Vorraussetzung*, unter der $B$ gilt.
@@ -1561,8 +1651,8 @@
 #definition[
   === Beweis durch vollständige Induktion <induktion>
   Bei einer vollständigen Induktion wird zunächst ein *Induktionsanfang*
-  definiert. Hier wird die Wahrheit der Aussage anhand eines Beispiels
-  demonstriert.
+  definiert. #footnote[siehe @induktionBeispiel] Hier wird die Wahrheit der
+  Aussage anhand eines Beispiels demonstriert.
 
   Danach folgt die *Induktionsvorraussetzung*, in der die Aussage als wahr
   vorrausgesetzt wird.
