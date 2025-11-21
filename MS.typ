@@ -1159,7 +1159,6 @@
 
 #remark[
   #set enum(numbering: "(1)")
-  //TODO: Hier weitermachen!
   === Begriffsnutzungen
   + $z$ wird *Zählerfunktion* mit dem *Zählergrad* $k$ und $n$ wird
     *Nennerfunktion* mit dem *Nennergrad* $l$ genannt.
@@ -1173,12 +1172,17 @@
   + Der Definitionsbereich #footnote[siehe @funktionsBegriffe] einer rationalen
     Funktion ist $D_f = RR without { x_N | n(x_N) = 0 }$.
 
+    #tldr[An der Stelle, an der die Nennerfunktion eine Nullstelle hat,
+    existiert eine Definitionslücke.]
+
   + Ist $l != 0$, so ist $f$ eine *rationale* Funktion.
 
     $ f(x) = (x^2 - 1)/(x^3 - x) "mit" D_f = RR without { -1; 0; 1} $
 
   + Sind $l != 0$ und $k < l$, so ist $f$ eine *echt gebrochene rationale*
     Funktion.
+
+    #tldr[Unter dem Bruch steht ein größerer Exponent.]
 
     $ f(x) = (x + 11)/(x^3 + 8) "mit" D_f without {-2} $
 
@@ -1188,10 +1192,33 @@
     ganzrationalen und echt gebrochenen rationalen Funktionsterms geschrieben
     werden.
 
+    #tldr[Unter dem Bruch steht ein kleinerer Exponent.]
+
     $ f(x) = (2 x^3 - x^2 + 2)/(x^2 - x) = 2x + 2/(x^2 - x) "mit" D_f = RR
     without { 0; 1} $
 
   #set enum(numbering: "1.")
+]
+
+#remark[
+  === Besonderheiten
+  Die besonderen Stellen einer rationalen Funktion hängen von den Nullstellen
+  der Zähler- und Nennerfunktion ab.
+
+  + Wenn $x_N$ *Nullstelle der Nennerfunktion* ist, aber nicht der
+    Zählerfunktion, dann ist $x_N$ eine *Polstelle*.
+
+    Falls die Vielfachheit der Nullstelle $x_N$ bei der Nennerfunktion und der
+    Zählerfunktion verschieden ist, aber $x_N$ eine *größere Vielfachheit in der
+    Nennerfunktion* hat, so ist $x_N$ auch eine Polstelle.
+
+  + Falls $x_N$ mit gleicher Vielfachheit #footnote[siehe @vielfachheit]
+    *Nullstelle der Nennerfunktion als auch der Zählerfunktion* ist, so ist
+    $x_N$ eine *hebbare Definitionslücke*.
+
+    Falls die Vielfachheit der Nullstelle $x_N$ bei der Nennerfunktion und der
+    Zählerfunktion verschieden ist, aber $x_N$ eine *größere Vielfachheit in der
+    Zählerfunktion* hat, so ist $x_N$ auch hebbare Definitionslücke.
 ]
 
 = Folgen <folgen>
@@ -1533,7 +1560,22 @@
   Supremum.
 ]
 
-== Grenzwerte bei Folgen
+== Grenzwerte
+
+#definition[
+  === Grenzwert einer Folge
+  Eine reelle Zahl $g$ heißt *Grenzwert* der Folge $(a_n)$, falls für jedes
+  $epsilon > 0$ ab einer bestimmten Indexzahl $n_0$ alle Folgenglieder in der
+  Epsilonumgebung $]g - epsilon; g + epsilon[$ liegen.
+
+  #align(center)[Oder alternativ:]
+
+  Für jedes $epsilon > 0$ gibt es ein $n_0 in NN$, so dass für alle $n > n_0$
+  gilt: $| a_n - g | > epsilon$.
+
+  $ forall epsilon > 0 exists n_0 in NN forall n > n_0 : | a_n - g | > epsilon
+  $
+]
 
 #theorem[
   === Grenzwerte konstanter Folgen
