@@ -1201,7 +1201,7 @@
 ]
 
 #remark[
-  === Besonderheiten
+  === Stellen der Funktion <polstelle>
   Die besonderen Stellen einer rationalen Funktion hängen von den Nullstellen
   der Zähler- und Nennerfunktion ab.
 
@@ -1219,6 +1219,59 @@
     Falls die Vielfachheit der Nullstelle $x_N$ bei der Nennerfunktion und der
     Zählerfunktion verschieden ist, aber $x_N$ eine *größere Vielfachheit in der
     Zählerfunktion* hat, so ist $x_N$ auch hebbare Definitionslücke.
+]
+
+#theorem[
+  === Satz über Asymptoten
+  Jede *gebrochen rationale Funktion* $f$ #footnote[nach der Definition aus
+  @gebrochenRacional] mit $f(x) = p(x)/g(x)$ mit $q(x) != 0$ hat zusätzlich
+  zu ihren senkrechten Asymptoten eine weitere Asymptote $a(x)$, sodass
+
+  $ f(x) = a(x) + r(x) $
+
+  wobei $a$ eine *ganzrationale Funktion* der Asymptote und $r$ eine *echt
+  gebrochene Funktion* des Restterms ist.
+
+  #remark[
+    === Verhalten im Unendlichen
+    $a$ bestimmt das verhalten von $f$ im Unendlichen, während $r$ das
+    Verhalten an den Polstellen #footnote[siehe @polstelle] bestimmt.
+
+    #example[
+      === Beispiele
+      *Beispiel I.*
+
+      $
+        f(x) &= (5 x)/(x^2 - x) wide x_("Polstelle") = 1 \
+        &= (x^2 dot 5/x)/(x^2 dot (1 - 1/x)) wide "Ausklammern der größten
+        Nennerpotenz"\
+        &= (5/x)/(1 - 1/x) limits(->)^(x -> plus.minus oo) 0/1 = 0  wide =>
+        a(x) = 0 \
+      $
+
+      Die Asymptote liegt also auf der $x$-Achse.
+
+      *Beispiel II.*
+
+      $
+        g(x) &= (2x + 1)/(3x - 6) wide x_("Polstelle") = 2 \
+        &= (x dot (2 + 1/x))/(x dot (3 - 6/x)) wide "Ausklammern der größten
+        Nennerpotenz" \
+        &= (2 + 1/x)/(3 - 6/x) limits(->)^(x -> plus.minus oo) 2/3 wide => a(x)
+        = 2/3 \
+      $
+
+      *Beispiel III.*
+
+      $
+        h(x) &= (x^2 - x)/(2x - 1) wide x_("Polstelle") = 1/2 \
+        &= (x dot (x - 1))/(x (2 - 1/x)) wide "Ausklammern der größten
+        Nennerpotenz" \
+        &= (x - 1)/(2 - 1/x) limits(->)^(x -> plus.minus oo) plus.minus oo wide
+        => a(x) = (x - 1)/(2) \
+      $
+    ]
+  ]
 ]
 
 = Folgen <folgen>
@@ -1575,6 +1628,12 @@
 
   $ forall epsilon > 0 exists n_0 in NN forall n > n_0 : | a_n - g | > epsilon
   $
+]
+
+#theorem[
+  === Konvergenzprinzip
+  Falls eine Folge $(a_n)$ konvergent ist, s besitzt sie *genau einen*
+  Grenzwert.
 ]
 
 #theorem[
