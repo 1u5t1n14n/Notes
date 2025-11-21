@@ -153,6 +153,27 @@
   Latein und Griechisch, sie konnte singen und tanzen, sogar eleganter als für
   eine anständige Frau notwendig, und noch vieles andere, welches Mittel des
   Luxus ist.],
+
+  [Sed ei cariora semper omnia quam decus atque pudicitia fuit; pecuniae an
+  famae minus parceret, haud facile discerneres; lubido sic adcensa, ut saepius
+  peteret viros quam peteretur.],
+  [Aber alles war ihr immer wichtiger als Anstand und Keuschheit; ob sie mit
+  ihrem Geld oder ihrem Ruf weniger schonend umging, könnte man nicht leicht
+  entscheiden; ihr Verlangen war so erregt, dass sie öfter Männer aufsuchte als
+  sie aufgesucht wurde.],
+
+  [Sed ea saepe antehac fidem prodiderat, creditum abiuraverat, caedis conscia
+  fuerat: luxuria atque inopia praeceps abierat.],
+  [Aber sie hatte früher oft ihr Wort gebrochen, hatte Darlehen abgeleugnet und
+  war Mitwissende bei einem Mord gewesen: Sie war durch Verschwendungssucht und
+  Mittellosigkeit tief gesunken.],
+
+  [Verum ingenium eius haud absurdum: Posse #footnote[historischer Infinitiv]
+  versus facere, iocum movere, sermone uti vel modesto vel molli vel procaci;
+  prorsus multae facetiae multusque lepos inerat.],
+  [Aber ihre Veranlagung war nicht schlecht: Sie konnte Verse dichten, witzige
+  Gespräche einleiten, sowohl zurückhaltende als auch freundliche oder freche
+  Gespräche führen, kur: Ihr wohnte viel Witz und Charme inne.],
 )
 
 = Glossar
