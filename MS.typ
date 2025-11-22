@@ -335,6 +335,8 @@
       $- y/(y - 1)$ ist für $y = 1$ nicht definiert und somit ist $f$ nicht
       surjektiv, da ein $y in Y$ existiert für das es kein $x in X$ gibt.
 
+      $ endOfProof $
+
     + $f$ ist kann folglich nicht *bijektiv* sein, da es dafür surjektiv und
       injektiv sein müsste. Es wäre bijektiv für $f : RR without {-1} -> RR
       without {1}$.
@@ -365,6 +367,8 @@
     Dann gilt $x_1 = g(f(x_1)) = g(f(x_2)) = x_2$ und somit $x_1 = x_2$. \
     Folglich ist $f$ injektiv.
 
+    $ endOfProof $
+
   *Surjektivität*
   + "$==>$" \ \
     Sei $f$ surjektiv. \
@@ -378,6 +382,8 @@
     Dann gilt $f(h(y)) = y$ für alle $y in Y$. \
     Also ist $h(y) in X$ ein Urbild von $y$ unter $f$. \
     Folglich ist $f$ surjektiv. \
+
+    $ endOfProof $
 
   //TODO: Hier noch Bijektivität einbringen.
 
@@ -941,6 +947,8 @@
         Steigungsdreieck und $m_g = (Delta x)/(-Delta y)$.
 
       - Es folgt $m_f dot m_g = (Delta y)/(Delta x) (Delta x)/(-Delta y) = -1$
+
+      $ endOfProof $
   ]
 
   #set enum(numbering: "1.")
@@ -1613,27 +1621,98 @@
   Supremum.
 ]
 
-== Grenzwerte
+== Grenzwert und Häufungswert
+
+#definition[
+  === Häufungswert
+  Sei $(a_n)$ eine Folge. Die reelle Zahl $h$ ist Häufungswert von $(a_n)$,
+  falls es für alle $epsilon > 0$ unendlich viele $n$ mit $| a_n - h | <
+  epsilon$ gibt.
+
+  #example[
+    === Beispielnachweis
+    Betrachten wir die Folge $(a_n) : a_n = - 1/2 + ((-1)^n)/n$. Vermutlich ist
+    der Häufungswert $h = - 1/2$.
+
+    Sei $epsilon > 0$.
+
+    $
+      | a_n - (- 1/2) | = | - 1/2 + ((-1)^n)/n + 1/2 | &= | ((-1)^n) | \
+      &= 1/n < epsilon wide &&| div epsilon dot n \
+      &= 1/epsilon < n \ \ \
+      endOfProof
+    $
+
+    Da $1/epsilon in RR^+$ und $n in NN$, wobei $NN$ unendlich ist, findet man
+    unendlich viele natürliche Zahlen mit $1/epsilon < n$.
+  ]
+]
 
 #definition[
   === Grenzwert einer Folge
   Eine reelle Zahl $g$ heißt *Grenzwert* der Folge $(a_n)$, falls für jedes
   $epsilon > 0$ ab einer bestimmten Indexzahl $n_0$ alle Folgenglieder in der
-  Epsilonumgebung $]g - epsilon; g + epsilon[$ liegen.
+  Epsilonumgebung #footnote[siehe @grenzMerke] $]g -
+  epsilon; g + epsilon[$ liegen.
 
   #align(center)[Oder alternativ:]
 
   Für jedes $epsilon > 0$ gibt es ein $n_0 in NN$, so dass für alle $n > n_0$
-  gilt: $| a_n - g | > epsilon$.
+  gilt: $| a_n - g | < epsilon$.
 
-  $ forall epsilon > 0 exists n_0 in NN forall n > n_0 : | a_n - g | > epsilon
+  $ forall epsilon > 0 exists n_0 in NN forall n > n_0 : | a_n - g | < epsilon
   $
+]
+
+#remark[
+  #set enum(numbering: "(1)")
+  === Bemerkungen zum Grenzwert <grenzMerke>
+  + Wir wissen, dass $| a_n - g | < epsilon$ gleichwertig zu $- epsilon < a_n -
+    g < epsilon$ und $g - epsilon < a_n < g + epsilon$ ist.
+
+    Das somit betrachtete *offene Intervall* $] g - epsilon; g + epsilon [$
+    heißt *Epsilonumgebung* #footnote[siehe @glossar unter _Epsilonumgebung_] von
+    $g$.
+
+  + Mit Hilfe des Begriffs der Epsilonumgebung kann man den Grenzwert $g$ einer
+    Folge auch anders verstehen.
+
+    Egal, welche Epsilonumgebung man um den vermuteten Grenzwert $g$ legt, dürfen
+    immer *nur endlich viele Folgenglieder* $a_n$ außerhalb der Epsilonumgebung
+    liegen.
+
+  + Besitzt eine Folge einen Grenzwert, so ist sie *konvergent*, ansonsten
+    *divergent*.
+
+  + Der Grenzwert wird mit dem _Limes_ symbolisiert.
+
+    $ g = lim_(n -> oo) a_n $
+
+  + Besitzt die Folge $(a_n)$ einen Grenzwert, so konvergiert jede Teilfolge
+    $(t_n)$ gegen diesen Grenzwert.
+
+  + Eine Folge, deren Grenzwert $g = 0$ ist, heißt *Nullfolge*.
+
+  #set enum(numbering: "1.")
 ]
 
 #theorem[
   === Konvergenzprinzip
   Falls eine Folge $(a_n)$ konvergent ist, s besitzt sie *genau einen*
   Grenzwert.
+
+  #example[
+    === Argumentation
+    Nehmen wir an $g_1$ und $g_2$ seien Grenzwerte von $(a_n)$ mit $g_1 !=
+    g_2$.
+
+    Wähle $epsilon < (|g_1 - g_2|)/2$. \
+    Somit $U_(epsilon) (g_1) union U_(epsilon) (g_2) = emptyset$. \
+    Da $g_1$ ein Grenzwert ist, gilt für alle $n > n_0 : a_n in U_(epsilon)
+    (g_1)$. Das sind unendlich viele. \
+    D. h. außerhalb liegen nur endlich viele. Somit auch in $U_(epsilon)
+    (g_2)$.
+  ]
 ]
 
 #theorem[
@@ -1659,7 +1738,8 @@
       epsilon \
       | a_1/q | dot | q |^n &< epsilon &&| div | a_1/q | \
       | q |^n &< epsilon dot | q/a_1 | wide &&| log_(|q|)(...) \
-      n &> log_(|q|)(epsilon | q/a_1 |)
+      n &> log_(|q|)(epsilon | q/a_1 |) \ \ \
+      endOfProof
     $
 
     Das Relationszeichen wurde umgedreht, weil $0 < |q| < 1$ und somit die
@@ -1761,3 +1841,13 @@
   Diese wird dann in der *Induktionsbehauptung* benutzt, um die Aussage zu
   beweisen.
 ]
+
+#pagebreak()
+
+= Anhang
+== Glossar <glossar>
+
+/ Epsilonumgebung:
+  die Epsilonumgebung um eine Zahl $a$ ist definiert mit $U_(epsilon) := ] a -
+  epsilon; a + epsilon [$ \
+  Intervall um eine Zahl wird im Abstand von $epsilon$ betrachtet
