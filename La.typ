@@ -147,7 +147,7 @@
 
   [Haec mulier genere atque forma, praeterea viro, liberis satis fortunata
   fuit; litteris Graecis Latinis docta, psallere (et) saltare egantius quam
-  necesse est probae, multa alia, quae instrumentaluxuriae sunt.],
+  necesse est probae, multa alia, quae instrumenta luxuriae sunt.],
   [Diese Frau war durch ihre Herkunft und Gestalt, außerdem durch ihren Mann
   und ihre Kinder zur genüge wohlhabend; sie war gebildet in den Sprachen
   Latein und Griechisch, sie konnte singen und tanzen, sogar eleganter als für
@@ -241,7 +241,7 @@
   [fortuna], [Schicksal, Glück, Erfolg], [_fortunae_ f.],
   [conservus], [Mitsklave], [_conservi_ m.],
   [licere], [erlaubt sein], [_liceo_, _licui_, _licitum_],
-  [qui], [welches], [_quae_, _quod<br>cuius_],
+  [qui], [welches], [_quae_, _quod_, _cuius_],
   [prudentia], [Kenntnis, Erfahrung, Klugheit], [_prudentiae_ f.],
   [decere], [\+ Akk.: zu (etwas) passen, angemessen sein], [_deceo_, _decui_],
   [exemplum], [Beispiel], [_exempli_ n.],
@@ -254,14 +254,14 @@
   [canere], [singen, besingen], [_cano_, _cecini_, _cantum_],
   [amor], [Liebe], [amoris m.],
   [concordia], [Eintrach, Harmonie], [_concordiae_ f.],
-  [luxuria], [Luxus], [_luxuriae_ f.],
+  [luxuria], [Luxus, Genusssucht, Überfluss], [_luxuriae_ f.],
   [virilis], [dem Manne eigen, männlich], [-_is_, -_e_],
-  [facinus], [Handlung, Verbrechen], [_facinoris_],
+  [facinus], [Handlung, Verbrechen], [_facinoris_ n.],
   [necesse est], [es ist nötig], [],
   [elegans], [elegant, fein], [_elegantis_],
   [saltare], [tanzen], [_salto_, _saltavi_, _saltatum_],
   [psallere], [singen, spielen], [_psallo_, _psalli_, -],
-  [comittere], [begene, beginnen], [_comitto_, _comisi_, _comissum_],
+  [committere], [begehen, beginnen], [_committo_, _commisi_, _commissum_],
   [fortunatus], [begütert, reich], [-_a_, -_um_],
   [sed], [aber, sondern], [],
   [inopia], [Mangel, Armut, Not], [_inopiae_ f.],
