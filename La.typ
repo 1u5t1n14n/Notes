@@ -270,7 +270,7 @@
   [abire], [weggehen, zurücktreten, davonkommen], [_abeo_, _abii_, _abitum_],
   [antehac], [bisher, früher], [],
   [atque], [und noch dazu, und sogar, und besonders], [],
-  [libido], [Begierde, Lust, Verlangen], [_libidonis_ f.],
+  [libido], [Begierde, Lust, Verlangen], [_libidinis_ f.],
   [discernere], [absondern, trennen, (ent)scheiden], [_discerno_, _discrevi_, _discretum_],
   [decus], [Zierde, Schmuck, Glanz], [_decoris_ n.],
   [lepos], [Feinheit, Anmut, Charme], [_leporis_ m.],
