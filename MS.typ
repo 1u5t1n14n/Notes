@@ -1282,6 +1282,32 @@
   ]
 ]
 
+== Trigonometrische Funktionen
+
+#definition[
+  === Allgemeine Form der Sinus- und Cosinusfunktion
+
+  $
+    s(x) = a dot sin(b dot (x - c)) + d \
+    "bzw." \
+    c(x) = a dot cos(b dot (x - c)) + d \
+  $
+
+  $a$ beschreibt dabei die Streckung bzw. Stauchung in $y$-Richtung oder die
+  Spiegelung an der $x$-Achse und somit die *Amplitude*.
+
+  $b$ beschreibt die Streckung bzw. Stauchung in $x$-Richtung oder die
+  Spiegelung an der $y$-Achse und somit die *Periode* mit der Periodendauer
+  $p$.
+
+  $ p = (2 pi)/(|b|) $
+
+  $c$ beschreibt die Verschiebung in $x$-Richtung und somit die
+  *Phasenverschiebung*.
+
+  $d$ beschreibt die Verschiebung in $y$-Richtung und somit die *Ruhelage*.
+]
+
 = Folgen <folgen>
 == Der Folgenbegriff
 
