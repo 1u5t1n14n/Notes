@@ -1788,16 +1788,30 @@
   oo) 1/a_n = 0$, $(a_n)$ also eine *Nullfolge* ist.
 ]
 
-// Konvergenzkriterien
+Um einfacher zu bestimmen, ob eine Folge konvergent ist, gibt es bestimmte
+*Konvergenzkriterien*, welche hier aufgeführt werden.
 
 #theorem[
   === Beschränkungskonvergenzsatz
   Sei $(a_n)$ eine Folge.
 
-  Wenn $(a_n)$ nicht beschränkt ist, so ist $(a_n)$ nicht konvergent.
+  Wenn $(a_n)$ konvergent ist, so ist $(a_n)$ beschränkt.
 
   #tldr[
-    Wenn $(a_n)$ konvergent ist, so ist $(a_n)$ beschränkt.
+    Wenn $(a_n)$ nicht beschränkt ist, so ist $(a_n)$ nicht konvergent.
+  ]
+
+  #example[
+    === Beweis
+    Wir nehmen an, die Folge $(a_n)$ konvergiert gegen $g$. Dazu müsste die
+    Definition gelten.
+
+    $ forall epsilon > 0 exists n_0 in NN forall n > n_0 : | a_n - g | <
+    epsilon $
+
+    Wähle $epsilon = 1$, sodass alle Folgenglieder für $n > n_0$ innerhalb von
+    $]g - 1; g + 1[$. Somit ist die Folge mit $n > n_0$ durch $g - 1$ und $g +
+    1$ beschränkt.
   ]
 ]
 
