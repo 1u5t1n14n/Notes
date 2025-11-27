@@ -5,7 +5,7 @@
 
     //font: "Georgia"
     //font: "Inter"
-    font: "Jost*"
+    //font: "Jost*"
   )
 
   set page(fill: rgb(color), margin: (top: 15em, rest: 15em))
@@ -20,11 +20,14 @@
   ]
 
   set document(title: title, author: author, date: datetime(day: 2, month: 1, year: 2009))
-  set page(fill: none, margin: auto)
+  set page(numbering: "— 1 —", fill: none, margin: auto)
   set grid(columns: (1fr, 1fr), gutter: 0.65em)
   set highlight(radius: 0.3em, extent: 0.2em)
   set heading(numbering: "1.1.")
-  set page(numbering: "1")
+  set pagebreak(weak: true)
+  set outline.entry(fill: none)
+  set table(stroke: none, align: left)
+  show table.cell.where(y: 0): set text(weight: "bold")
 
   pagebreak()
   outline()
