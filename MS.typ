@@ -88,7 +88,7 @@
 
   $ X times Y = {(x; y) | x in X and y in Y} $
 
-  #footnote[$(x; y)$ ist ein geordnetes Paar #footnote[$(x; y) = (x; w) <=> x =
+  #footnote[$(x; y)$ ist ein geordnetes Paar #footnote[$(x; y) = (v; w) <=> x =
   v wide y = w$].]
   
 ]
