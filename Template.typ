@@ -79,4 +79,4 @@
 #let polynom = $a_n x^n + a_(n - 1) x^(n - 1) + ... + a_1 x + a_0$
 
 // Latein
-#let predicate(body) = highlight(fill: red)[#body]
+#let p(body) = highlight(fill: red)[#body]
