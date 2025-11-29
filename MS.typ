@@ -1284,6 +1284,44 @@
 
 == Trigonometrische Funktionen
 
+#remark[
+  === Eigenschaften der allgemeinen trigonometrischen Funktionen
+  Sei $k in ZZ$.
+
+  #figure(
+    table(
+      align: center,
+      columns: 4,
+
+      table.header[Eigenschaft][$sin(x)$][$cos(x)$][$tan(x)$],
+      [Definitionsbereich $D$],
+      [$RR$],
+      [$RR$],
+      [$RR without {k pi + pi/2}$],
+
+      [Wertebereich $W$],
+      [$[-1; 1]$],
+      [$[-1; 1]$],
+      [$RR$],
+
+      [Nullstellen $x_N$],
+      [$x_N = k pi$],
+      [$x_N = k pi + pi/2$],
+      [$x_N = k pi$],
+
+      [Periodendauer],
+      [$p = 2 pi$],
+      [$p = 2 pi$],
+      [$p = pi$],
+
+      [andere Darstellung],
+      [$sin(x) = cos(x - pi/2)$],
+      [],
+      [$tan(x) = sin(x)/cos(x)$],
+    )
+  )
+]
+
 #definition[
   === Allgemeine Form der Sinus- und Cosinusfunktion
 
@@ -1306,6 +1344,8 @@
   *Phasenverschiebung*.
 
   $d$ beschreibt die Verschiebung in $y$-Richtung und somit die *Ruhelage*.
+
+  $ d = plus.minus 1 => x_N = minus.plus pi/2 + 2 k pi $
 ]
 
 = Folgen <folgen>
