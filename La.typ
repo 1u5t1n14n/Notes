@@ -141,7 +141,7 @@
   [Sed in iis erat Sempronia, quae multa saepe virilis audaciae facinora
   conmiserat.],
   [Aber unter diesen war Sempronia, welche viele Verbrechen mit oft männlichem
-  Mut begangen atte.],
+  Mut begangen hatte.],
 
   [Haec mulier genere atque forma, praeterea viro, liberis satis fortunata
   fuit; litteris Graecis Latinis docta, psallere (et) saltare egantius quam
@@ -182,8 +182,9 @@
   [Res #p[est] omnis in hac causa nobis, iudices, cum Clodia, muliere non solum
   nobili, sed etiam nota; de qua ego nihil #p[dicam] nisi depellendi criminis
   causa.],
-  [; über diese werde ich mich nicht äußern, wenn nicht um der Abwehr einer
-  Verurteilung in diesem Fall.],
+  [Die ganze Sache in diesem Fall ist, ihr Richter, mit Clodia, eine Frau nicht
+  nur des Adels, sondern auch ein Schandfleck, über welche ich mich nicht
+  äußern würde, wenn nicht um der Abwehr einer Verurteilung in diesem Fall.],
 
   [[...]],
   [[...]],
