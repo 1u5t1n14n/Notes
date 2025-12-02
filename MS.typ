@@ -1345,7 +1345,84 @@
 
   $d$ beschreibt die Verschiebung in $y$-Richtung und somit die *Ruhelage*.
 
-  $ d = plus.minus 1 => x_N = minus.plus pi/2 + 2 k pi $
+  $
+    x_sin_1 = (2 k pi - arcsin(d/a) - c)/b wide
+    x_sin_2 = ((2 k + 1) pi + arcsin(d/a) - c)/b \ \ \
+
+    x_cos_1 = ((2 k - 1/2) pi + arcsin(d/a) - c)/b wide
+    x_cos_2 = ((2 k + 1/2) pi - arcsin(d/a) - c)/b \
+  $
+
+  #example[
+    === Herleitung der allgemeinen Nullstellen des Sinus und Cosinus
+
+    $
+      s(x) = a dot sin(b x + c) + d &= 0 \
+      a dot sin(b x + c) + d &= 0 wide &&| - d \
+      a dot sin(b x + c) &= - d wide &&| div a \
+      sin(b x + c) &= - d/a wide &&| arcsin() \
+      b x + c &= - arcsin(d/a) wide &&| - c \
+      b x &= - arcsin(d/a) - c wide &&| div b \
+      x &= (- arcsin(d/a) - c)/b wide &&| div b \
+    $
+
+    Da die Sinusfunktion periodisch ist, wäre noch ein $2 pi$ zu ergänzen.
+    Analog sind die weiteren Nullstellen zu bestimmen. Der Beweis ist dem Leser
+    überlassen.
+  ]
+]
+
+== Änderungsraten
+
+#definition[
+  //TODO: Noch mal überarbeiten, da unklar und wahrscheinlich falsch
+  === Lokale Änderungsrate
+  Die lokale Änderungsrate bildet man über den Grenzwert des
+  *Differenzenquotienten*.
+
+  $ (f(x) - f(x_0))/(x - x_0) $
+  // x -> x_0 ????
+
+  Dieser Wert heißt *Ableitung* $f'(x_0)$ der Funktion $f$ an der Stelle $x_0$.
+
+  Der Grenzwert gibt die lokale Änderungsrate an der Stelle $x_0$ an und
+  entspricht der *Steigung der Tangente* an $f$ in $P(x_0|f(x_0))$
+]
+
+#definition[
+  === Differenzierbarkeit und erste Ableitung
+  Eine Funktion $f : I subset RR -> RR$ heißt in $x_0 in I$ differenzierbar,
+  falls der Differentialquotient, der Grenzwert des
+  Differenzenquotienten $(f(x) - f(x_0))/(x - x_0)$, existiert.
+
+  $ f'(x_0) \
+    &:= (d f)/(d x) (x_0) \
+    &:= lim_(x -> x_0) (f(x) - f(x_0))/(x - x_0) \
+    &= lim_(h -> 0) (f(x_0 + h) - f(x_0))/(h)
+  $
+
+  Dieser Grenzwert heißt Ableitung von $f$ in $x_0$.
+
+  Die Funktion $f : I subset RR -> RR$ heißt differenzierbar, falls sie in
+  jedem Punkt $P(x_0|f(x_0))$ mit $x_0 in I$ differenzierbar ist.
+
+  Dann heißt die Funktion $f'$ *erste Ableitung* von $f$.
+
+  $ f' : I subset RR -> RR $
+
+  #example[
+    === Beispielbeweis
+
+    $
+      f(x) = x^n \
+      ((x_0 + h) - x_0^n)/(h) &=
+      (x_0^n + n x_0^(n - 1) h + a x_0^(n - 2) h^2 + ... + h^n - x_0^n)/(h) \
+      &= (h(n x_0^(n - 1) + a x_0^(n - 2) h + ... + h^(n - 1)))/(h) \
+      &= n x_0^(n - 1) + a x_0^(n - 2) h + ... + h^(n - 1) \
+      lim_(h -> 0) (n x_0^(n - 1) + a x_0^(n - 2) h + ... + h^(n - 1)) &= n
+      x_0^(n - 1)\
+    $
+  ]
 ]
 
 = Folgen <folgen>
@@ -1509,7 +1586,7 @@
 ]
 
 #theorem[
-  === Teilfolgensatz
+  === Teilfolgensatz <teilfolgen>
   Jede Folge $(a_n)$ besitzt eine monotone Teilfolge.
 
   #example[
@@ -1682,7 +1759,7 @@
 ]
 
 #theorem[
-  === Supremumsaxiom
+  === Supremumsaxiom <supAxiom>
   Im Bereich der *reellen* Zahlen besitzt jede nach oben beschränkte Folge ein
   Supremum.
 ]
@@ -1828,11 +1905,17 @@
   oo) 1/a_n = 0$, $(a_n)$ also eine *Nullfolge* ist.
 ]
 
+Bei etwas komplexeren Folgen ist nicht direkt ersichtlich, ob diese überhaupt
+einen Grenzwert besitzt.
+
+$ (a_n) : a_n (1 + 1/2n)^n $
+
 Um einfacher zu bestimmen, ob eine Folge konvergent ist, gibt es bestimmte
 *Konvergenzkriterien*, welche hier aufgeführt werden.
 
 #theorem[
-  === Beschränkungskonvergenzsatz
+  === Satz der Relation von Konvergenz und Beschränktheit
+  <beschränktKonvergent>
   Sei $(a_n)$ eine Folge.
 
   Wenn $(a_n)$ konvergent ist, so ist $(a_n)$ beschränkt.
@@ -1852,6 +1935,56 @@ Um einfacher zu bestimmen, ob eine Folge konvergent ist, gibt es bestimmte
     Wähle $epsilon = 1$, sodass alle Folgenglieder für $n > n_0$ innerhalb von
     $]g - 1; g + 1[$. Somit ist die Folge mit $n > n_0$ durch $g - 1$ und $g +
     1$ beschränkt.
+  ]
+]
+
+#theorem[
+  === Beschränkungskonvergenzsatz <konvergentBeschränkt>
+  Sei $(a_n)$ monoton. $(a_n)$ ist konvergent genau dann, wenn $(a_n)$
+  beschränkt ist.
+
+  #example[
+    === Beweis
+    Sei $(a_n)$ ohne Beschränkung der Allgemeinheit monoton wachsend.
+
+    + "$==>$" \ \
+      Sei $(a_n)$ konvergent. Nach dem Satz der Relation von Konvergenz und
+      Beschränktheit #footnote[siehe @beschränktKonvergent] ist $(a_n)$ somit
+      beschränkt.
+
+    + "$<==$" \ \
+      Sei $(a_n)$ beschränkt, d.h. sie besitzt eine obere Schranke und nach
+      Supremumsaxiom #footnote[siehe @supAxiom] sogar ein _Supremum_ $"sup" a_n =
+      S$. Damit existieren  für alle $epsilon > 0$ ein $m in NN$ mit $a_m > S -
+      epsilon$.
+
+      Das heißt $a_n in ]S - epsilon; S + epsilon[$. Damit ist $(a_n)$
+      konvergent mit $limits(lim)_(n -> oo) a_n = S = "sup" a_n$.
+  ]
+
+  #theorem[
+    === Korollar <korollar>
+    Sei $(a_n)$ monoton wachsend. Wenn $(a_n)$ nach oben beschränkt ist, dann
+    gilt $limits(lim)_(n -> oo) a_n = "sup" a_n$.
+  ]
+]
+
+#theorem[
+  === Satz von _Bolzano-Weierstraß_
+  Jede beschränkte Folge reeller Zahlen besitzt eine konvergente Teilfolge.
+
+  #example[
+    === Beweis
+    Sei $(a_n)$ eine beschränkte reelle Folge. Nach dem Satz in @teilfolgen
+    besitzt jede Folge eine monotone Teilfolge. Da $(a_n)$ beschränkt ist, ist
+    auch ihre monotone Teilfolge $(t_n)$ beschränkt.
+
+    Nach dem Korollar #footnote[siehe @korollar] des vorherigen Satzes
+    #footnote[siehe @konvergentBeschränkt] gilt für eine monoton steigende
+    beschränkte Folge $limits(lim)_(n -> oo) a_n = "sup" a_n$. So gilt dies
+    auch umgekehrt für monoton fallende Folgen, die beschränkt sind. $(t_n)$
+    besitzt somit ein _Supremum_ oder ein _Infimum_ welches durch die Monotonie
+    der Folge auch Grenzwert ist.
   ]
 ]
 
@@ -1931,3 +2064,129 @@ Um einfacher zu bestimmen, ob eine Folge konvergent ist, gibt es bestimmte
   die Epsilonumgebung um eine Zahl $a$ ist definiert mit $U_(epsilon) := ] a -
   epsilon; a + epsilon [$ \
   Intervall um eine Zahl wird im Abstand von $epsilon$ betrachtet
+
+#set par(justify: true)
+#set math.equation(numbering: "(1)")
+#set page(columns: 2)
+
+#place(
+  top + center,
+  float: true,
+  scope: "parent",
+  [
+    == Relation des Häufungswerts zum Grenzwert
+  ],
+)
+
+#place(
+  left + top,
+  float: true,
+  scope: "parent",
+  [
+    Mit der Definition der Grenzwerte und Häufungswerte sind noch längst nicht
+    alle Fragen geklärt. Immernoch muss man sich mit Antworten auf diese Fragen
+    beschäftigen:
+
+    _Können Folgen mit zwei Häufungswerten konvergent sein? Gibt es ein Maximum
+    an Häufungswerten? Ist der einzige Häufungswert einer Folge mit Sicherheit
+    Grenzwert?_
+
+    Das sind alles Fragen, die man sich stellen muss, um das Konzept der
+    Häufungswerte und Grenzwerte zu begreifen und ihr Verhältnis zueinander zu
+    verstehen.
+  ],
+)
+
+=== Der Grenzwert als eine Spezialform des Häufungswertes
+Definieren wir zuerst die Begriffe Grenzwert und Häufungswert. \
+Für den reellen Grenzwert $g$ gilt die Definition
+$
+  forall epsilon > 0 exists n_0 in NN forall n > n_0 : |a_n - g| < epsilon
+$ <definition>
+
+Es müssen also ab einem _Index_ $n_0$ alle Folgenglieder innerhalb der
+Epsilonumgebung um  den Grenzwert liegen. Da die _Indices_ einer Folge
+natürliche Zahlen sind, sind sie ins Unendliche unbeschränkt, aber nicht Teil
+des negativen Zahlenbereichs. Somit ist die Anzahl der _Indices_ vor $n_0$
+beschränkt und endlich; die Anzahl der _Indices_ nach $n_0$ ist unendlich. \
+Also müssen außerhalb der Epsilonumgebung des Grenzwertes endlich viele
+Folgenglieder liegen und innerhalb alle Folgenglieder ab _Index_ $n_0$ aufgrund
+der Unendlichkeit der natürlichen Zahlen unendlich viele, sonst ist die
+betrachtete Zahl kein Grenzwert.
+
+Der Häufungswert ist die reelle Zahl $h$, falls es für alle $epsilon > 0$
+unendlich viele $n$ mit $|a_n - h| < epsilon$ gibt. In der Epsilonumgebung des
+Häufungswertes müssen also unendlich viele Folgenglieder liegen.
+
+Diese Definition überlagert sich mit der des Grenzwertes. In beiderlei
+Epsilonumgebungen müssen unendlich viele Folgenglieder liegen -- mit dem
+Unterschied, dass außerhalb der Epsilonumgebung des Häufungswertes nicht
+endlich viele Folgenglieder liegen müssen.
+
+Wir können also festhalten, dass falls in der Epsilonumgebung einer reellen
+Zahl unendlich viele Folgenglieder liegen, diese Zahl mit Sicherheit
+Häufungswert der Folge ist, da dies der Definition entspricht. Falls zusätzlich
+dazu nur endlich viele Folgenglieder außerhalb der Epsilonumgebung liegen, ist
+der Häufungswert zugleich Grenzwert. \
+Jeder Grenzwert ist also auch Häufungswert.
+
+Wenn eine Folge $(a_n)$ einen Grenzwert besitzt, ist dieser mit Sicherheit auch
+ein Häufungswert der Folge.
+
+=== Zahl der Häufungswerte
+Tatsächlich lässt sich mit einer einfachen _Modulo_-Folge begründen, dass es
+keine Maximalzahl an Häufungswerten gibt.
+
+$
+  (a_n) : a_n := cases(
+    0 "falls" n mod 3 = 0,
+    1 "falls" n mod 3 = 1,
+    2 "falls" n mod 3 = 2,
+  )
+$ <modulo>
+
+Die Werte dieser Folge häufen sich im Unendlichen bei $0$, $1$ und $2$, ein
+Verhalten, welches sich mittels einer angelegten Epsilonumgebung zeigen ließe.
+Um die Anzahl der Häufungswerte zu erhöhen, könnte man bei diesem Beispiel den
+Divisor erhöhen und einen weiteren Fall hinzufügen.
+
+Da eine Folge durch natürliche _Indices_ unendlich ist, kann sie sich im
+Unendlichen unbegrenzt vielen Werten mehrfach annähern, wodurch diese zu
+Häufungswerten der Folge werden. Am einfachsten ließe sich dies durch
+periodische Vorgänge, wie diese _Modulo_-Folge oder eine _Sinus_-Folge
+bewerkstelligen.
+
+$
+  (b_n) : b_n = sin(n/90 pi)
+$ <sinus>
+
+=== Konvergenz bei zwei oder mehr Häufungswerten
+Aufgrund des Verhaltens einer Folge, sich an den Häufungswerte im Unendlichen
+unendlich oft zu häufen, werden außerhalb der Epsilonumgebung eines Wertes
+immer unendlich viele Folgenglieder in den Epsilonumgebungen der Häufungswerte
+liegen, wodurch die Definition eines Grenzwertes nicht erfüllt werden kann und
+folglich kein Grenzwert existiert.
+
+Eine Folge mit zwei oder mehr Häufungswerten kann folglich nicht konvergent
+sein.
+
+=== Grenzwerte bei Folgen mit nur einem Häufungswert
+Der einzige Häufungswert einer Folge ist nicht mit Sicherheit Grenzwert
+ebendieser Folge, was sich anhand eines Gegenbeispiels zeigen lässt.
+
+Betrachten wir folgende Folge.
+
+$
+  (c_n) : c_n := cases(
+    1 "falls" n mod 2 = 0,
+    - n "andernfalls",
+  )
+$ <negativ>
+
+Diese Folge hätte einen Häufungswert $1$, aber keinen Grenzwert, da die
+ungerade Teilfolge $(t_n) : t_n = c_(2 n + 1)$ mit $n_1 = 0$ unbeschränkt ist
+und somit keinen bestimmten Grenzwert besitzt.
+
+Teilfolgen einer Folge, die einen Grenzwert besitzt, müssen allerdings auch
+diesen Grenzwert besitzten, was hier nicht der Fall ist. Somit ist der einzige
+Häufungswert einer Folge nicht mit Sicherheit Grenzwert ebendieser Folge.
