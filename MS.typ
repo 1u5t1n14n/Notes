@@ -1,5 +1,5 @@
 #import "Template.typ": *
-#show: template.with(color: "#FF0000", title: "Mathematik")
+#show: template.with(color: "#FF0000", title: [Mathematik])
 
 = Mengen und Zahlbereiche
 == Mengen
@@ -1326,9 +1326,9 @@
   === Allgemeine Form der Sinus- und Cosinusfunktion
 
   $
-    s(x) = a dot sin(b dot (x - c)) + d \
-    "bzw." \
-    c(x) = a dot cos(b dot (x - c)) + d \
+    s(x) = a dot sin(b dot (x - c)) + d \ \
+    "bzw." \ \
+    c(x) = a dot cos(b dot (x - c)) + d
   $
 
   $a$ beschreibt dabei die Streckung bzw. Stauchung in $y$-Richtung oder die
@@ -1375,13 +1375,11 @@
 == Änderungsraten
 
 #definition[
-  //TODO: Noch mal überarbeiten, da unklar und wahrscheinlich falsch
   === Lokale Änderungsrate
   Die lokale Änderungsrate bildet man über den Grenzwert des
   *Differenzenquotienten*.
 
-  $ (f(x) - f(x_0))/(x - x_0) $
-  // x -> x_0 ????
+  $ lim_(x -> x_0) (f(x) - f(x_0))/(x - x_0) $
 
   Dieser Wert heißt *Ableitung* $f'(x_0)$ der Funktion $f$ an der Stelle $x_0$.
 
@@ -1390,10 +1388,10 @@
 ]
 
 #definition[
-  === Differenzierbarkeit und erste Ableitung
-  Eine Funktion $f : I subset RR -> RR$ heißt in $x_0 in I$ differenzierbar,
-  falls der Differentialquotient, der Grenzwert des
-  Differenzenquotienten $(f(x) - f(x_0))/(x - x_0)$, existiert.
+  === Differenzierbarkeit
+  Eine Funktion $f : I subset RR -> RR$ sei stetig auf $I$. Sie heißt
+  differenzierbar in $x_0 in I$ , falls der Differentialquotient, der Grenzwert
+  des Differenzenquotienten $(f(x) - f(x_0))/(x - x_0)$, existiert.
 
   $ f'(x_0) \
     &:= (d f)/(d x) (x_0) \
@@ -1403,6 +1401,26 @@
 
   Dieser Grenzwert heißt Ableitung von $f$ in $x_0$.
 
+  #remark[
+    === Links- und rechtsseitiger Grenzwert bei der Differenzierbarkeit
+    Damit dr Grenzwert des Differenzenquotienten existiert, müssen wir
+    insbesondere bei abschnittsweise definierten Funktionen prüfen, ob der
+    linksseitige und der rechtsseitige Grenzwert übereinstimmen.
+
+    $
+      f'(x_0) = lim_(x -> x_0^-) (f(x) - f(x_0))/(x - x_0)
+      = lim_(x -> x_0^+) (f(x) - f(x_0))/(x - x_0) \ \
+
+      "bzw." \ \
+
+      f'(x_0) = lim_(h -> 0^-) (f(x_0 + h) - f(x_0))/(h)
+      = lim_(h -> 0^+) (f(x_0 + h) - f(x_0))/(h)
+    $
+  ]
+]
+
+#definition[
+  === Erste Ableitung
   Die Funktion $f : I subset RR -> RR$ heißt differenzierbar, falls sie in
   jedem Punkt $P(x_0|f(x_0))$ mit $x_0 in I$ differenzierbar ist.
 
@@ -1562,7 +1580,7 @@
   allerdings monoton steigen oder fallen, nennt man *monoton steigend* bzw.
   *monoton fallend*.
 
-  $ forall n in NN : a_n <= a_(n + 1) \
+  $ forall n in NN : a_n <= a_(n + 1) \ \
   "bzw." forall n in NN : a_n >= a_(n + 1) $
 ]
 
@@ -2065,7 +2083,6 @@ Um einfacher zu bestimmen, ob eine Folge konvergent ist, gibt es bestimmte
   epsilon; a + epsilon [$ \
   Intervall um eine Zahl wird im Abstand von $epsilon$ betrachtet
 
-#set par(justify: true)
 #set math.equation(numbering: "(1)")
 #set page(columns: 2)
 
