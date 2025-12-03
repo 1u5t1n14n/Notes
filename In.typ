@@ -1,5 +1,5 @@
 #import "Template.typ": *
-#show: template.with(color: "#F29509", title: "Informatik")
+#show: template.with(color: "#F29509", title: [Informatik])
 
 // Hier kommen noch richtig krasse Code-Snippets rein.
 

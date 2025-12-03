@@ -1,5 +1,5 @@
 #import "Template.typ": *
-#show: template.with(color: "#14E8C1", title: "Chemie")
+#show: template.with(color: "#14E8C1", title: [Chemie])
 
 = Anorganik
 == Basis

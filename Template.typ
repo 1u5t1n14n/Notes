@@ -25,6 +25,7 @@
   set highlight(radius: 0.3em, extent: 0.2em)
   set heading(numbering: "1.1.")
   set pagebreak(weak: true)
+  set par(justify: true)
   set outline.entry(fill: none)
   set table(stroke: none, align: left)
   show table.cell.where(y: 0): set text(weight: "bold")

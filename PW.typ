@@ -1,5 +1,5 @@
 #import "Template.typ": *
-#show: template.with(color: "#6D2EF4", title: "Politikwissenschaften")
+#show: template.with(color: "#6D2EF4", title: [Politikwissenschaften])
 
 = Glossar
 / Rassismus: Weltvorstellung, nach der die Gleichheit aller Menschen von ihrer jeweiligen Abstammung abhängig ist
