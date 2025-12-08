@@ -826,7 +826,7 @@
 ]
 
 #theorem[
-  === Satz für die Stetigkeit
+  === Satz für die Stetigkeit <stetig>
   Eine Funktion $f : D_f -> RR$ ist in $x_0 in D_f$ genau dann stetig, wenn
   links- und rechtsseitiger Grenzwert existieren und mit dem Funktionswert von
   $x_0$ übereinstimmen.
@@ -1389,9 +1389,9 @@
 
 #definition[
   === Differenzierbarkeit
-  Eine Funktion $f : I subset RR -> RR$ sei stetig auf $I$. Sie heißt
-  differenzierbar in $x_0 in I$ , falls der Differentialquotient, der Grenzwert
-  des Differenzenquotienten $(f(x) - f(x_0))/(x - x_0)$, existiert.
+  Eine Funktion $f : I subset RR -> RR$. Sie heißt differenzierbar in $x_0 in
+  I$ , falls der Differentialquotient, der Grenzwert des Differenzenquotienten
+  $(f(x) - f(x_0))/(x - x_0)$, existiert.
 
   $ f'(x_0) \
     &:= (d f)/(d x) (x_0) \
@@ -1401,9 +1401,12 @@
 
   Dieser Grenzwert heißt Ableitung von $f$ in $x_0$.
 
+  #tldr[Daraus ließe sich auch die Stetigkeit #footnote[siehe @stetig] folgern,
+  denn dann wären links- und rechtsseitiger Grenzwert verschieden.]
+
   #remark[
     === Links- und rechtsseitiger Grenzwert bei der Differenzierbarkeit
-    Damit dr Grenzwert des Differenzenquotienten existiert, müssen wir
+    Damit der Grenzwert des Differenzenquotienten existiert, müssen wir
     insbesondere bei abschnittsweise definierten Funktionen prüfen, ob der
     linksseitige und der rechtsseitige Grenzwert übereinstimmen.
 
@@ -1416,6 +1419,11 @@
       f'(x_0) = lim_(h -> 0^-) (f(x_0 + h) - f(x_0))/(h)
       = lim_(h -> 0^+) (f(x_0 + h) - f(x_0))/(h)
     $
+
+    #example[
+      //TODO: MACHEN!
+      === Beispiel
+    ]
   ]
 ]
 
@@ -1441,6 +1449,65 @@
       x_0^(n - 1)\
     $
   ]
+]
+
+#remark[
+  #set enum(numbering: "1)")
+  === Ableitungsregeln
+  Seien $f, g, u, v$ differenzierbare Funktionen und $k, c in RR$ sowie $n in
+  QQ$.
+
+  + *Potenzregel* \
+
+    $
+      f(x) = x^n \
+      f'(x) = n x^(n - 1)
+    $
+
+    #example[]
+
+  + *Faktorregel* \
+
+    $
+      f(x) = k dot g(x) \
+      f'(x) = k dot g'(x)
+    $
+
+    #example[]
+
+  + *Summenregel* \
+
+    $
+      f(x) = h(x) + g(x) \
+      f'(x) = h'(x) + g'(x)
+    $
+
+    #example[]
+
+  + *Sinus und Cosinus*
+
+    $
+      f(x) = sin(x) \
+      f'(x) = cos(x) \
+      f''(x) = - sin(x) \
+      f'''(x) = - cos(x) \ \ \
+      f''''(x) = f(x)
+    $
+
+    #example[]
+
+  + *Summenregel* \
+
+    Existieren $u'$ und $v'$.
+
+    $
+      f(x) = u(x) dot v(x) \
+      f'(x) = u(x) dot v'(x) + v(x) dot u'(x)
+    $
+
+    #example[]
+
+  #set enum(numbering: "1.")
 ]
 
 = Folgen <folgen>
@@ -2005,6 +2072,25 @@ Um einfacher zu bestimmen, ob eine Folge konvergent ist, gibt es bestimmte
     der Folge auch Grenzwert ist.
   ]
 ]
+
+Sei $(a_n) : a_1 = 5 and a_n = (2 a_(n - 1))/(a_(n - 1) + 1)$.o
+
+$
+  a_n &> a_(n + 1) \
+  a_n &> (2 a_n)/(a_n + 1) &&| dot (a_n + 1) \
+  a_n^2 + a_n &> 2 a_n &&| div a_n \
+  a_n + 1 &> 2 &&| - 1 \
+  a_n &> 1 \
+$
+
+*Induktionsanfang*
+
+Sei $n = 2$. $a_2 = 5/3$.
+
+*Induktionsschritt*
+
+Für alle $n >= 1$ gilt $a_n > 1$. Wenn #footnote[Implikation] $a_n >= 1$, dann
+gilt $a_(n + 1) > 1$.
 
 = Beweise
 == Beweistechniken
