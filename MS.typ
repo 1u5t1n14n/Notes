@@ -200,8 +200,6 @@
   + $f^(-1)(B_1 inter B_2) = f^(-1)(B_1) inter f^(-1)(B_2)$
 
   + $f^(-1)(Y without B) = X without f^(-1)(B)$
-
-  #set enum(numbering: "1.")
 ]
 
 #remark[
@@ -229,8 +227,6 @@
       $ ln : RR^+ -> RR &\
       x &|-> ln(x) $
     ]
-
-  #set enum(numbering: "1.")
 ]
 
 == Verkettung von Abbildungen
@@ -386,8 +382,6 @@
     $ endOfProof $
 
   //TODO: Hier noch Bijektivität einbringen.
-
-  #set enum(numbering: "1.")
 ]
 
 == Umkehrabbildung
@@ -436,8 +430,6 @@
 
       $ exp : RR -> RR^+ \
       exp: x -> e^x $
-
-    #set enum(numbering: "1.")
   ]
 ]
 
@@ -458,8 +450,6 @@
     sowohl Links- als auch Rechtsinverse von $f$ ist. D.h. es gilt $g compose f
     = I d_X and f compose g = I d_Y$, wobei $g$ eindeutig bestimmt ist, und $g
     = f^(-1)$.
-
-  #set enum(numbering: "1.")
 
   #remark[
     Nur für *bijektive* Abbildungen gibt es Umkehrabbildungen. Bei nur
@@ -547,8 +537,6 @@
 
     Der Term wird bei ersterer Angabe _Funktion $f$: Funktionswert ist gleich
   Funktionsterm_ gesprochen.
-
-  #set enum(numbering: "1.")
 ]
 
 #example[
@@ -598,8 +586,6 @@
     $c(x) = cos(x)$ heißen *Sinusfunktion* und *Kosinusfunktion*. Des Weiteren
     heißt die Funktion $t$ mit $tan(x) = s(x)/c(x)$ *Tangensfunktion*. $s$, $c$
     und $t$ sind die elementaren *trigonometrischen Funktionen*.
-
-  #set enum(numbering: "1.")
 ]
 
 #definition[
@@ -659,8 +645,6 @@
     Funktion ungerade und punktsymmetrisch, denn es gilt
 
     $ forall x in D_f : f(x) = -f(-x) $
-
-  #set enum(numbering: "1.")
 
   #example[
     === Beweis für Achsensymmetrie
@@ -763,8 +747,6 @@
   + $limits(lim)_(x -> oo) (f(x)/g(x)) = b/c$
 
   + $limits(lim)_(x -> oo) (a dot f(x)) = a dot b$
-
-  #set enum(numbering: "1.")
 ]
 
 #remark[
@@ -950,8 +932,6 @@
 
       $ endOfProof $
   ]
-
-  #set enum(numbering: "1.")
 ]
 
 == Quadratische Funktionen <quadrat>
@@ -987,8 +967,6 @@
 
     Die Nullstellen lassen sich direkt aus den *Linearfaktoren* $(x - x_1)$ und
     $(x - x_2)$ ablesen.
-
-  #set enum(numbering: "1.")
 ]
 
 #theorem[
@@ -1204,8 +1182,6 @@
 
     $ f(x) = (2 x^3 - x^2 + 2)/(x^2 - x) = 2x + 2/(x^2 - x) "mit" D_f = RR
     without { 0; 1} $
-
-  #set enum(numbering: "1.")
 ]
 
 #remark[
@@ -1464,8 +1440,6 @@
       f'(x) = n x^(n - 1)
     $
 
-    #example[]
-
   + *Faktorregel* \
 
     $
@@ -1473,7 +1447,19 @@
       f'(x) = k dot g'(x)
     $
 
-    #example[]
+    #example[
+      === Beweis der Faktorregel
+      Sei $f(x) = k dot g(x)$ mit $k in RR$.
+
+      $
+        f'(x) &= lim_(h -> 0) (f(x + h) - f(x))/(h) \
+        &= lim_(h -> 0) (k dot g(x + h) - k dot g(x))/(h) \
+        &= lim_(h -> 0) k dot (g(x + h) - g(x))/(h) \
+        &= k dot lim_(h -> 0) (g(x + h) - g(x))/(h) wide "(Grenzwertsätze)" \
+        f'(x) &= k dot g'(x) \ \ \
+        endOfProof
+      $
+    ]
 
   + *Summenregel* \
 
@@ -1481,8 +1467,6 @@
       f(x) = h(x) + g(x) \
       f'(x) = h'(x) + g'(x)
     $
-
-    #example[]
 
   + *Sinus und Cosinus*
 
@@ -1494,8 +1478,6 @@
       f''''(x) = f(x)
     $
 
-    #example[]
-
   + *Summenregel* \
 
     Existieren $u'$ und $v'$.
@@ -1504,10 +1486,48 @@
       f(x) = u(x) dot v(x) \
       f'(x) = u(x) dot v'(x) + v(x) dot u'(x)
     $
+]
 
-    #example[]
+== Extrema
 
-  #set enum(numbering: "1.")
+#definition[
+  #set enum(numbering: "a)")
+  === Lokales Maximum und Minimum
+  Sei $f : I subset RR -> RR$ #footnote[auf einem reellen Intervall $I$
+  definiert].
+
+  + $f$ nimmt in $x_0 in I$ ein *lokales Maximum* an, falls ein $epsilon > 0$
+    existiert, sodass $f(x_0) >= f(x) forall x in I$ mit $|x - x_0| < epsilon$.
+
+  + $f$ nimmt in $x_0 in I$ ein *lokales Minimum* an, falls ein $epsilon > 0$
+    existiert, sodass $f(x_0) <= f(x) forall x in I$ mit $|x - x_0| < epsilon$.
+]
+
+#theorem[
+  === Notwendiges Kriterium für lokale Extrema
+  Sei $f : I subset RR -> RR$. Hat $f$ in $x_E in I$ ein lokales Maximum oder
+  Minimum und ist $f$ in $x_E$ differenzierbar, so gilt $f'(x_E) = 0$.
+]
+
+#remark[
+  //TODO: Das nach hinten packen
+  === Notwendige Vorraussetzung
+  Das heißt, wenn $f'(x_E) != 0$, ist $x_E$ kein Extremum. *Aber* dies ist
+  nicht hinreichend, um zu sagen, dass $x_E$ ein Extremum ist, falls lediglich
+  $f'(x_E) = 0$.
+]
+
+#theorem[
+  #set enum(numbering: "a)")
+  === Hinreichendes Kriterium für lokale Extrema
+  Sei $f : (a, b) -> RR$ eine differenzierbare Funktion, die in $x_E$ zweimal
+  differenzierbar ist.
+
+  + Gilt $f'(x_E) = 0 and f''(x_E) < 0$, hat $f$ in $x_E$ ein *lokales
+    Maximum*.
+
+  + Gilt $f'(x_E) = 0 and f''(x_E) > 0$, hat $f$ in $x_E$ ein *lokales
+    Minimum*.
 ]
 
 = Folgen <folgen>
@@ -1712,8 +1732,6 @@
         a_(n_L + 1) < a_(n_L + 1) ^* < a_(n_L + 1)^(**) < ... \ \ \
         endOfProof
       $
-
-    #set enum(numbering: "1.")
   ]
 ]
 
@@ -1920,13 +1938,11 @@
     $(t_n)$ gegen diesen Grenzwert.
 
   + Eine Folge, deren Grenzwert $g = 0$ ist, heißt *Nullfolge*.
-
-  #set enum(numbering: "1.")
 ]
 
 #theorem[
   === Konvergenzprinzip
-  Falls eine Folge $(a_n)$ konvergent ist, s besitzt sie *genau einen*
+  Falls eine Folge $(a_n)$ konvergent ist, so besitzt sie *genau einen*
   Grenzwert.
 
   #example[
@@ -2073,7 +2089,7 @@ Um einfacher zu bestimmen, ob eine Folge konvergent ist, gibt es bestimmte
   ]
 ]
 
-Sei $(a_n) : a_1 = 5 and a_n = (2 a_(n - 1))/(a_(n - 1) + 1)$.o
+Sei $(a_n) : a_1 = 5 and a_n = (2 a_(n - 1))/(a_(n - 1) + 1)$.
 
 $
   a_n &> a_(n + 1) \

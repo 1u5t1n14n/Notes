@@ -48,12 +48,28 @@
 )
 
 #let definition(body) = noteBlock(
-  body,
+  [
+    #show heading: it => [
+      #counter(heading).display(it.numbering)
+      Definition:
+      #it.body
+      #linebreak()
+    ]
+    #body
+  ],
   fill: rgb("#EDF1D6"),
   stroke: rgb("#609966")
 )
 #let theorem(body) = noteBlock(
-  body,
+  [
+    #show heading: it => [
+      #counter(heading).display(it.numbering)
+      Satz:
+      #it.body
+      #linebreak()
+    ]
+    #body
+  ],
   fill: rgb("#FEF2F4"),
   stroke: rgb("#EE6983")
 )
@@ -64,7 +80,15 @@
 )
 
 #let remark(body) = noteBlock(
-  body,
+  [
+    #show heading: it => [
+      #counter(heading).display(it.numbering)
+      Bemerkung:
+      #it.body
+      #linebreak()
+    ]
+    #body
+  ],
   fill: rgb("#F2E1AE"),
   stroke: rgb("#E8967A")
 )
