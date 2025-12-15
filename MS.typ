@@ -1486,6 +1486,53 @@
       f(x) = u(x) dot v(x) \
       f'(x) = u(x) dot v'(x) + v(x) dot u'(x)
     $
+
+  + *Kettenregel* \
+
+    Existieren $u'$ und $v'$.
+
+    $
+      f(x) = u(v(x)) \
+      f'(x) = u'(v(x)) dot v'(x)
+    $
+
+    #example[
+      === Beweis der Kettenregel
+      Seien $f(x) = u(v(x))$ und $u, v$ zwei differenzierbare Funktionen.
+
+      $
+        f'(x) &= lim_(h -> 0) (u(v(x + h)) - u(v(x)))/(h) \
+        &= lim_(h -> 0) (u(v(x + h)) - u(v(x)))/(h) dot (v(x + h) - v(x))/(v(x
+        + h) - v(x)) \
+        &= lim_(h -> 0) (u(v(x + h)) - u(v(x)))/(v(x + h) - v(x)) dot (v(x + h)
+        - v(x))/(h) \
+        &= lim_(h -> 0) (f(x + h) - f(x))/((x + h) - x) \
+        &= lim_(h -> 0) u'(v(x)) dot v'(x) \ \ \
+        endOfProof
+      $
+    ]
+
+    #example[
+      === Beispiele
+
+      $
+        f(t) &= (a t^2 + 6)^2 \
+        u(v) &= v^2 &&v(x) = a t^2 + 6 \
+        u'(v) &= 2 v &&v'(x) = 2 a t \
+        f'(t) &= u'(v(t)) dot v'(t) \
+        &= 2 (a t^2 + 6) dot 2 a t \
+        &= 4 (a^2 t^3 + 6 a t) \
+        f'(t) &= 4 a^2 t^3 + 24 a t \
+      $
+
+      $
+        f(x) &= (3 x^2 - x)^5 \
+        u(v) &= v^5 &&v(x) = 3 x^2 - x \
+        u'(v) &= 5v^4 &&v'(x) = 6 x - 1 \
+        f'(x) &= u'(v(x)) dot v'(x) \
+        f'(x) &= 5(3 x^2 - x)^4 dot (6 x - 1) \
+      $
+    ]
 ]
 
 == Extrema
@@ -1530,6 +1577,20 @@
     Minimum*.
 ]
 
+#theorem[
+  === Vorzeichenkriterium
+  Wenn $f'(x_E) = 0$ gilt und das Vorzeichen von $f'$ an der Stelle $x_E$ von
+  *Plus nach Minus* wechselt, dann hat der Graph #footnote[siehe @graph] von
+  $f$ an der Stelle $x_E$ einen *Hochpunkt*.
+
+  Wenn $f'(x_E) = 0$ gilt und das Vorzeichen von $f'$ an der Stelle $x_E$ von
+  *Minus nach Plus* wechselt, dann hat der Graph von $f$ an der Stelle $x_E$
+  einen *Tiefpunkt*.
+
+  Wenn *kein Vorzeichenwechsel* auftritt, hat der Graph von $f$ an der Stelle
+  $x_E$ einen *Sattelpunkt*.
+]
+
 = Folgen <folgen>
 == Der Folgenbegriff
 
@@ -1554,7 +1615,7 @@
   #footnote[siehe @funktionsBegriffe] $n$. In der üblichen Notation von
   Funktionen sollte $a_n$ besser als $a(n)$ geschrieben werden.
 
-  $3n - 4$ ist Term für die Berechnung des $n$-ten Folgegliedes.
+  $3n - 4$ ist Term für die Berechnung des $n$-ten Folgengliedes.
 ]
 
 #definition[
@@ -1684,10 +1745,9 @@
 
 #definition[
   === Definition
-  Die Folge $(t_n)$ ist Teilfolge der Folge $(a_n)$. \
-  Ist $n_i$ mit $(i = 1; 2; ...; k in NN without {0})$ eine streng monoton
-  wachsende Folge natürlicher Zahle, so heißt $(a_(n_i)) = (t_n)$ Teilfolge von
-  $(a_n)$.
+  Die Folge $(t_n)$ ist Teilfolge der Folge $(a_n)$. \ Ist $n_i$ mit $(i = 1;
+  2; ...; k in NN without {0})$ eine streng monoton wachsende Folge natürlicher
+  Zahlen, so heißt $(a_(n_i)) = (t_n)$ Teilfolge von $(a_n)$.
 ]
 
 #theorem[
@@ -1824,8 +1884,8 @@
     Betrachten wir die Folge $(b_n) : b_n = (6n - 1)/(4n)$ mit $n >= 1$.
 
     Zuerst äußern wir die Vermutung, dass das _Supremum_ bei $"sup" b_n = 3/2$
-    liegt. Zuerst muss bewiesen werden, dass $"sup" b_n$ eine obere Schranke
-    ist. Danach, dass es ein _Supremum_ ist.
+    liegt. Nun muss bewiesen werden, dass $"sup" b_n$ eine obere Schranke ist.
+    Danach, dass es ein _Supremum_ ist.
 
     + $"sup" b_n$ ist eine obere Schranke.
 
@@ -1877,13 +1937,13 @@
 
   #example[
     === Beispielnachweis
-    Betrachten wir die Folge $(a_n) : a_n = - 1/2 + ((-1)^n)/n$. Vermutlich ist
-    der Häufungswert $h = - 1/2$.
+    Betrachten wir die Folge $(a_n) : a_n = - 1/2 + ((-1)^n)/(n)$. Vermutlich
+    ist der Häufungswert $h = - 1/2$.
 
     Sei $epsilon > 0$.
 
     $
-      | a_n - (- 1/2) | = | - 1/2 + ((-1)^n)/n + 1/2 | &= | ((-1)^n) | \
+      | a_n - (- 1/2) | = | - 1/2 + ((-1)^n)/n + 1/2 | &= | ((-1)^n)/(n) | \
       &= 1/n < epsilon wide &&| div epsilon dot n \
       &= 1/epsilon < n \ \ \
       endOfProof
@@ -1955,7 +2015,7 @@
     Da $g_1$ ein Grenzwert ist, gilt für alle $n > n_0 : a_n in U_(epsilon)
     (g_1)$. Das sind unendlich viele. \
     D. h. außerhalb liegen nur endlich viele. Somit auch in $U_(epsilon)
-    (g_2)$.
+    (g_2)$. $g_2$ ist also kein Grenzwert.
   ]
 ]
 
@@ -1982,7 +2042,7 @@
       epsilon \
       | a_1/q | dot | q |^n &< epsilon &&| div | a_1/q | \
       | q |^n &< epsilon dot | q/a_1 | wide &&| log_(|q|)(...) \
-      n &> log_(|q|)(epsilon | q/a_1 |) \ \ \
+      n &> log_(|q|)(epsilon dot | q/a_1 |) \ \ \
       endOfProof
     $
 
@@ -2009,13 +2069,13 @@
 Bei etwas komplexeren Folgen ist nicht direkt ersichtlich, ob diese überhaupt
 einen Grenzwert besitzt.
 
-$ (a_n) : a_n (1 + 1/2n)^n $
+$ (a_n) : a_n = (1 + 1/2n)^n $
 
 Um einfacher zu bestimmen, ob eine Folge konvergent ist, gibt es bestimmte
 *Konvergenzkriterien*, welche hier aufgeführt werden.
 
 #theorem[
-  === Satz der Relation von Konvergenz und Beschränktheit
+  === Relation von Konvergenz und Beschränktheit
   <beschränktKonvergent>
   Sei $(a_n)$ eine Folge.
 
