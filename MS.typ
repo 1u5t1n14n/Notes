@@ -1927,7 +1927,7 @@
   Supremum.
 ]
 
-== Grenzwert und Häufungswert
+== Konvergenz
 
 #definition[
   === Häufungswert
@@ -2189,6 +2189,32 @@ $
   2 &= g^2 &&| sqrt(...) \
   sqrt(2) &= g
 $
+
+== Grenzwerte
+
+#theorem[
+  #set enum(numbering: "(1)")
+  === Grenzwertsätze für Folgen
+  Seien $(a_n)$ und $(b_n)$ konvergente Folgen. Dann gilt
+
+  + Die Folge $(c_n)$ mit $c_n = a_n plus.minus b_n$ ist *konvergent*.
+
+  + Die Folge $(c_n)$ mit $c_n = a_n dot b_n$ ist *konvergent*.
+
+  + Die Folge $(c_n)$ mit $c_n = (a_n)/(b_n)$ ist *konvergent*.
+
+  #example[
+    === Beweis (1)
+    Seien $(a_n)$ und $(b_n)$ mit $limits(lim)_(n -> oo) a_n = a$ und
+    $limits(lim)_(n -> oo) b_n = b$. Des Weiteren sei $epsilon > 0$.
+
+    Dann existiert ein $n_1 in NN$, sodass für alle $n > n_1$ gilt $|a_n - a| >
+    1/2 epsilon$. Analog existiert ein $n_2 in NN$, sodass für alle $n > n_2$
+    gilt $|b_n - n| > 1/2 epsilon$.
+
+    //TODO: Weitermachen!!!!!!
+  ]
+]
 
 = Beweise
 == Beweistechniken
