@@ -740,7 +740,7 @@
   gegen Unendlich, sondern gegen eine Zahl] ihre Grenzwerte $limits(lim)_(x
   -> oo) f(x) = b$ und $limits(lim)_(x -> oo) g(x) = c$, dann gilt Folgendes.
 
-  + $limits(lim)_(x -> oo) (f(x) + g(x) = b + c$
+  + $limits(lim)_(x -> oo) (f(x) + g(x)) = b + c$
 
   + $limits(lim)_(x -> oo) (f(x) dot g(x)) = b dot c$, falls $b, g != 0$.
 
@@ -2038,8 +2038,8 @@
 
     $
       | a_n - 0 | = | a_n | = | a_1 dot q^(n - 1) | &< epsilon \
-      | a_1 | dot | q^(n - 1) | = | a_1 | dot | q^n/q | a_1/q | dot | q^n | &<
-      epsilon \
+      | a_1 | dot | q^(n - 1) | = | a_1 | dot | q^n/q | = | a_1/q | dot | q^n
+      | &< epsilon \
       | a_1/q | dot | q |^n &< epsilon &&| div | a_1/q | \
       | q |^n &< epsilon dot | q/a_1 | wide &&| log_(|q|)(...) \
       n &> log_(|q|)(epsilon dot | q/a_1 |) \ \ \
@@ -2167,6 +2167,28 @@ Sei $n = 2$. $a_2 = 5/3$.
 
 Für alle $n >= 1$ gilt $a_n > 1$. Wenn #footnote[Implikation] $a_n >= 1$, dann
 gilt $a_(n + 1) > 1$.
+
+\
+
+#line(length: 100%)
+
+\
+
+Sei $(a_n) : a_(n + 1) = 1/2 (a_n + (2)/(a_n))$ mit $a_1 = 1$.
+
+Es sei $limits(lim)_(n -> oo) a_n = g$. D.h. $limits(lim)_(n -> oo) a_(n + 1) =
+g$.
+
+$
+  lim_(n -> oo) a_(n + 1) &= g \
+  lim_(n -> oo) 1/2 (a_n + (2)/(a_n)) &= g \
+  lim_(n -> oo) 1/2 a_n + lim_(n -> oo) (1)/(a_n) &= g \
+  1/2 g + (1)/(g) &= g &&| - 1/2 g \
+  (1)/(g) &= 1/2 g &&| dot g \
+  1 &= 1/2 g^2 &&| dot 2 \
+  2 &= g^2 &&| sqrt(...) \
+  sqrt(2) &= g
+$
 
 = Beweise
 == Beweistechniken
