@@ -1021,17 +1021,20 @@
 
   #example[
     === Beweis <induktionBeispiel>
-    *Induktionsanfang* #footnote[siehe @induktion] \
+    *Induktionsanfang* #footnote[siehe @induktion]
+
     Ist $n = 1$, dann ist $f_1(x) = a_1 x + a_0$. $f_1$ hat genau eine
     Nullstelle.
 
     $ x_N = - a_0/a_1 $
 
-    *Induktionsvorraussetzung* \
+    *Induktionsvorraussetzung*
+
     Es gelte, dass $f$ ein Polynom $n$-ten Grades ist. Dieses hat höchstens $n$
     Nullstellen.
 
-    *Induktionsbehauptung* \
+    *Induktionsbehauptung*
+
     Ein Polynom vom Grad $n + 1$ hat höchstens $n + 1$ Nullstellen.
 
     Nun folgt die Argumentation.
@@ -2212,7 +2215,56 @@ $
     1/2 epsilon$. Analog existiert ein $n_2 in NN$, sodass für alle $n > n_2$
     gilt $|b_n - n| > 1/2 epsilon$.
 
-    //TODO: Weitermachen!!!!!!
+    Nun betrachten wir den Term $|a_n + b_n - (a + b)|$, weil $limits(lim)_(n
+    -> oo) c_n = g$, falls $|c_n - g| < epsilon$.
+
+    $
+      |a_n + b_n - (a + b)| &= |a_n - a + b_n - b| \
+      &<= |a_n - a| + |b_n - b| wide "(Dreiecksungleichung)" \
+      &< 1/2 epsilon + 1/2 epsilon \
+      |a_n + b_n - (a + b)| &< epsilon \ \ \
+      endOfProof
+    $
+
+    Damit gilt für alle $n > max {n_1; n_2}$, dass $|a_n + b_n - (a + b)| <
+    epsilon$ und somit ergibt sich für die Folge $(c_n)$ mit $c_n = a_n + b_n$,
+    dass $c_n$ konvergent ist.
+
+    Somit gibt der Beweis sogar eine Antwort auf die Frage, welchen Grenzwert
+    die Summenfolge $a_n + b_n$ besitzt.
+
+    Es gilt nämlich Folgendes.
+
+    $ lim_(n -> oo) (a_n + b_n) = lim_(n -> oo) a_n + lim_(n -> oo) b_n = a + b
+    $
+  ]
+]
+
+#theorem[
+  === Bernoullische Ungleichung
+  Sei $n in NN$ und $x in RR$ mit $x > - 1$. Dann gilt folgende Ungleichung.
+
+  $ (1 + x)^n >= 1 + n x $
+
+  #example[
+    === Beweis
+    *Induktionsanfang*
+
+    Sei $n = 0$.
+
+    $
+      (1 + x)^0 &>= 1 + 0 x \
+      1 &>= 1
+    $
+
+    *Induktionsschritt*
+
+    Für alle $n >= 0$ gilt
+
+    Wenn $(1 + x)^n >= 1 + n x$, so gilt für alle $n > 0 : (1 + x)^(n + 1) >= 1
+    + (n + 1) dot x$.
+
+    //TODO: Weitermachen!!
   ]
 ]
 
