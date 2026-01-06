@@ -2241,7 +2241,7 @@ $
 ]
 
 #theorem[
-  === Bernoullische Ungleichung
+  === Bernoullische Ungleichung <bernoulli>
   Sei $n in NN$ und $x in RR$ mit $x > - 1$. Dann gilt folgende Ungleichung.
 
   $ (1 + x)^n >= 1 + n x $
@@ -2259,14 +2259,41 @@ $
 
     *Induktionsschritt*
 
-    Für alle $n >= 0$ gilt
+    Sei $x > -1$. Dann gilt für alle $n >= 0$ Folgendes.
 
-    Wenn $(1 + x)^n >= 1 + n x$, so gilt für alle $n > 0 : (1 + x)^(n + 1) >= 1
-    + (n + 1) dot x$.
+    Wenn $(1 + x)^n >= 1 + n x$, so $(1 + x)^(n + 1) >= 1 + (n + 1) dot x$.
 
-    //TODO: Weitermachen!!
+    Wenn $(1 + x)^n >= 1 + n x$, so $(1 + x)^n (1 + x) >= (1 + n x)(1 + x)$.
+
+    $
+      (1 + x)^n (1 + x) &>= (1 + n x)(1 + x) \
+      (1 + x)^(n + 1) &>= 1 + x + n x + n x^2 \
+      (1 + x)^(n + 1) &>= 1 + (n + 1) dot x + n x^2 wide n x^2 >= 0 \
+      (1 + x)^(n + 1) &>= 1 + (n + 1) dot x + n x^2 >= 1 + (n + 1) dot x \ \ \
+      endOfProof
+    $
   ]
 ]
+
+=== Eulersche Zahl
+Um die Monotonie einer Folge $(a_n)$ mit $a_n = (1 + 1/n)^n$ nachzuweisen,
+benötigt man ebendiese Bernoullische Ungleichung #footnote[siehe @bernoulli].
+
+$
+  a_n &< a_(n + 1) \
+  a_(n - 1) &< a_n wide &&| - a_(n - 1) \
+  0 &< a_n - a_(n - 1) \
+$
+
+$
+  (a_n)/(a_(n - 1)) &= ((1 + 1/n)^n)/((1 + 1/(n - 1))^(n - 1)) = ((1 +
+  1/n)^n)/((1 + 1/(n - 1))^n dot (1 + 1/(n - 1))^(-1)) = (1 + 1/(n - 1)) dot (((n
+  + 1)/n)/(n/(n - 1)))^n \
+  &= (1 + 1/(n - 1)) dot ((n + 1)/n dot (n - 1)/n)^n = (n/(n - 1)) dot ((n +
+  1)/n dot (n - 1)/n)^n \
+  &= (n/(n - 1)) dot ((n^2 - 1)/(n^2))^n = (n/(n - 1)) dot (1 - 1/(n^2))^n =
+  (n/(n - 1)) dot (1 + (- 1/(n^2)))^n \
+$
 
 = Beweise
 == Beweistechniken
@@ -2436,7 +2463,7 @@ periodische Vorgänge, wie diese _Modulo_-Folge oder eine _Sinus_-Folge
 bewerkstelligen.
 
 $
-  (b_n) : b_n = sin(n/90 pi)
+  (b_n) : b_n = sin(n)
 $ <sinus>
 
 === Konvergenz bei zwei oder mehr Häufungswerten
