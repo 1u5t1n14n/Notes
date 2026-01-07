@@ -2152,6 +2152,8 @@ Um einfacher zu bestimmen, ob eine Folge konvergent ist, gibt es bestimmte
   ]
 ]
 
+=== Unvollständiges Beispiel einer Induktion
+
 Sei $(a_n) : a_1 = 5 and a_n = (2 a_(n - 1))/(a_(n - 1) + 1)$.
 
 $
@@ -2171,11 +2173,7 @@ Sei $n = 2$. $a_2 = 5/3$.
 Für alle $n >= 1$ gilt $a_n > 1$. Wenn #footnote[Implikation] $a_n >= 1$, dann
 gilt $a_(n + 1) > 1$.
 
-\
-
-#line(length: 100%)
-
-\
+=== Grenzwert berechnen
 
 Sei $(a_n) : a_(n + 1) = 1/2 (a_n + (2)/(a_n))$ mit $a_1 = 1$.
 
@@ -2275,15 +2273,19 @@ $
   ]
 ]
 
-=== Eulersche Zahl
+=== Hinführung zur Eulerschen Zahl
 Um die Monotonie einer Folge $(a_n)$ mit $a_n = (1 + 1/n)^n$ nachzuweisen,
 benötigt man ebendiese Bernoullische Ungleichung #footnote[siehe @bernoulli].
 
 $
-  a_n &< a_(n + 1) \
-  a_(n - 1) &< a_n wide &&| - a_(n - 1) \
-  0 &< a_n - a_(n - 1) \
+  a_n &<= a_(n + 1) \
+  a_(n - 1) &<= a_n wide &&| - a_(n - 1) \
+  0 &<= a_n - a_(n - 1) \ \ \
+  a_(n - 1) &<= a_n wide &&| div a_(n - 1) \
+  1 &<= (a_n)/(a_(n - 1)) \
 $
+
+Falls $(a_n)/(a_(n - 1)) >= 1$, ist $(a_n)$ monoton steigend.
 
 $
   (a_n)/(a_(n - 1)) &= ((1 + 1/n)^n)/((1 + 1/(n - 1))^(n - 1)) = ((1 +
@@ -2293,7 +2295,36 @@ $
   1)/n dot (n - 1)/n)^n \
   &= (n/(n - 1)) dot ((n^2 - 1)/(n^2))^n = (n/(n - 1)) dot (1 - 1/(n^2))^n =
   (n/(n - 1)) dot (1 + (- 1/(n^2)))^n \
+  &>= (n/(n - 1)) dot (1 + n dot (- 1/(n^2))) = (n/(n - 1)) dot ((n - 1)/n) = 1
+  \
+  (a_n)/(a_(n - 1)) &>= 1 \ \ \
+  endOfProof
 $
+
+Um die Beschränktheit von $(a_n)$ zu untersuchen, betrachten wir die Folge
+$(b_n) : b_n = (1 + 1/n)^(n + 1)$. Ebendiese ist monoton fallend und besitzt
+eine obere Schranke #footnote[siehe @schranken].
+
+$ o = b_1 = 4 $
+
+Um die Beschränktheit von $(a_n)$ nachzuweisen, muss für alle $n in NN$ gelten
+$b_n > a_n$.
+
+$
+  b_n &> a_n \
+  (1 + 1/n)^(n + 1) &> (1 + 1/n)^n wide &&| div (1 + 1/n) \
+  (1 + 1/n) > 1 \ \ \
+  endOfProof
+$
+
+Die resultierende Ungleichung ist wahr für alle $n in NN$, weshalb $(a_n)$ nach
+oben beschränkt ist. Da sie gleichzeitig durch ihre Monotonie mit ihrem ersten
+Folgenglied nach unten beschränkt ist, ist sie nach dem
+Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
+
+#definition[
+  === Eulersche Zahl
+]
 
 = Beweise
 == Beweistechniken
