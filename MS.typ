@@ -1557,14 +1557,13 @@
   === Notwendiges Kriterium für lokale Extrema
   Sei $f : I subset RR -> RR$. Hat $f$ in $x_E in I$ ein lokales Maximum oder
   Minimum und ist $f$ in $x_E$ differenzierbar, so gilt $f'(x_E) = 0$.
-]
 
-#remark[
-  //TODO: Das nach hinten packen
-  === Notwendige Vorraussetzung
-  Das heißt, wenn $f'(x_E) != 0$, ist $x_E$ kein Extremum. *Aber* dies ist
-  nicht hinreichend, um zu sagen, dass $x_E$ ein Extremum ist, falls lediglich
-  $f'(x_E) = 0$.
+  #remark[
+    === Notwendige Vorraussetzung
+    Das heißt, wenn $f'(x_E) != 0$, ist $x_E$ kein Extremum. *Aber* dies ist
+    nicht hinreichend, um zu sagen, dass $x_E$ ein Extremum ist, falls
+    lediglich $f'(x_E) = 0$.
+  ]
 ]
 
 #theorem[
@@ -1583,8 +1582,8 @@
 #theorem[
   === Vorzeichenkriterium
   Wenn $f'(x_E) = 0$ gilt und das Vorzeichen von $f'$ an der Stelle $x_E$ von
-  *Plus nach Minus* wechselt, dann hat der Graph #footnote[siehe @graph] von
-  $f$ an der Stelle $x_E$ einen *Hochpunkt*.
+  *Plus nach Minus* wechselt, dann hat der Graph #footnote[siehe @graph]
+  <graphNote> von $f$ an der Stelle $x_E$ einen *Hochpunkt*.
 
   Wenn $f'(x_E) = 0$ gilt und das Vorzeichen von $f'$ an der Stelle $x_E$ von
   *Minus nach Plus* wechselt, dann hat der Graph von $f$ an der Stelle $x_E$
@@ -1592,6 +1591,73 @@
 
   Wenn *kein Vorzeichenwechsel* auftritt, hat der Graph von $f$ an der Stelle
   $x_E$ einen *Sattelpunkt*.
+]
+
+== Krümmungsverhalten
+
+#definition[
+  === Krümmungsverhalten <kruemmung>
+  Die Funktion $f$ heißt im Intervall $[a; b] subset D_f$ *konvex bzw.
+  linksgekrümmt*, falls ihr Graph #footnote(<graphNote>) *unterhalb* jeder
+  Verbindungsstrecke zweier seiner Punkte $P(x_1|f(x_1))$ und $Q(x_1|f(x_1))$
+  mit $x_1, x_2 in [a; b]$ liegt.
+
+  Die Funktion $f$ heißt im Intervall $[a; b] subset D_f$ *konkav bzw.
+  rechtsgekrümmt*, falls ihr Graph #footnote(<graphNote>) *oberhalb* jeder
+  Verbindungsstrecke zweier seiner Punkte $P(x_1|f(x_1))$ und $Q(x_1|f(x_1))$
+  mit $x_1, x_2 in [a; b]$ liegt.
+]
+
+#definition[
+  === Wendepunkt <wende>
+  Der Graph #footnote(<graphNote>) einer Funktion $f$ besitzt in $x_W$ einen
+  *Wendepunkt*, wenn dort der Graph von $f$ von einer Links- in eine
+  Rechtskrümmung #footnote[siehe @kruemmung] <kruemmungNote> oder umgekehrt
+  übergeht.
+]
+
+#definition[
+  === Sattelpunkt
+  Ein *Sattelpunkt* ist ein Wendepunkt #footnote[siehe @wende] <wendeNote> mit
+  waagerechter Tangente #footnote[_Wendetangente_].
+]
+
+#theorem[
+  === Krümmungsverhalten
+  Die Funktion $f$ sei auf einem Intervall $I subset D_f$ zweimal
+  differenzierbar.
+
+  Gilt $f''(x_W) > 0$, so ist der Graph #footnote(<graphNote>) von $f$ auf $I$
+  *linksgekrümmt* bzw. *konvex* #footnote(<kruemmungNote>).
+
+  Gilt $f''(x_W) < 0$, so ist der Graph von $f$ auf $I$ *rechtsgekrümmt* bzw.
+  *konkav*.
+]
+
+#theorem[
+  === Notwendiges Kriterium für Wendepunkte
+  Sei $f : I subset.eq RR -> RR$. Hat $f$ in $x_W$ einen Wendepunkt und ist $f$
+  zweimal differenzierbar, so gilt $f''(x_W) = 0$.
+]
+
+#theorem[
+  === Erstes hinreichendes Kriterium für Wendepunkte (Vorzeichenwechsel)
+  Wenn $f$ in der zweiten Ableitung einen Vorzeichenwechsel von *positiv zu
+  negativ* vollzieht, dann hat $f$ an der Stelle $x_W$ einen
+  *Links-Rechts-Wendepunkt* #footnote(<wendeNote>).
+
+  Wenn $f$ in der zweiten Ableitung einen Vorzeichenwechsel von *negativ zu
+  positiv* vollzieht, dann hat $f$ an der Stelle $x_W$ einen
+  *Rechts-Links-Wendepunkt*.
+]
+
+#theorem[
+  === Zweites hinreichendes Kriterium für Wendepunkte (Dritte Ableitung)
+  Falls $f''(x_W) = 0$ und $f'''(x_W) > 0$ gilt, so hat $f$ an der Stelle $x_W$
+  einen *Links-Rechts-Wendepunkt*.
+
+  Falls $f''(x_W) = 0$ und $f'''(x_W) < 0$ gilt, so hat $f$ an der Stelle $x_W$
+  einen *Rechts-Links-Wendepunkt*.
 ]
 
 = Folgen <folgen>
