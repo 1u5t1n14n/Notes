@@ -1642,21 +1642,21 @@
 
 #theorem[
   === Erstes hinreichendes Kriterium für Wendepunkte (Vorzeichenwechsel)
-  Wenn $f$ in der zweiten Ableitung einen Vorzeichenwechsel von *positiv zu
+  Wenn $f$ in der Umgebung von $x_W$ einen Vorzeichenwechsel von *positiv zu
   negativ* vollzieht, dann hat $f$ an der Stelle $x_W$ einen
   *Links-Rechts-Wendepunkt* #footnote(<wendeNote>).
 
-  Wenn $f$ in der zweiten Ableitung einen Vorzeichenwechsel von *negativ zu
+  Wenn $f$ in der Umgebung von $x_W$ einen Vorzeichenwechsel von *negativ zu
   positiv* vollzieht, dann hat $f$ an der Stelle $x_W$ einen
   *Rechts-Links-Wendepunkt*.
 ]
 
 #theorem[
   === Zweites hinreichendes Kriterium für Wendepunkte (Dritte Ableitung)
-  Falls $f''(x_W) = 0$ und $f'''(x_W) > 0$ gilt, so hat $f$ an der Stelle $x_W$
+  Falls $f''(x_W) = 0$ und $f'''(x_W) < 0$ gilt, so hat $f$ an der Stelle $x_W$
   einen *Links-Rechts-Wendepunkt*.
 
-  Falls $f''(x_W) = 0$ und $f'''(x_W) < 0$ gilt, so hat $f$ an der Stelle $x_W$
+  Falls $f''(x_W) = 0$ und $f'''(x_W) > 0$ gilt, so hat $f$ an der Stelle $x_W$
   einen *Rechts-Links-Wendepunkt*.
 ]
 
@@ -2299,14 +2299,26 @@ $
 
     Es gilt nämlich Folgendes.
 
-    $ lim_(n -> oo) (a_n + b_n) = lim_(n -> oo) a_n + lim_(n -> oo) b_n = a + b
-    $
+    $ lim_(n -> oo) (a_n + b_n) = lim_(n -> oo) a_n + lim_(n -> oo) b_n
+    = a + b $
   ]
+]
+
+#remark[
+  === Beschränkungskriterium
+  Sei $(c_n) : c_n = a_n dot b_n$ mit $limits(lim)_(n -> oo) a_n = 0$
+
+  Dann gilt nicht zwingend $limits(lim)_(n -> oo) c_n = 0$ mit der
+  Argumentation, dass ein Faktor Null sei.
+
+  $c_n$ ist mit Sicherheit eine Nullfolge, falls $(b_n)$ beschränkt
+  #footnote[siehe @konvergentBeschränkt] ist.
 ]
 
 #theorem[
   === Bernoullische Ungleichung <bernoulli>
-  Sei $n in NN$ und $x in RR$ mit $x > - 1$. Dann gilt folgende Ungleichung.
+  Sei $n in NN$ und $x in RR$ mit $x > - 1$. Dann gilt folgende
+  Ungleichung.
 
   $ (1 + x)^n >= 1 + n x $
 
@@ -2390,6 +2402,16 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
 
 #definition[
   === Eulersche Zahl
+  //TODO: Definition hinzufügen
+]
+
+#theorem[
+  === Einschachtelungssatz
+  $(a_n), (b_n)$ und $(c_n)$ seien Folgen, bei denen für alle $n : a_n
+  <= b_n <= c_n$ gilt.
+
+  Gilt $limits(lim)_(n -> oo) a_n = limits_(lim)_(n -> oo) c_n = g$, so
+  gilt $limits(lim)_(n -> oo) b_n = g$.
 ]
 
 = Beweise
