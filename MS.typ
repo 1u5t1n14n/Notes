@@ -2177,16 +2177,14 @@ Um einfacher zu bestimmen, ob eine Folge konvergent ist, gibt es bestimmte
     === Beweis
     Sei $(a_n)$ ohne Beschränkung der Allgemeinheit monoton wachsend.
 
-    + "$==>$" \ \
-      Sei $(a_n)$ konvergent. Nach dem Satz der Relation von Konvergenz und
-      Beschränktheit #footnote[siehe @beschränktKonvergent] ist $(a_n)$ somit
-      beschränkt.
+    + "$==>$" Sei $(a_n)$ konvergent. Nach dem Satz der Relation von
+      Konvergenz und Beschränktheit #footnote[siehe @beschränktKonvergent]
+      ist $(a_n)$ somit beschränkt.
 
-    + "$<==$" \ \
-      Sei $(a_n)$ beschränkt, d.h. sie besitzt eine obere Schranke und nach
-      Supremumsaxiom #footnote[siehe @supAxiom] sogar ein _Supremum_ $"sup" a_n =
-      S$. Damit existieren  für alle $epsilon > 0$ ein $m in NN$ mit $a_m > S -
-      epsilon$.
+    + "$<==$" Sei $(a_n)$ beschränkt, d.h. sie besitzt eine obere Schranke
+      und nach Supremumsaxiom #footnote[siehe @supAxiom] sogar ein
+      _Supremum_ $"sup" a_n = S$. Damit existieren  für alle $epsilon > 0$ ein
+      $m in NN$ mit $a_m > S - epsilon$.
 
       Das heißt $a_n in ]S - epsilon; S + epsilon[$. Damit ist $(a_n)$
       konvergent mit $limits(lim)_(n -> oo) a_n = S = "sup" a_n$.
@@ -2410,8 +2408,47 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
   $(a_n), (b_n)$ und $(c_n)$ seien Folgen, bei denen für alle $n : a_n
   <= b_n <= c_n$ gilt.
 
-  Gilt $limits(lim)_(n -> oo) a_n = limits_(lim)_(n -> oo) c_n = g$, so
+  Gilt $limits(lim)_(n -> oo) a_n = limits(lim)_(n -> oo) c_n = g$, so
   gilt $limits(lim)_(n -> oo) b_n = g$.
+]
+
+#definition[
+  === _Cauchy_-Folge
+  Eine Folge $(a_n)$ heißt _Cauchy_-Folge, sofern es zu jedem $epsilon > 0$ ein
+  $n_0$ gibt, sodass $m, n > n_0 : |a_m - a_n| > epsilon$.
+
+  $forall epsilon > 0 exists n_0 in NN forall n_0 < n, m in NN : |a_m - a_n| <
+  epsilon$
+]
+
+#theorem[
+  === Konvergenz bei _Cauchy_-Folgen
+  Eine Folge ist _Cauchy_-Folge genau dann, wenn sie konvergent ist.
+
+  #example[
+    === Beweis
+    "$==>$" Sei $(a_n)$ konvergent. Laut Vorraussetzung existiert für alle
+    $epsilon > 0$ ein $n_0$, sodass für alle $n > n_0$ gilt $|a_n - g| <
+    epsilon/2$.
+
+    Für $m, n > n_0$ gilt Folgendes.
+
+    $
+      |a_m - a_n| &= |a_m - g + g - a_n| \
+      &<= |a_m - g| + |g - a_n| = |a_n - g| + |a_n - g| < (2 dot epsilon)/2
+      \
+      |a_m - a_n| &< epsilon \ \ \
+      endOfProof
+    $
+
+    //TODO: Dies fortführen
+    "$<==$" Sei $(a_n)$ _Cauchy_-Folge.
+  ]
+]
+
+#theorem[
+  === Rationale _Cauchy_-Folgen
+  Wenn die rationale Folge $(a_n)$ konvergent ist, ist sie _Cauchy_-Folge.
 ]
 
 = Beweise
