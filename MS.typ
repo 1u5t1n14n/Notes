@@ -2266,16 +2266,17 @@ $
 
   + Die Folge $(c_n)$ mit $c_n = a_n dot b_n$ ist *konvergent*.
 
-  + Die Folge $(c_n)$ mit $c_n = (a_n)/(b_n)$ ist *konvergent*.
+  + Die Folge $(c_n)$ mit $c_n = (a_n)/(b_n)$ ist *konvergent*, falls $(c_n)$
+    keine Nullfolge ist.
 
   #example[
     === Beweis (1)
     Seien $(a_n)$ und $(b_n)$ mit $limits(lim)_(n -> oo) a_n = a$ und
     $limits(lim)_(n -> oo) b_n = b$. Des Weiteren sei $epsilon > 0$.
 
-    Dann existiert ein $n_1 in NN$, sodass für alle $n > n_1$ gilt $|a_n - a| >
+    Dann existiert ein $n_1 in NN$, sodass für alle $n > n_1$ gilt $|a_n - a| <
     1/2 epsilon$. Analog existiert ein $n_2 in NN$, sodass für alle $n > n_2$
-    gilt $|b_n - n| > 1/2 epsilon$.
+    gilt $|b_n - b| < 1/2 epsilon$.
 
     Nun betrachten wir den Term $|a_n + b_n - (a + b)|$, weil $limits(lim)_(n
     -> oo) c_n = g$, falls $|c_n - g| < epsilon$.
@@ -2299,6 +2300,48 @@ $
 
     $ lim_(n -> oo) (a_n + b_n) = lim_(n -> oo) a_n + lim_(n -> oo) b_n
     = a + b $
+
+    === Beweis (2)
+    Seien $(a_n)$ und $(b_n)$ mit $limits(lim)_(n -> oo) a_n = a$ und
+    $limits(lim)_(n -> oo) b_n = b$. Des Weiteren sei $epsilon > 0$.
+
+    Dann existiert ein $n_1 in NN$, sodass für alle $n > n_1$ gilt $|a_n - a| <
+    1/2 epsilon$. Analog existiert ein $n_2 in NN$, sodass für alle $n > n_2$
+    gilt $|b_n - b| < 1/2 epsilon$.
+
+    Nun betrachten wir den Term $|a_n b_n - a b)|$, weil $limits(lim)_(n -> oo)
+    c_n = g$, falls $|c_n - g| < epsilon$.
+
+    $
+      |a_n b_n - a b| &= |a_n b_n - a b + a b_n - a b_n| wide
+      &&"(nahrhafte Null)" \
+      &= |a_n b_n - a b_n + a b_n - a b| \
+      &= |b_n (a_n - a) + a (b_n - b)| \
+      &<= |b_n (a_n - a)| + |a (b_n - b)| &&"(Dreiecksungleichung)" \
+      &<= |b_n| dot |a_n - a| + |a| dot |b_n - b| \
+    $
+
+    Mit Konvergenz von $(a_n)$ und $(b_n)$ sind beide Folgen beschränkt. Wähle
+    ein $k in RR : a < k > b_n$
+
+    Damit gilt folgende Ungleichung, da $|a_n - a| < epsilon/2 wide |b_n - b| <
+    epsilon/2$.
+
+    $
+      |a_n b_n - a b| &<= |b_n| dot |a_n - a| + |a| dot |b_n - b| \
+      &<= k dot |a_n - a| + k dot |b_n - b| <= (k epsilon)/2 + (k epsilon)/2 \
+      |a_n b_n - a b| &<= epsilon \ \ \
+      endOfProof
+    $
+
+    Damit gilt für alle $n > max {n_1; n_2}$, dass $|a_n  b_n - a b| < epsilon$
+    und somit ergibt sich für die Folge $(c_n)$ mit $c_n = a_n b_n$, dass $c_n$
+    konvergent ist.
+
+    Es gilt auch Folgendes.
+
+    $ lim_(n -> oo) a_n b_n = lim_(n -> oo) a_n dot lim_(n -> oo) b_n = a dot
+    b $
   ]
 ]
 
@@ -2443,6 +2486,26 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
 
     //TODO: Dies fortführen
     "$<==$" Sei $(a_n)$ _Cauchy_-Folge.
+  ]
+
+  #example[
+    === Beispiel
+    Ist $(a_n) : a_n = 1/n$ eine _Cauchy_-Folge?
+
+    Sei $epsilon > 0$.
+
+    Ohne Beschränkung der Allgemeinheit sei $n > m$. Damit gilt $1/n < 1/m$.
+
+    $
+      |a_m - a_n| &= |1/m - 1/n| \
+      &= 1/m - 1/n <= 1/m < epsilon \ \ \
+      endOfProof
+    $
+
+    Wähle $n_0 > 1/epsilon$. Somit gilt für alle $m, n > n_0 : |a_m - a_n| <
+    epsilon$.
+
+    $(a_n)$ ist folglich _Cauchy_-Folge und konvergent.
   ]
 ]
 
