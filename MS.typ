@@ -2514,6 +2514,56 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
   Wenn die rationale Folge $(a_n)$ konvergent ist, ist sie _Cauchy_-Folge.
 ]
 
+= Reihen
+== Der Begriff
+
+#definition[
+  === Begriff
+  Die Folge $(s_n)$ mit $s_n = a_1 + a_2 + ... + a_n$ heißt _unendliche_
+  *Reihe* der Folge $(a_n)$.
+]
+
+#remark[
+  === Zur Benennung und Darstellung
+
+  + Ein Folgenglied $s_n$ der Reihe $(s_n)$ heißt $n$-te *Partialsumme*.
+
+  + Für das Folgenglied $s_n$ wird oft die Summenzeichenschreibweise
+    #footnote[siehe @summen] benutzt.
+
+    $
+      s_n &= sum_(k = 1)^n a_k = a_1 + a_2 + ... + a_n \
+      s_3 &= sum_(k = 1)^3 a_k = a_1 + a_2 + a_3 wide "(Beispiel)"\
+    $
+
+  + Oft verwendet man als Symbol der Reihe $(s_n)$ auch $limits(sum)_(k =
+    1)^(oo) a_k$. Dabei ist $limits(sum)_(k = 1)^(oo) a_k != limits(sum)_(k =
+    1)^n a_k$.
+
+    #tldr[
+      $limits(sum)_(k = 1)^n a_k$ ist die $n$-te Partialsumme, also
+      Folgenglied.
+      $limits(sum)_(k = 1)^(oo) a_k$ bezeichnet die Reihe als Objekt.
+    ]
+]
+
+#definition[
+  === Summenschreibweise <summen>
+]
+
+#theorem[
+  #set enum(numbering: "(1)")
+  === Summensätze
+  Für jede natürliche Zahl $n >= 1$ und jedes $c in RR$ gelten Folgende Sätze.
+
+  + $limits(sum)_(k = 1)^n c = n dot c$
+
+  + $limits(sum)_(k = 1)^n (c dot a_k) = c dot limits(sum)_(k = 1)^n a_k$
+
+  + $limits(sum)_(k = 1)^n (a_k plus.minus b_k) = limits(sum)_(k = 1)^n a_k
+    plus.minus limits(sum)_(k = 1)^n a_k$
+]
+
 = Beweise
 == Beweistechniken
 
