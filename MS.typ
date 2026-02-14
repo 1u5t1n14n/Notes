@@ -357,7 +357,7 @@
     Dann ist $g$ *wohldefiniert* und es gilt $g(f(x)) = x$ für alle $x in X$. \
     $g$ ist also eine Linksinverse #footnote[siehe @linksRechts] von $f$.
 
-    "$<==$" \ \
+  + "$<==$" \ \
     Sei $g : Y -> X$ eine Linksinverse von $f$. \
     Seien $x_1, x_2 in X$ zwei Punkte mit $f(x_1) = f(x_2)$. \
     Dann gilt $x_1 = g(f(x_1)) = g(f(x_2)) = x_2$ und somit $x_1 = x_2$. \
@@ -1334,6 +1334,7 @@
 
   #example[
     === Herleitung der allgemeinen Nullstellen des Sinus und Cosinus
+    //TODO: UNBEDINGT KORRIGIEREN!!!
 
     $
       s(x) = a dot sin(b x + c) + d &= 0 \
@@ -2198,7 +2199,7 @@ Um einfacher zu bestimmen, ob eine Folge konvergent ist, gibt es bestimmte
 ]
 
 #theorem[
-  === Satz von _Bolzano-Weierstraß_
+  === Satz von _Bolzano-Weierstraß_ <weierBolz>
   Jede beschränkte Folge reeller Zahlen besitzt eine konvergente Teilfolge.
 
   #example[
@@ -2469,6 +2470,7 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
   Eine Folge ist _Cauchy_-Folge genau dann, wenn sie konvergent ist.
 
   #example[
+    #set enum(numbering: "1)")
     === Beweis
     "$==>$" Sei $(a_n)$ konvergent. Laut Vorraussetzung existiert für alle
     $epsilon > 0$ ein $n_0$, sodass für alle $n > n_0$ gilt $|a_n - g| <
@@ -2484,8 +2486,38 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
       endOfProof
     $
 
-    //TODO: Dies fortführen
     "$<==$" Sei $(a_n)$ _Cauchy_-Folge.
+
+    +  Die _Caucy_-Folge ist beschränkt. Sei
+      $epsilon = 1$. Dann gilt für alle $m, n > n_0 : |a_m - a_n| < 1$.
+
+      $
+        |a_m| - |a_n| &<= |a_m - a_n| < 1 \
+        |a_m| &< |a_n| + 1
+      $
+
+      Insbesondere ist $|a_m| < 1 + |a_(n_0 + 1)| in RR^+$. Damit gilt für alle
+      $m : |a_m| < "max" {1 + |a_(n_0 + 1)|; a_1; a_2; ...; a_n_0}$.
+
+      $(a_n)$ ist folglich beschränkt.
+
+    + Da $(a_n)$ beschränkt, besitzt sie eine konvergente Teilfolge $(t_n)$
+      #footnote[siehe @weierBolz].
+
+    + Da $(t_n)$ konvergent, existiert Folgenglied $t_N$ mit $N > n_0$, für das
+      gilt $: |t_N - g| < epsilon/2$. $limits(lim)_(n -> oo) t_n = g$.
+
+      _Beachte_: Hierbei ist $epsilon$ wie folgt gewählt: Für alle $m, n > n_0
+      : |a_m - a_n| < epsilon/2$
+
+    + $
+        |a_n - g| &= |a_n - g + t_N - t_N| \
+        &= |a_n - t_N + t_N - g| \
+        &<= |a_n - t_N| + |t_N - g|
+        &< underbrace(epsilon/2, "Cauchy-Folge") + underbrace(epsilon/2,
+        "konvergente \n Teilfolge") = epsilon \ \ \
+        endOfProof
+      $
   ]
 
   #example[
@@ -2512,6 +2544,37 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
 #theorem[
   === Rationale _Cauchy_-Folgen
   Wenn die rationale Folge $(a_n)$ konvergent ist, ist sie _Cauchy_-Folge.
+]
+
+== _limes inferior_ und _limes superior_
+
+#theorem[
+  === Kleinster und größter Häufungswert
+  Jede beschränkte Folge $(a_n)$ besitzt einen kleinsten und größten
+  Häufungswert.
+]
+
+#theorem[
+  === Bezeichnung
+  Sei $(a_n)$ eine beschränkte Folge.
+
+  Der kleinste Häufungswert wird _limes inferior_, $lim inf a_n$, und der
+  größte _limes superior_, $lim sup a_n$ genannt.
+]
+
+#theorem[
+  === Bedingung des _limes inferior_
+  Eine reelle Zahl $i$ ist _limes inferior_ einer beschränkten Folge $(a_n)$,
+  falls für alle $epsilon > 0$ für unendlich viele Folgenglieder $a_n$ gilt,
+  $a_n < i + epsilon$ und nur für höchtens endlich viele gilt $a_n < i -
+  epsilon$.
+]
+
+#theorem[
+  === Häufungswertzusammenfall
+  Die Folge $(a_n)$ konvergiert genau dann, wenn sie beschränkt ist und genau
+  einen Häufungswert besitzt. In diesem Fall ist $limits(lim)_(n -> oo) a_n =
+  lim inf a_n = lim sup a_n$.
 ]
 
 = Reihen
@@ -2544,6 +2607,7 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
       $limits(sum)_(k = 1)^n a_k$ ist die $n$-te Partialsumme, also
       Folgenglied.
       $limits(sum)_(k = 1)^(oo) a_k$ bezeichnet die Reihe als Objekt.
+      #footnote[siehe @wertReihe]
     ]
 ]
 
@@ -2562,6 +2626,56 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
 
   + $limits(sum)_(k = 1)^n (a_k plus.minus b_k) = limits(sum)_(k = 1)^n a_k
     plus.minus limits(sum)_(k = 1)^n a_k$
+]
+
+#definition[
+  === Wert einer Reihe <wertReihe>
+  Die Reihe $(s_n) : s_n = limits(sum)_(k = 1)^n a_k$ sei konvergent.
+
+  Die Zahl $limits(lim)_(n -> oo) limits(sum)_(k = 1)^n a_k$ heißt *Summe* oder
+  *Wert* der Reihe $(s_n)$.
+
+  #remark[
+    Mitunter wird der Wert einer Reihe auch anders symbolisiert.
+
+    $ lim_(n -> oo) sum_(k = 1)^n a_k = sum_(k = 1)^(oo) a_k $
+  ]
+
+  #example[
+    === Beispiel
+    $$
+  ]
+]
+
+== Besondere Reihen
+
+#definition[
+  === Summe der natürlichen Zahlen
+  Sei eine Reihe $(s_n) : s_n = limits(sum)_(k = 1)^n k$.
+
+  Dann ist $s_n = (n (n + 1))/(2)$.
+]
+
+#definition[
+  === Summe der Kubikzahlen
+  Sei eine Reihe $(s_n) : s_n = limits(sum)_(k = 1)^n k^3$.
+
+  Dann ist $s_n = ((n (n + 1))/(2))^2$.
+]
+
+#definition[
+  === Summe der ungeraden Zahlen
+  Sei eine Reihe $(s_n) : s_n = limits(sum)_(k = 1)^n (2 k - 1)$.
+
+  Dann ist $s_n = n^2$.
+]
+
+#definition[
+  === Irgendeine Zahl
+  Sei eine Reihe $(s_n) : s_n = limits(sum)_(k = 1)^n 1/((Omega k - Omega +
+  1)(Omega k + 1))$ mit $Omega in NN without {0}$.
+
+  Dann ist $s_n = n/(Omega n + 1)$.
 ]
 
 = Beweise
