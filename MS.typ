@@ -1325,31 +1325,80 @@
   $d$ beschreibt die Verschiebung in $y$-Richtung und somit die *Ruhelage*.
 
   $
-    x_sin_1 = (2 k pi - arcsin(d/a) - c)/b wide
-    x_sin_2 = ((2 k + 1) pi + arcsin(d/a) - c)/b \ \ \
+    x_sin_1 = (2 k pi - arcsin(d/a))/b + c wide
+    x_sin_2 = ((2 k + 1) pi + arcsin(d/a))/b + c \ \ \
 
-    x_cos_1 = ((2 k - 1/2) pi + arcsin(d/a) - c)/b wide
-    x_cos_2 = ((2 k + 1/2) pi - arcsin(d/a) - c)/b \
+    x_cos_1 = ((2 k - 1/2) pi + arcsin(d/a))/b + c wide
+    x_cos_2 = ((2 k + 1/2) pi - arcsin(d/a))/b + c \
   $
 
   #example[
     === Herleitung der allgemeinen Nullstellen des Sinus und Cosinus
-    //TODO: UNBEDINGT KORRIGIEREN!!!
 
     $
-      s(x) = a dot sin(b x + c) + d &= 0 \
-      a dot sin(b x + c) + d &= 0 wide &&| - d \
-      a dot sin(b x + c) &= - d wide &&| div a \
-      sin(b x + c) &= - d/a wide &&| arcsin() \
-      b x + c &= - arcsin(d/a) wide &&| - c \
-      b x &= - arcsin(d/a) - c wide &&| div b \
-      x &= (- arcsin(d/a) - c)/b wide &&| div b \
+      s(x) = a dot sin(b (x - c)) + d &= 0 wide &&| - d \
+      a dot sin(b (x - c)) &= - d &&| div a \
+      sin(b (x - c)) &= - d/a &&| arcsin() \
+      b (x - c) &= - arcsin(d/a) &&| div b \
+      x - c &= - (arcsin(d/a))/b &&| + c \
+      x &= - (arcsin(d/a))/b + c \
     $
 
     Da die Sinusfunktion periodisch ist, wäre noch ein $2 pi$ zu ergänzen.
     Analog sind die weiteren Nullstellen zu bestimmen. Der Beweis ist dem Leser
     überlassen.
   ]
+]
+
+== Exponentialfunktionen
+
+#definition[
+  === Funktionsterm
+  Eine Funktion $f : RR -> RR$ mit $f(x) = b^x$ mit $b > 0$ und $b != 0$ heißt
+  *Exponentialfunktion*.
+]
+
+#definition[
+  === Eigenschaften
+  Eine für eine Funktion $f$ mit $f(x) = b^x$ gilt Folgendes.
+
+  #figure(
+    table(
+      align: center,
+      columns: 3,
+
+      table.header[Bedingung][$b > 1$][$b < 1$],
+      [Verhalten im Unendlichen],
+      [$
+        limits(lim)_(x -> oo) f = 0 \
+        limits(lim)_(x -> -oo) f = oo
+      $],
+      [$
+        limits(lim)_(x -> oo) f = oo \
+        limits(lim)_(x -> -oo) f = 0 \
+      $],
+
+      [Monotonie],
+      [$f'(x) > 0$],
+      [$f'(x) < 0$],
+
+      [Besonderheiten],
+      [$
+        f(0) = 1 \
+        f(1) = b
+      $],
+      [$
+        f(0) = 1 \
+        f(1) = b
+      $],
+    )
+  )
+]
+
+#definition[
+  === Parametrisierte Funktionsgleichung
+  Funktionsgleichungen der Form $f(x) = a dot b^x + c$ mit $b > 0$, $b != 1$
+  und $a != 0$ stellen allgemeine Exponentialfunktionen dar.
 ]
 
 == Änderungsraten
@@ -1480,6 +1529,13 @@
       f''(x) = - sin(x) \
       f'''(x) = - cos(x) \ \ \
       f''''(x) = f(x)
+    $
+
+  + *Exponentialfunktionen*
+
+    $
+      f(x) = b^x \
+      f'(x) = ln(b) dot b^x
     $
 
   + *Summenregel* \
@@ -2442,11 +2498,6 @@ oben beschränkt ist. Da sie gleichzeitig durch ihre Monotonie mit ihrem ersten
 Folgenglied nach unten beschränkt ist, ist sie nach dem
 Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
 
-#definition[
-  === Eulersche Zahl
-  //TODO: Definition hinzufügen
-]
-
 #theorem[
   === Einschachtelungssatz
   $(a_n), (b_n)$ und $(c_n)$ seien Folgen, bei denen für alle $n : a_n
@@ -2461,8 +2512,8 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
   Eine Folge $(a_n)$ heißt _Cauchy_-Folge, sofern es zu jedem $epsilon > 0$ ein
   $n_0$ gibt, sodass $m, n > n_0 : |a_m - a_n| > epsilon$.
 
-  $forall epsilon > 0 exists n_0 in NN forall n_0 < n, m in NN : |a_m - a_n| <
-  epsilon$
+  $ forall epsilon > 0 exists n_0 in NN forall n_0 < n, m in NN : |a_m - a_n| <
+  epsilon $
 ]
 
 #theorem[
