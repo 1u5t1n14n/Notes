@@ -14,6 +14,60 @@
   in *anionischer* Form vor.
 ]
 
+== Thermodynamik
+
+#definition[
+  === Offene, geschlossene und abgeschlossene Systeme <geschlossen>
+  *Offene* Systeme sind durch Stoff- und Energieaustausch mit der Umgebung
+  charakterisiert. *Geschlossene* Systeme tauschen ausschließlich Energie, aber
+  keine Stoffe mit der Umgebung aus. *Abgeschlossene* Systeme zeigen weder
+  Energie- noch Stoffaustausch mit der Umgebung.
+]
+
+#theorem[
+  === Energieerhaltungssatz
+  In einem energetisch abgeschlossenen #footnote[siehe @geschlossen] System ist
+  die Gesamtenergie konstant.
+]
+
+#definition[
+  === Energieformen
+  #figure(
+    table(
+      columns: (1fr, 2fr, 1fr),
+
+      table.header[Energieform][Beschreibung][Beispiel],
+      [mechanische Energie],
+      [_Potentielle Energie_ kann man einem Körper geben, indem man ihn hebt.
+      Ihr Betrag hängt von der Höhendifferenz ab. Z.B. besitzt das Wasser in
+      einem Stausee im Hinblich auf das tiefer liegende Kraftwerk Lageenergie,
+      die durch das Herabfallen in _kinetische Energie_ umgewandelt werden
+      kann.],
+      [hellblau],
+
+      [Wärmeenergie],
+      [],
+      [schwarz bis dunkelblau],
+
+      [elektrische Energie],
+      [],
+      [violett],
+
+      [chemische Energie],
+      [durchsichtig neutral],
+      [],
+
+      [Strahlungsenergie],
+      [],
+      [blau],
+
+      [Kernenergie],
+      [],
+      [blau],
+    )
+  )
+]
+
 = Organik
 == Proteine
 
