@@ -1,5 +1,5 @@
 #import "Template.typ": *
-#show: template.with(color: "#CCB77A", title: [#highlight(fill: black)[Geschichte]])
+#show: template.with(color: "#CCB77A", title: [Geschichte])
 
 #set page(columns: 2)
 
