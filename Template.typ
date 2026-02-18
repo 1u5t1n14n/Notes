@@ -16,7 +16,7 @@
   ]
   align(bottom + right)[
     #author \
-    #datetime.today().display("[year].[month].[day]")
+    #datetime.today().display("[year][month][day]")
   ]
 
   set document(title: title, author: author, date: datetime(day: 2, month: 1, year: 2009))
