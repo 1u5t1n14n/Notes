@@ -999,10 +999,8 @@
         endOfProof
       $
 
-    #remark[
-      Alternativ lassen sich diese Zusammenhänge auch mit dem Ausmultiplizieren
-      der faktorisierten Form aufzeigen.
-    ]
+    Alternativ lassen sich diese Zusammenhänge auch mit dem Ausmultiplizieren
+    der faktorisierten Form aufzeigen.
   ]
 
   #remark[
@@ -2646,7 +2644,7 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
     #footnote[siehe @summen] benutzt.
 
     $
-      s_n &= sum_(k = 1)^n a_k = a_1 + a_2 + ... + a_n \
+      s_n &= sum_(k = 1)^n a_k = underbrace(a_1 + a_2 + ... + a_n, n-"mal") \
       s_3 &= sum_(k = 1)^3 a_k = a_1 + a_2 + a_3 wide "(Beispiel)"\
     $
 
@@ -2698,30 +2696,61 @@ Beschränkungskonvergenzsatz #footnote[siehe @konvergentBeschränkt] konvergent.
   ]
 ]
 
-== Besondere Reihen
+#theorem[
+  ===
+  Sei $(a_n)$ Folge.
+
+  Wenn $s_n = limits(sum)_(k = 1)^n a_k$ konvergent, so ist $(a_n)$ Nullfolge.
+
+  #example[
+    === Beweis
+    Da $(s_n)$ konvergent, sei $limits(lim)_(n -> oo) s_n = s$.
+
+    $
+      lim_(n -> oo) a_n = lim_(n -> oo) a_(n + 1) &= lim_(n -> oo) (s_(n + 1) - s_n) \
+      &= lim_(n -> oo) s_(n + 1) - lim_(n -> oo) s_n = s - s = 0 \ \ \
+      endOfProof
+    $
+  ]
+
+  #remark[
+    === Kontrapositionsaspekt
+    Wenn $(a_n)$ keine Nullfolge, so $(s_n)$ nicht konvergent.
+  ]
+]
 
 #definition[
+  === Absolute Konvergenz
+  Sei $(a_n)$ Folge.
+
+  $(s_n)$ mit $s_n = limits(sum)_(k = 1)^n a_k$ ist *absolut konvergent*, wenn
+  $limits(lim)_(n -> oo) limits(sum)_(k = 1)^n |a_k|$ existiert.
+]
+
+== Besondere Reihen
+
+#theorem[
   === Summe der natürlichen Zahlen
   Sei eine Reihe $(s_n) : s_n = limits(sum)_(k = 1)^n k$.
 
   Dann ist $s_n = (n (n + 1))/(2)$.
 ]
 
-#definition[
+#theorem[
   === Summe der Kubikzahlen
   Sei eine Reihe $(s_n) : s_n = limits(sum)_(k = 1)^n k^3$.
 
   Dann ist $s_n = ((n (n + 1))/(2))^2$.
 ]
 
-#definition[
+#theorem[
   === Summe der ungeraden Zahlen
   Sei eine Reihe $(s_n) : s_n = limits(sum)_(k = 1)^n (2 k - 1)$.
 
   Dann ist $s_n = n^2$.
 ]
 
-#definition[
+#theorem[
   === Irgendeine Zahl
   Sei eine Reihe $(s_n) : s_n = limits(sum)_(k = 1)^n 1/((Omega k - Omega +
   1)(Omega k + 1))$ mit $Omega in NN without {0}$.
